@@ -35,6 +35,7 @@ const Footer = () => {
           </ul>
         </div>
       </div>
+
       <p style={{ textAlign: "center", paddingBottom: "40px" }}>
         Copyright © 2023 codinghero. All rights reserved.
       </p>
