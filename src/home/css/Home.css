@@ -1,0 +1,139 @@
+.hero_section {
+  background-image: url("../../assets/background.png");
+  background-position: right;
+  background-repeat: no-repeat;
+  background-size: contain;
+  overflow: hidden;
+}
+
+.ch {
+  color: #fcbf49;
+}
+
+.hero_section .hero_text {
+  max-width: 900px;
+  margin: 130px;
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+  align-items: flex-start;
+}
+
+.hero_section .hero_text h1 {
+  font-size: 3.3em;
+}
+
+.hero_section .hero_text p {
+  font-size: 20px;
+}
+
+.btn_link {
+  background-color: #fcbf49;
+  padding: 20px;
+  border: 1.2px solid transparent;
+  text-decoration: none;
+  color: #fff;
+}
+
+.btn_link:hover {
+  transition: 0.3s;
+  background-color: transparent;
+  border: 1.2px solid #fcbf49;
+  color: #333;
+}
+
+/* Icon Section */
+
+.icon_section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10em;
+}
+
+.icon_section .icon_item {
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  text-align: center;
+  justify-content: center;
+}
+
+.icon_section .icon_item img {
+  width: 300px;
+  margin: auto;
+}
+
+.icon_title {
+  text-align: center;
+  color: #333;
+  font-size: 3.3rem;
+  padding-top: 60px;
+}
+
+/* tech section */
+
+.tech_section {
+  text-align: center;
+  padding: 12em;
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+  align-items: center;
+}
+
+.tech_section h1 {
+  font-size: 3em;
+  color: #333;
+}
+
+.tech_section .tech_list {
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  flex-wrap: wrap;
+}
+
+/* News */
+
+.newsletter_tutorials_section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  gap: 6em;
+}
+
+.newsletter_tutorials_section .tutorials {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  gap: 10em;
+}
+
+.newsletter_tutorials_section .tutorials .tutorial {
+  max-width: 400px;
+}
+
+.newsletter {
+  background-color: #fcbf49;
+  padding: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.new_text {
+  max-width: 900px;
+}
+
+.newsletter a {
+  background-color: #1e9ae0;
+  padding: 20px 60px;
+  text-decoration: none;
+  color: #fff;
+}
