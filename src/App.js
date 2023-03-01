@@ -6,6 +6,7 @@ import Navigation from "./shared/navigation/Navigation";
 import Footer from "./shared/navigation/Footer";
 import HomePage from "./home/pages/HomePage";
 import TutorialPage from "./tutorials/pages/TutorialPage";
+import TutorialDetails from "./tutorials/components/TutorialDetails";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route index element={<Redirect path="/home" />} />
           <Route path="/home" element={<HomePage />} />
           <Route path="/tutorials" element={<TutorialPage />} />
+          <Route path="/tutorials/:tid" element={<TutorialDetails />} />
           <Route path="/challenges" />
           <Route path="/profile" />
           <Route path="/authenticate" />

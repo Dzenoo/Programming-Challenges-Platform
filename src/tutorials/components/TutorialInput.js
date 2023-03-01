@@ -10,7 +10,6 @@ const Tutorialnput = () => {
         Our tutorials cover a wide range of topics, including programming, web
         development, react, deployment, SEO, and more.
       </p>
-
       <div className="input">
         <AiOutlineSearch />
         <input type="text" placeholder="Find a tutorial" />
