@@ -1,0 +1,69 @@
+.tutorial_page {
+  text-align: center;
+}
+
+.tutorial_input {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.tutorial_input h1 {
+  font-size: 3rem;
+}
+
+.tutorial_input p {
+  font-size: 1.3rem;
+}
+
+.tutorial_input input {
+  padding: 20px;
+  width: 400px;
+  border: 1px solid #1e9ae0;
+}
+
+.tutorial_input .input {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.tutorial_input .input svg {
+  font-size: 20px;
+  right: 20px;
+  cursor: pointer;
+  position: absolute;
+}
+
+/* Tutorial Items and List */
+
+.tutorial_list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2em;
+  flex-wrap: wrap;
+  padding: 40px;
+}
+
+.tutorial_list .tutorial_item {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  max-width: 800px;
+  align-items: center;
+  text-align: left;
+  grid-gap: 20px;
+  border: 1px solid #333;
+}
+
+.tutorial_list .tutorial_item img {
+  width: 100%;
+  height: auto;
+}
+
+.tutorial_list .tutorial_item .tutorial_item_text {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+}
