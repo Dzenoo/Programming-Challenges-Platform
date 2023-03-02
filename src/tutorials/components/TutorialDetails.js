@@ -1,54 +1,48 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useParams } from "react-router-dom";
+import { TutorialContext } from "../../shared/context/TutorialContext";
 import "../css/tutorials.css";
-const Tutorials = [
-  {
-    id: "0",
-    image:
-      "https://res.cloudinary.com/dzwb60tk1/image/upload/v1676482330/Untitled_design_3_giwyy7.png",
-    title: "How to do something in Angular",
-    date: "10.02.2022",
-    shortDescription:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam at quod optio? Perspiciatis temporibus tempore fugiat repudiandae, eos placeat totam qui officiis culpa aut dolorum omnis ratione inventore vitae deleniti?",
-    details: "Some details 1",
-  },
-  {
-    id: "1",
-    image:
-      "https://res.cloudinary.com/dzwb60tk1/image/upload/v1676482330/Untitled_design_3_giwyy7.png",
-    title: "How to do something in React",
-    date: "10.02.2022",
-    shortDescription:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam at quod optio? Perspiciatis temporibus tempore fugiat repudiandae, eos placeat totam qui officiis culpa aut dolorum omnis ratione inventore vitae deleniti?",
-    details: "Some details 2",
-  },
-  {
-    id: "2",
-    image:
-      "https://res.cloudinary.com/dzwb60tk1/image/upload/v1676482330/Untitled_design_3_giwyy7.png",
-    title: "How to do something in JavaScript",
-    date: "10.02.2022",
-    shortDescription:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam at quod optio? Perspiciatis temporibus tempore fugiat repudiandae, eos placeat totam qui officiis culpa aut dolorum omnis ratione inventore vitae deleniti?",
-    details: "Some details 3",
-  },
-];
 
 const TutorialDetails = () => {
+  const tutorialCtx = useContext(TutorialContext);
+  const { tutorials } = tutorialCtx;
   const tutorialId = useParams().tid;
-  const currTutorial = Tutorials.filter((tut) => tut.id === tutorialId);
+  const currTutorial = tutorials.filter((tut) => tut.id === tutorialId);
 
   return (
-    <div>
-      {currTutorial.map((tuto) => (
-        <div key={tuto.id}>
-          <img src={tuto.image} alt="img" />
-          <h1>{tuto.details}</h1>
-          <h1>{tuto.title}</h1>
-          <h2>{tuto.shortDescription}</h2>
-        </div>
-      ))}
-    </div>
+    <>
+      <div className="tutorials_details_wrapper">
+        {currTutorial.map((tuto) => (
+          <>
+            <div key={tuto.id} className="tutorial_details_item">
+              <img src={tuto.image} alt={tuto.title} />
+              <div className="tutorial_details_text">
+                <h1>{tuto.title}</h1>
+                <span>{tuto.date}</span>
+                <h2>{tuto.shortDescription}</h2>
+              </div>
+            </div>
+
+            <div className="details_content">
+              <h1>Details of Tutorial</h1>
+              <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nam id
+                dolor nisi similique aperiam asperiores amet consectetur dolore
+                voluptatem. Ullam deleniti error vero eaque sit rerum
+                voluptatibus voluptates quas beatae? Lorem ipsum dolor sit amet
+                consectetur, adipisicing elit. Nam id dolor nisi similique
+                aperiam asperiores amet consectetur dolore voluptatem. Ullam
+                deleniti error vero eaque sit rerum voluptatibus voluptates quas
+                beatae? Lorem ipsum dolor sit amet consectetur, adipisicing
+                elit. Nam id dolor nisi similique aperiam asperiores amet
+                consectetur dolore voluptatem. Ullam deleniti error vero eaque
+                sit rerum voluptatibus voluptates quas beatae?
+              </p>
+            </div>
+          </>
+        ))}
+      </div>
+    </>
   );
 };
 

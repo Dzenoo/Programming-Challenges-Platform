@@ -78,3 +78,52 @@
   padding: 8px;
   border-radius: 12px;
 }
+
+/* Tutorial Details */
+
+.tutorials_details_wrapper {
+  padding: 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+  justify-content: center;
+  align-items: center;
+  max-width: 1300px;
+  margin: auto;
+}
+
+.tutorials_details_wrapper .tutorial_details_item {
+  max-width: 1300px;
+  display: flex;
+  justify-content: center;
+}
+
+.tutorials_details_wrapper .tutorial_details_item img {
+  width: 100%;
+  height: auto;
+}
+
+.tutorials_details_wrapper .tutorial_details_item .tutorial_details_text {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+  align-items: flex-start;
+  padding: 20px;
+}
+
+.tutorials_details_wrapper .tutorial_details_item .tutorial_details_text h1,
+.tutorials_details_wrapper .tutorial_details_item .tutorial_details_text h2 {
+  color: #fff;
+}
+
+.tutorials_details_wrapper .tutorial_details_item .tutorial_details_text span {
+  background-color: #1e9ae0;
+  color: #fff;
+  font-size: 20px;
+  padding: 12px;
+}
+
+.details_content p,
+h1 {
+  color: #fff;
+}
