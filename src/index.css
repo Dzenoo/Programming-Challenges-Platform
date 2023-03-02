@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #001228;
 }
 
 code {
@@ -16,4 +17,18 @@ code {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+.pagination_list {
+  display: flex;
+  list-style: none;
+  justify-content: center;
+  gap: 1em;
+}
+
+.pagination_list li {
+  cursor: pointer;
+  background-color: #fcbf49;
+  padding: 12px 16px;
+  color: #333;
 }

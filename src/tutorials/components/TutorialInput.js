@@ -1,8 +1,9 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { AiOutlineSearch } from "react-icons/ai";
 import "../css/tutorials.css";
 
-const Tutorialnput = () => {
+const TutorialInput = ({ setInputValue, searchTutorials, searchMsg }) => {
   return (
     <div className="tutorial_input">
       <h1>Empower Your Learning</h1>
@@ -10,12 +11,23 @@ const Tutorialnput = () => {
         Our tutorials cover a wide range of topics, including programming, web
         development, react, deployment, SEO, and more.
       </p>
-      <div className="input">
-        <AiOutlineSearch />
-        <input type="text" placeholder="Find a tutorial" />
-      </div>
+      <form className="input" onSubmit={searchTutorials}>
+        <AiOutlineSearch onClick={searchTutorials} />
+        <input
+          type="text"
+          placeholder="Find a tutorial"
+          onChange={(e) => setInputValue(e.target.value)}
+        />
+      </form>
+      <p>{searchMsg}</p>
     </div>
   );
 };
 
-export default Tutorialnput;
+export default TutorialInput;
+
+TutorialInput.propTypes = {
+  setInputValue: PropTypes.func.isRequired,
+  searchTutorials: PropTypes.func.isRequired,
+  searchMsg: PropTypes.string.isRequired,
+};

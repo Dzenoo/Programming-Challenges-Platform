@@ -21,15 +21,17 @@
 
 .hero_section .hero_text h1 {
   font-size: 3.3em;
+  color: #fff;
 }
 
 .hero_section .hero_text p {
+  color: #fff;
   font-size: 20px;
 }
 
 .btn_link {
   background-color: #fcbf49;
-  padding: 20px;
+  padding: 20px 60px;
   border: 1.2px solid transparent;
   text-decoration: none;
   color: #fff;
@@ -39,7 +41,7 @@
   transition: 0.3s;
   background-color: transparent;
   border: 1.2px solid #fcbf49;
-  color: #333;
+  color: #ffff;
 }
 
 /* Icon Section */
@@ -60,6 +62,11 @@
   justify-content: center;
 }
 
+.icon_section .icon_item p,
+.icon_section .icon_item h1 {
+  color: #fff;
+}
+
 .icon_section .icon_item img {
   width: 300px;
   margin: auto;
@@ -67,7 +74,7 @@
 
 .icon_title {
   text-align: center;
-  color: #333;
+  color: #fff;
   font-size: 3.3rem;
   padding-top: 60px;
 }
@@ -85,7 +92,11 @@
 
 .tech_section h1 {
   font-size: 3em;
-  color: #333;
+  color: #fff;
+}
+
+.tech_section p {
+  color: #fff;
 }
 
 .tech_section .tech_list {
@@ -106,6 +117,10 @@
   gap: 6em;
 }
 
+.newsletter_tutorials_section h1 {
+  color: #fff;
+}
+
 .newsletter_tutorials_section .tutorials {
   display: flex;
   align-items: center;
@@ -116,6 +131,7 @@
 
 .newsletter_tutorials_section .tutorials .tutorial {
   max-width: 400px;
+  color: #fff;
 }
 
 .newsletter {

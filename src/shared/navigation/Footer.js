@@ -4,7 +4,7 @@ import "./Footer.css";
 
 const Footer = () => {
   return (
-    <>
+    <div className="footer_wrapper">
       <div className="footer_grid">
         <div className="footer_column1">
           <h1>About Us</h1>
@@ -39,7 +39,7 @@ const Footer = () => {
       <p style={{ textAlign: "center", paddingBottom: "40px" }}>
         Copyright © 2023 codinghero. All rights reserved.
       </p>
-    </>
+    </div>
   );
 };
 

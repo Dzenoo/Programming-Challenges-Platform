@@ -1,12 +1,13 @@
 .header {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 1.2em;
+  justify-content: space-evenly;
   height: 4em;
   overflow: hidden;
   position: sticky;
   top: 0;
+  background-color: #fff;
+  z-index: 20;
 }
 
 .header.changeColor {

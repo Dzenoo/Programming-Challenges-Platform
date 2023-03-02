@@ -21,7 +21,7 @@ const Tech = () => {
       </p>
       <div className="tech_list">
         {images.map((image) => (
-          <div className="tech_item">
+          <div key={image} className="tech_item">
             <img src={image} alt="img" />
           </div>
         ))}

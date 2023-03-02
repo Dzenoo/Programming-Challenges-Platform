@@ -7,24 +7,27 @@ import Footer from "./shared/navigation/Footer";
 import HomePage from "./home/pages/HomePage";
 import TutorialPage from "./tutorials/pages/TutorialPage";
 import TutorialDetails from "./tutorials/components/TutorialDetails";
+import { TutorialProvider } from "./shared/context/TutorialContext";
 
 function App() {
   return (
     <>
-      <Navigation />
-      <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route index element={<Redirect path="/home" />} />
-          <Route path="/home" element={<HomePage />} />
-          <Route path="/tutorials" element={<TutorialPage />} />
-          <Route path="/tutorials/:tid" element={<TutorialDetails />} />
-          <Route path="/challenges" />
-          <Route path="/profile" />
-          <Route path="/authenticate" />
-          <Route path="*" element={<Navigate to="/" />} />
-        </Route>
-      </Routes>
-      <Footer />
+      <TutorialProvider>
+        <Navigation />
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route index element={<Redirect path="/home" />} />
+            <Route path="/home" element={<HomePage />} />
+            <Route path="/tutorials" element={<TutorialPage />} />
+            <Route path="/tutorials/:tid" element={<TutorialDetails />} />
+            <Route path="/challenges" />
+            <Route path="/profile" />
+            <Route path="/authenticate" />
+            <Route path="*" element={<Navigate to="/" />} />
+          </Route>
+        </Routes>
+        <Footer />
+      </TutorialProvider>
     </>
   );
 }

@@ -31,7 +31,6 @@ const Tutorials = [
       "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Adipisci cupiditate aperiam facere hic dicta maiores aliquid. Temporibus dolor, optio nam iusto debitis alias ipsum ut doloremque, minus libero nostrum sunt.",
   },
 ];
-
 const HomePage = () => {
   return (
     <>

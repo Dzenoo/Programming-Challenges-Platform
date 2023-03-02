@@ -1,44 +1,42 @@
-import React from "react";
-import Tutorialnput from "../components/TutorialInput";
+import React, { useContext, useState } from "react";
+import { TutorialContext } from "../../shared/context/TutorialContext";
+import Pagination from "../../shared/navigation/Pagination";
+import TutorialInput from "../components/TutorialInput";
 import TutorialItem from "../components/TutorialItem";
 import "../css/tutorials.css";
 
-const Tutorials = [
-  {
-    id: 0,
-    image:
-      "https://res.cloudinary.com/dzwb60tk1/image/upload/v1676482330/Untitled_design_3_giwyy7.png",
-    title: "How to do something in Angular",
-    date: "10.02.2022",
-    shortDescription:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam at quod optio? Perspiciatis temporibus tempore fugiat repudiandae, eos placeat totam qui officiis culpa aut dolorum omnis ratione inventore vitae deleniti?",
-  },
-  {
-    id: 1,
-    image:
-      "https://res.cloudinary.com/dzwb60tk1/image/upload/v1676482330/Untitled_design_3_giwyy7.png",
-    title: "How to do something in React",
-    date: "10.02.2022",
-    shortDescription:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam at quod optio? Perspiciatis temporibus tempore fugiat repudiandae, eos placeat totam qui officiis culpa aut dolorum omnis ratione inventore vitae deleniti?",
-  },
-  {
-    id: 2,
-    image:
-      "https://res.cloudinary.com/dzwb60tk1/image/upload/v1676482330/Untitled_design_3_giwyy7.png",
-    title: "How to do something in JavaScript",
-    date: "10.02.2022",
-    shortDescription:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam at quod optio? Perspiciatis temporibus tempore fugiat repudiandae, eos placeat totam qui officiis culpa aut dolorum omnis ratione inventore vitae deleniti?",
-  },
-];
-
 const TutorialPage = () => {
+  const [currentPage, setCurrentPage] = useState(1);
+  const [tutorialsPerPage] = useState(3);
+  const tutorialCtx = useContext(TutorialContext);
+  const { tutorials, setInputQuery, searchTutorialsHandler, searchError } =
+    tutorialCtx;
+
+  const indexOfLastTutorial = currentPage * tutorialsPerPage;
+  const indexOfFirstTutorial = indexOfLastTutorial - tutorialsPerPage;
+  const currentTutorials = tutorials.slice(
+    indexOfFirstTutorial,
+    indexOfLastTutorial
+  );
+
+  function paginate(pageNumber) {
+    setCurrentPage(pageNumber);
+  }
+
   return (
     <>
       <div className="tutorial_page">
-        <Tutorialnput />
-        <TutorialItem tutorials={Tutorials} />
+        <TutorialInput
+          setInputValue={setInputQuery}
+          searchTutorials={searchTutorialsHandler}
+          searchMsg={searchError}
+        />
+        <TutorialItem tutorials={currentTutorials} />
+        <Pagination
+          tutoPerPage={tutorialsPerPage}
+          totalTutorials={tutorials.length}
+          paginate={paginate}
+        />
       </div>
     </>
   );
