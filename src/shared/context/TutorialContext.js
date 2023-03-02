@@ -60,7 +60,7 @@ const Tutorials = [
   {
     id: "6",
     image:
-      "https://res.cloudinary.com/dzwb60tk1/image/upload/v1676482337/Untitled_design_4_jcnmzr.png",
+      "https://res.cloudinary.com/dzwb60tk1/image/upload/v1676482330/Untitled_design_3_giwyy7.png",
     title: "Adding pagination to React",
     date: "10.02.2022",
     shortDescription:

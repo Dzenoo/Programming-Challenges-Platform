@@ -11,8 +11,8 @@ const Pagination = ({ tutoPerPage, totalTutorials, paginate }) => {
     <div>
       <ul className="pagination_list">
         {pageNumbers.map((number) => (
-          <li key={number}>
-            <span onClick={() => paginate(number)}>{number}</span>
+          <li key={number} onClick={() => paginate(number)}>
+            <span>{number}</span>
           </li>
         ))}
       </ul>

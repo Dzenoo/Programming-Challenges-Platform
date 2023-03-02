@@ -13,11 +13,11 @@ const Newsletter = ({ tutorials }) => {
           <div key={tutorial.id} className="tutorial">
             <img src={tutorial.image} alt={tutorial.title} />
             <h1>{tutorial.title}</h1>
-            <p>{tutorial.description}</p>
+            <p>{tutorial.shortDescription}</p>
+            <Link to={`/tutorials/${tutorial.id}`}>Read More</Link>
           </div>
         ))}
       </div>
-
       <div className="newsletter">
         <div className="new_text">
           <p>
@@ -29,8 +29,7 @@ const Newsletter = ({ tutorials }) => {
             preferences.
           </p>
         </div>
-
-        <Link>Register</Link>
+        <Link to="authenticate">Register</Link>
       </div>
     </div>
   );

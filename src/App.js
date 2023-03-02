@@ -7,6 +7,7 @@ import Footer from "./shared/navigation/Footer";
 import HomePage from "./home/pages/HomePage";
 import TutorialPage from "./tutorials/pages/TutorialPage";
 import TutorialDetails from "./tutorials/components/TutorialDetails";
+import ChallengesPage from "./challenges/pages/ChallengePage";
 import { TutorialProvider } from "./shared/context/TutorialContext";
 
 function App() {
@@ -20,7 +21,7 @@ function App() {
             <Route path="/home" element={<HomePage />} />
             <Route path="/tutorials" element={<TutorialPage />} />
             <Route path="/tutorials/:tid" element={<TutorialDetails />} />
-            <Route path="/challenges" />
+            <Route path="/challenges" element={<ChallengesPage />} />
             <Route path="/profile" />
             <Route path="/authenticate" />
             <Route path="*" element={<Navigate to="/" />} />
