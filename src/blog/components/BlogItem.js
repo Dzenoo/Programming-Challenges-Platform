@@ -1,5 +1,5 @@
 import React from "react";
-import "../css/tutorials.css";
+import "../css/blog.css";
 import PropTypes from "prop-types";
 import { AiFillCalendar } from "react-icons/ai";
 import { Link } from "react-router-dom";

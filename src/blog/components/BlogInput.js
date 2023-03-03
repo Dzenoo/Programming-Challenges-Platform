@@ -1,16 +1,13 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { AiOutlineSearch } from "react-icons/ai";
-import "../css/tutorials.css";
+import "../css/blog.css";
 
 const TutorialInput = ({ setInputValue, searchTutorials, searchMsg }) => {
   return (
     <div className="tutorial_input">
       <h1>Empower Your Learning</h1>
-      <p>
-        Our tutorials cover a wide range of topics, including programming, web
-        development, react, deployment, SEO, and more.
-      </p>
+      <p>Our tutorials cover a wide range of topics</p>
       <form className="input" onSubmit={searchTutorials}>
         <AiOutlineSearch onClick={searchTutorials} />
         <input

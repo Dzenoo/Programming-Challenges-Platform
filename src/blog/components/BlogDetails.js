@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { useParams } from "react-router-dom";
 import { TutorialContext } from "../../shared/context/TutorialContext";
-import "../css/tutorials.css";
+import "../css/blog.css";
 
 const TutorialDetails = () => {
   const tutorialCtx = useContext(TutorialContext);

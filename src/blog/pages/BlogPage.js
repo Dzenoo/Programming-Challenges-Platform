@@ -1,13 +1,13 @@
 import React, { useContext, useState } from "react";
 import { TutorialContext } from "../../shared/context/TutorialContext";
 import Pagination from "../../shared/navigation/Pagination";
-import TutorialInput from "../components/TutorialInput";
-import TutorialItem from "../components/TutorialItem";
-import "../css/tutorials.css";
+import BlogInput from "../components/BlogInput";
+import BlogItem from "../components/BlogItem";
+import "../css/blog.css";
 
 const TutorialPage = () => {
   const [currentPage, setCurrentPage] = useState(1);
-  const [tutorialsPerPage] = useState(3);
+  const [tutorialsPerPage] = useState(4);
   const tutorialCtx = useContext(TutorialContext);
   const { tutorials, setInputQuery, searchTutorialsHandler, searchError } =
     tutorialCtx;
@@ -26,12 +26,12 @@ const TutorialPage = () => {
   return (
     <>
       <div className="tutorial_page">
-        <TutorialInput
+        <BlogInput
           setInputValue={setInputQuery}
           searchTutorials={searchTutorialsHandler}
           searchMsg={searchError}
         />
-        <TutorialItem tutorials={currentTutorials} />
+        <BlogItem tutorials={currentTutorials} />
         <Pagination
           tutoPerPage={tutorialsPerPage}
           totalTutorials={tutorials.length}

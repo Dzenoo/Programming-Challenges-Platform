@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import logo from "../../assets/logo.png";
 import "./Navigation.css";
 
@@ -27,21 +27,71 @@ const Navigation = () => {
       <img src={logo} alt="logo" />
       <ul className="header_menu">
         <li>
-          <Link to="/home">Home</Link>
+          <NavLink
+            className={({ isActive }) => (isActive ? "link-active" : "link")}
+            to="/home"
+          >
+            Home
+          </NavLink>
         </li>
         <li>
-          <Link to="/tutorials">Tutorials</Link>
+          <NavLink
+            className={({ isActive }) => (isActive ? "link-active" : "link")}
+            to="/challenges"
+          >
+            Challenges
+          </NavLink>
         </li>
         <li>
-          <Link to="/challenges">Challenges</Link>
+          <NavLink
+            className={({ isActive }) => (isActive ? "link-active" : "link")}
+            to="/tutorials"
+          >
+            Blog
+          </NavLink>
         </li>
         <li>
-          <Link to="/profile">Profile</Link>
+          <NavLink
+            className={({ isActive }) => (isActive ? "link-active" : "link")}
+            to="/profile"
+          >
+            Profile
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            className={({ isActive }) => (isActive ? "link-active" : "link")}
+            to="/"
+          >
+            Leaderboard
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            className={({ isActive }) => (isActive ? "link-active" : "link")}
+            to="/"
+          >
+            Community
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            className={({ isActive }) => (isActive ? "link-active" : "link")}
+            to="/"
+          >
+            Pricing
+          </NavLink>
         </li>
       </ul>
-      <Link to="/auth" className="header_register_button">
-        Register
-      </Link>
+
+      <div style={{ display: "flex", gap: "12px" }}>
+        <NavLink to="/signup" className="header_register_button">
+          Register
+        </NavLink>
+        <NavLink to="/login" className="header_login_button">
+          Login
+        </NavLink>
+      </div>
     </header>
   );
 };

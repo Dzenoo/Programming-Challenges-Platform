@@ -5,8 +5,8 @@ import Redirect from "./shared/routes/Redirect";
 import Navigation from "./shared/navigation/Navigation";
 import Footer from "./shared/navigation/Footer";
 import HomePage from "./home/pages/HomePage";
-import TutorialPage from "./tutorials/pages/TutorialPage";
-import TutorialDetails from "./tutorials/components/TutorialDetails";
+import BlogPage from "./blog/pages/BlogPage";
+import BlogDetails from "./blog/components/BlogDetails";
 import ChallengesPage from "./challenges/pages/ChallengePage";
 import { TutorialProvider } from "./shared/context/TutorialContext";
 
@@ -19,11 +19,12 @@ function App() {
           <Route path="/" element={<Layout />}>
             <Route index element={<Redirect path="/home" />} />
             <Route path="/home" element={<HomePage />} />
-            <Route path="/tutorials" element={<TutorialPage />} />
-            <Route path="/tutorials/:tid" element={<TutorialDetails />} />
+            <Route path="/tutorials" element={<BlogPage />} />
+            <Route path="/tutorials/:tid" element={<BlogDetails />} />
             <Route path="/challenges" element={<ChallengesPage />} />
             <Route path="/profile" />
-            <Route path="/authenticate" />
+            <Route path="/login" />
+            <Route path="/signup" />
             <Route path="*" element={<Navigate to="/" />} />
           </Route>
         </Routes>

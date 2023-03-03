@@ -1,7 +1,7 @@
 .header {
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: space-between;
   height: 4em;
   overflow: hidden;
   position: sticky;
@@ -17,6 +17,11 @@
 
 .header.changeColor .header_menu a {
   color: #333;
+}
+
+.link-active {
+  font-weight: 600;
+  color: #1e9ae0 !important;
 }
 
 .header.changeColor .header_register_button {
@@ -37,7 +42,6 @@
   list-style: none;
   display: flex;
   gap: 2em;
-  margin-right: 80px;
 }
 
 .header .header_menu a {
@@ -45,6 +49,24 @@
   color: #333;
   border-bottom: 2px solid transparent;
   cursor: pointer;
+}
+
+.header .header_login_button {
+  padding: 0.6em 2em;
+  border-radius: 30px;
+  border: none;
+  border: 2px solid transparent;
+  background-color: #1e9ae0;
+  color: #fff;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.header .header_login_button:hover {
+  transition: 0.3s;
+  background-color: transparent;
+  border: 2px solid #1e9ae0;
+  color: #333;
 }
 
 .header .header_register_button {
