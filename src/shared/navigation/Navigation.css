@@ -8,6 +8,7 @@
   top: 0;
   background-color: #fff;
   z-index: 20;
+  box-shadow: 0 2px 4px #a5a5a5;
 }
 
 .header.changeColor {

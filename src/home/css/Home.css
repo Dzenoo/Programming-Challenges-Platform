@@ -21,11 +21,11 @@
 
 .hero_section .hero_text h1 {
   font-size: 3.3em;
-  color: #fff;
+  color: #121212;
 }
 
 .hero_section .hero_text p {
-  color: #fff;
+  color: #121212;
   font-size: 20px;
 }
 
@@ -34,14 +34,14 @@
   padding: 20px 60px;
   border: 1.2px solid transparent;
   text-decoration: none;
-  color: #fff;
+  color: #121212;
 }
 
 .btn_link:hover {
   transition: 0.3s;
   background-color: transparent;
   border: 1.2px solid #fcbf49;
-  color: #ffff;
+  color: #121212;
 }
 
 /* Icon Section */
@@ -64,7 +64,7 @@
 
 .icon_section .icon_item p,
 .icon_section .icon_item h1 {
-  color: #fff;
+  color: #121212;
 }
 
 .icon_section .icon_item img {
@@ -74,7 +74,7 @@
 
 .icon_title {
   text-align: center;
-  color: #fff;
+  color: #121212;
   font-size: 3.3rem;
   padding-top: 60px;
 }
@@ -92,11 +92,11 @@
 
 .tech_section h1 {
   font-size: 3em;
-  color: #fff;
+  color: #121212;
 }
 
 .tech_section p {
-  color: #fff;
+  color: #121212;
 }
 
 .tech_section .tech_list {
@@ -118,7 +118,7 @@
 }
 
 .newsletter_tutorials_section h1 {
-  color: #fff;
+  color: #121212;
 }
 
 .newsletter_tutorials_section .tutorials {
@@ -132,7 +132,7 @@
 .newsletter_tutorials_section .tutorials .tutorial {
   max-width: 400px;
   height: 600px;
-  color: #fff;
+  color: #121212;
 }
 
 .newsletter {
@@ -152,5 +152,5 @@
   background-color: #1e9ae0;
   padding: 20px 60px;
   text-decoration: none;
-  color: #fff;
+  color: #121212;
 }

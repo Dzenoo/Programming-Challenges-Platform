@@ -1,0 +1,146 @@
+.challenge_list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch;
+  padding: 30px;
+  gap: 1em;
+}
+
+.challenge_list .challenge_item {
+  display: flex;
+  flex-direction: column;
+  color: #fff;
+  max-width: 380px;
+  background-color: #fff;
+  border: 1px solid grey;
+  border-radius: 12px;
+  padding: 20px;
+  position: relative;
+}
+
+.challenge_list .challenge_item img {
+  border-radius: 20px;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.challenge_list .challenge_item span,
+.challenge_list .challenge_item h1,
+.challenge_list .challenge_item p {
+  color: #333;
+  margin-top: 20px;
+}
+
+.challenge_list .challenge_item span.advanced {
+  color: rgb(15, 155, 255);
+  font-weight: bold;
+  font-size: 20px;
+}
+.challenge_list .challenge_item span.beginner {
+  color: rgb(5, 164, 7);
+  font-size: 20px;
+  font-weight: bold;
+}
+.challenge_list .challenge_item span.expert {
+  color: rgb(255, 179, 38);
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.challenge_item .tech {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.challenge_item .tech .tech_flex {
+  display: flex;
+  gap: 10px;
+}
+
+.challenge_item .tech .tech_flex span {
+  color: #333;
+  border: 1px solid #333;
+  padding: 12px;
+}
+
+/* filters styling */
+
+/* Main Container  wrap filters and list*/
+.challenges_container {
+  position: relative;
+}
+
+/* Wrapper for  Filters */
+.filter_challenges {
+  padding: 40px;
+}
+
+/* Box for Filters when is clicked it open  */
+.open_filter {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  background-color: #fcbf49;
+  padding: 20px;
+}
+
+.filter_wrapper {
+  background-color: #fff;
+  width: fit-content;
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  right: 0;
+  top: 60px;
+  z-index: 20;
+  gap: 2em;
+  height: 0;
+  transition: 0.3s;
+}
+
+.filter_wrapper.toggle {
+  height: fit-content;
+  border: 1px solid grey;
+  padding: 40px;
+}
+
+.filter_wrapper h2 {
+  color: #fcbf49;
+}
+
+.filter_wrapper .filter_tech {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.filter_wrapper .filter_tech button {
+  background-color: transparent;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.filter_wrapper .filter_difficulty {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.filter_wrapper .filter_difficulty button {
+  background-color: transparent;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+}

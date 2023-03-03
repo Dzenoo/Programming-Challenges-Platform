@@ -8,12 +8,12 @@ import HomePage from "./home/pages/HomePage";
 import BlogPage from "./blog/pages/BlogPage";
 import BlogDetails from "./blog/components/BlogDetails";
 import ChallengesPage from "./challenges/pages/ChallengePage";
-import { TutorialProvider } from "./shared/context/TutorialContext";
+import AppProvider from "./shared/context";
 
 function App() {
   return (
     <>
-      <TutorialProvider>
+      <AppProvider>
         <Navigation />
         <Routes>
           <Route path="/" element={<Layout />}>
@@ -29,7 +29,7 @@ function App() {
           </Route>
         </Routes>
         <Footer />
-      </TutorialProvider>
+      </AppProvider>
     </>
   );
 }

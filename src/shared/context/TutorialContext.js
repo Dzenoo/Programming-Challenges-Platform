@@ -11,6 +11,8 @@ const Tutorials = [
     date: "10.02.2022",
     shortDescription:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam at quod optio? Perspiciatis temporibus tempore fugiat repudiandae, eos placeat totam qui officiis culpa aut dolorum omnis ratione inventore vitae deleniti?",
+
+    details: "<h1>React is Amazing</h1>",
   },
   {
     id: "1",
@@ -20,6 +22,7 @@ const Tutorials = [
     date: "10.02.2022",
     shortDescription:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam at quod optio? Perspiciatis temporibus tempore fugiat repudiandae, eos placeat totam qui officiis culpa aut dolorum omnis ratione inventore vitae deleniti?",
+    details: "<h1>React is Amazing</h1>",
   },
   {
     id: "2",
@@ -29,6 +32,7 @@ const Tutorials = [
     date: "10.02.2022",
     shortDescription:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam at quod optio? Perspiciatis temporibus tempore fugiat repudiandae, eos placeat totam qui officiis culpa aut dolorum omnis ratione inventore vitae deleniti?",
+    details: "<h1>React is Amazing</h1>",
   },
   {
     id: "3",
@@ -38,6 +42,7 @@ const Tutorials = [
     date: "10.02.2022",
     shortDescription:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam at quod optio? Perspiciatis temporibus tempore fugiat repudiandae, eos placeat totam qui officiis culpa aut dolorum omnis ratione inventore vitae deleniti?",
+    details: "<h1>React is Amazing</h1>",
   },
   {
     id: "4",
@@ -47,6 +52,7 @@ const Tutorials = [
     date: "10.02.2022",
     shortDescription:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam at quod optio? Perspiciatis temporibus tempore fugiat repudiandae, eos placeat totam qui officiis culpa aut dolorum omnis ratione inventore vitae deleniti?",
+    details: "<h1>React is Amazing</h1>",
   },
   {
     id: "5",
@@ -56,6 +62,7 @@ const Tutorials = [
     date: "10.02.2022",
     shortDescription:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam at quod optio? Perspiciatis temporibus tempore fugiat repudiandae, eos placeat totam qui officiis culpa aut dolorum omnis ratione inventore vitae deleniti?",
+    details: "<h1>React is Amazing</h1>",
   },
   {
     id: "6",
@@ -65,6 +72,8 @@ const Tutorials = [
     date: "10.02.2022",
     shortDescription:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam at quod optio? Perspiciatis temporibus tempore fugiat repudiandae, eos placeat totam qui officiis culpa aut dolorum omnis ratione inventore vitae deleniti?",
+    details:
+      "<h1>React is Amazing</h1><i>Yes He Is</i><strong><b>WHAT</b></strong>",
   },
 ];
 

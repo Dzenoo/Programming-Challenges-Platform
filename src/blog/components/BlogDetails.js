@@ -23,22 +23,10 @@ const TutorialDetails = () => {
               </div>
             </div>
 
-            <div className="details_content">
-              <h1>Details of Tutorial</h1>
-              <p>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nam id
-                dolor nisi similique aperiam asperiores amet consectetur dolore
-                voluptatem. Ullam deleniti error vero eaque sit rerum
-                voluptatibus voluptates quas beatae? Lorem ipsum dolor sit amet
-                consectetur, adipisicing elit. Nam id dolor nisi similique
-                aperiam asperiores amet consectetur dolore voluptatem. Ullam
-                deleniti error vero eaque sit rerum voluptatibus voluptates quas
-                beatae? Lorem ipsum dolor sit amet consectetur, adipisicing
-                elit. Nam id dolor nisi similique aperiam asperiores amet
-                consectetur dolore voluptatem. Ullam deleniti error vero eaque
-                sit rerum voluptatibus voluptates quas beatae?
-              </p>
-            </div>
+            <article
+              className="details_content"
+              dangerouslySetInnerHTML={{ __html: tuto.details }}
+            ></article>
           </>
         ))}
       </div>
