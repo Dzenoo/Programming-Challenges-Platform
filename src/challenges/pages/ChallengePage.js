@@ -9,6 +9,8 @@ const ChallengePage = () => {
   const challengeCtx = useContext(ChallengeContext);
   const { filterChallenges, challengesHandler, findByDifficulty } =
     challengeCtx;
+  const categories = ["React", "Css", "Html", "Node Js", "JavaScript", "Scss"];
+  const difficulties = ["Beginner", "Advanced", "Expert"];
 
   return (
     <div className="challenges_container">
@@ -20,30 +22,23 @@ const ChallengePage = () => {
           <span>Filters</span>
           <AiOutlineCaretDown />
         </div>
-
         <div className={`filter_wrapper ${filterIsOpen ? "toggle" : ""}`}>
           <div className="filter_tech">
             <h2>Language</h2>
-            <button onClick={() => filterChallenges("React")}>React</button>
-            <button onClick={() => filterChallenges("Css")}>Css</button>
-            <button onClick={() => filterChallenges("Html")}>Html</button>
-            <button onClick={() => filterChallenges("Node Js")}>Node Js</button>
-            <button onClick={() => filterChallenges("JavaScript")}>
-              JavaScript
-            </button>
-            <button onClick={() => filterChallenges("Scss")}>Scss</button>
+            {categories.map((btn) => (
+              <button key={btn} onClick={() => filterChallenges(btn)}>
+                {btn}
+              </button>
+            ))}
             <button onClick={challengesHandler}>All</button>
           </div>
-
           <div className="filter_difficulty">
             <h2>Difficulty</h2>
-            <button onClick={() => findByDifficulty("Beginner")}>
-              Beginner
-            </button>
-            <button onClick={() => findByDifficulty("Advanced")}>
-              Advanced
-            </button>
-            <button onClick={() => findByDifficulty("Expert")}>Expert</button>
+            {difficulties.map((dif) => (
+              <button key={dif} onClick={() => findByDifficulty(dif)}>
+                {dif}
+              </button>
+            ))}
           </div>
         </div>
       </div>

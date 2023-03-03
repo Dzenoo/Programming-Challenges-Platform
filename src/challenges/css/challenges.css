@@ -19,6 +19,11 @@
   position: relative;
 }
 
+.challenge_list .challenge_item:hover {
+  box-shadow: 0 2px 4px #fcbf49;
+  transition: 0.3s;
+}
+
 .challenge_list .challenge_item img {
   border-radius: 20px;
   width: 100%;

@@ -9,6 +9,7 @@ import BlogPage from "./blog/pages/BlogPage";
 import BlogDetails from "./blog/components/BlogDetails";
 import ChallengesPage from "./challenges/pages/ChallengePage";
 import AppProvider from "./shared/context";
+import ChallengeDetails from "./challenges/components/ChallengeDetails";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
             <Route path="/tutorials" element={<BlogPage />} />
             <Route path="/tutorials/:tid" element={<BlogDetails />} />
             <Route path="/challenges" element={<ChallengesPage />} />
+            <Route path="/challenges/:cid" element={<ChallengeDetails />} />
             <Route path="/profile" />
             <Route path="/login" />
             <Route path="/signup" />
