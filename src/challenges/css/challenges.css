@@ -95,11 +95,11 @@
 .filter_wrapper {
   background-color: #fff;
   width: fit-content;
-  overflow-y: scroll;
   display: flex;
   flex-direction: column;
   position: absolute;
-  right: 0;
+  overflow: hidden;
+  right: 20px;
   top: 60px;
   z-index: 20;
   gap: 2em;

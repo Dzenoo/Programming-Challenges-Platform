@@ -1,7 +1,7 @@
 .tutorial_page {
   text-align: center;
   padding: 100px;
-  color: #fff;
+  color: #121212;
 }
 
 .tutorial_input {
@@ -111,17 +111,17 @@
 
 .tutorials_details_wrapper .tutorial_details_item .tutorial_details_text h1,
 .tutorials_details_wrapper .tutorial_details_item .tutorial_details_text h2 {
-  color: #fff;
+  color: #121212;
 }
 
 .tutorials_details_wrapper .tutorial_details_item .tutorial_details_text span {
   background-color: #1e9ae0;
-  color: #fff;
+  color: #121212;
   font-size: 20px;
   padding: 12px;
 }
 
 .details_content p,
 h1 {
-  color: #fff;
+  color: #121212;
 }
