@@ -1,6 +1,6 @@
 import React from "react";
 
-const Pagination = ({ tutoPerPage, totalTutorials, paginate }) => {
+const Pagination = ({ tutoPerPage, totalTutorials, paginate, isActive }) => {
   const pageNumbers = [];
 
   for (let i = 1; i <= Math.ceil(totalTutorials / tutoPerPage); i++) {

@@ -126,7 +126,19 @@
   align-items: center;
   justify-content: center;
   margin: auto;
+  position: relative;
   gap: 10em;
+}
+
+.newsletter_tutorials_section .tutorials::before {
+  content: " ";
+  top: -10em;
+  z-index: -20;
+  width: 100em;
+  right: -60px;
+  height: calc(20em + 20vh);
+  background-color: #fcbf49;
+  position: absolute;
 }
 
 .newsletter_tutorials_section .tutorials .tutorial {

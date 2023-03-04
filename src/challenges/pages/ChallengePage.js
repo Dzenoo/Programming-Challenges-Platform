@@ -3,7 +3,6 @@ import { ChallengeContext } from "../../shared/context/ChallengeContext";
 import { AiOutlineCaretDown } from "react-icons/ai";
 import ChallengeItem from "../components/ChallengeItem";
 import "../css/challenges.css";
-
 const ChallengePage = () => {
   const [filterIsOpen, setFilterIsOpen] = useState(false);
   const challengeCtx = useContext(ChallengeContext);

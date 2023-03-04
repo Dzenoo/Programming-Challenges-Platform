@@ -12,9 +12,9 @@ const ChallengeDetails = () => {
   const challenge = challenges.filter((c) => c.id === chId);
 
   return (
-    <div>
+    <div className="challenge_details_wrapper">
       {challenge.map((c) => (
-        <div>
+        <div className="challenge_item">
           <img src={c.image} alt={c.title} />
           <h1>{c.title}</h1>
           <p>{c.description}</p>

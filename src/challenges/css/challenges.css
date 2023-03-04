@@ -132,8 +132,14 @@
 .filter_wrapper .filter_tech button {
   background-color: transparent;
   border: none;
+  padding: 12px;
   font-size: 18px;
   cursor: pointer;
+}
+
+.filter_wrapper .filter_tech button:hover {
+  background-color: #fcbf49;
+  transition: 0.3s;
 }
 
 .filter_wrapper .filter_difficulty {
@@ -146,6 +152,12 @@
 .filter_wrapper .filter_difficulty button {
   background-color: transparent;
   border: none;
+  padding: 12px;
   font-size: 18px;
   cursor: pointer;
+}
+
+.filter_wrapper .filter_difficulty button:hover {
+  background-color: #fcbf49;
+  transition: 0.3s;
 }
