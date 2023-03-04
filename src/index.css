@@ -32,3 +32,12 @@ code {
   padding: 12px 16px;
   color: #333;
 }
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #000000f4;
+  z-index: 30;
+}
