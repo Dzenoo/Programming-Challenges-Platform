@@ -1,43 +1,61 @@
 import React from "react";
-import "../css/Home.css";
-
+import { Typography, Box } from "@mui/material";
 import icon1 from "../../assets/ico1.png";
 import icon2 from "../../assets/ico2.png";
 import icon3 from "../../assets/ico3.png";
+import "../css/Home.css";
+
+const textAlignStyle = {
+  textAlign: "center",
+};
+
+const boxWidthStyle = {
+  maxWidth: "500px",
+};
 
 const Icons = () => {
   return (
     <>
-      <h1 className="icon_title">
+      <Typography variant="h2" style={textAlignStyle}>
         Boost your <span className="ch">Career</span>
-      </h1>
-      <div className="icon_section">
-        <div className="icon_item">
+      </Typography>
+      <Box
+        style={textAlignStyle}
+        sx={{
+          display: "flex",
+          flexWrap: "wrap",
+          justifyContent: "center",
+          gap: "2em",
+        }}
+      >
+        <Box style={boxWidthStyle}>
           <img src={icon1} alt="ico1" />
-          <h1>Learn Latest Technologies</h1>
-          <p>
+          <Typography variant="h4">Learn Latest Technologies</Typography>
+          <Typography variant="p">
             Our website is dedicated to providing you with valuable resources
             and information that can help you improve your skills, learn new
             things, and overcome challenges.
-          </p>
-        </div>
-        <div className="icon_item">
+          </Typography>
+        </Box>
+
+        <Box style={boxWidthStyle}>
           <img src={icon2} alt="ico2" />
-          <h1>Browse tutorials</h1>
-          <p>
+          <Typography variant="h4">Browse blog</Typography>
+          <Typography variant="p">
             Our platform offers a range of tutorials, courses, and articles that
             cover a variety of programming topics
-          </p>
-        </div>
-        <div className="icon_item">
+          </Typography>
+        </Box>
+
+        <Box style={boxWidthStyle}>
           <img src={icon3} alt="ico3" />
-          <h1>Learn from challenges</h1>
-          <p>
+          <Typography variant="h4">Learn from challenges</Typography>
+          <Typography variant="p">
             Programming challenges are an excellent way to develop your skills,
             learn new techniques, and challenge yourself.
-          </p>
-        </div>
-      </div>
+          </Typography>
+        </Box>
+      </Box>
     </>
   );
 };

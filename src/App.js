@@ -4,11 +4,11 @@ import { Navigate, Route, Routes } from "react-router-dom";
 
 import Layout from "./shared/routes/Layout";
 import Redirect from "./shared/routes/Redirect";
-import Navigation from "./shared/navigation/Navigation";
 import Footer from "./shared/navigation/Footer";
-import BlogDetails from "./blog/components/BlogDetails";
 import AppProvider from "./shared/context";
 import ChallengeDetails from "./challenges/components/ChallengeDetails";
+import TutorialDetails from "./blog/components/BlogDetails";
+import NavContainer from "./shared/routes/NavContainer";
 
 const HomePage = React.lazy(() =>
   Promise.all([
@@ -16,7 +16,7 @@ const HomePage = React.lazy(() =>
     new Promise((resolve) => {
       setTimeout(() => {
         resolve();
-      }, 3000);
+      }, 30);
     }),
   ]).then(([m]) => m)
 );
@@ -27,7 +27,7 @@ const ChallengesPage = React.lazy(() =>
     new Promise((resolve) => {
       setTimeout(() => {
         resolve();
-      }, 3000);
+      }, 30);
     }),
   ]).then(([m]) => m)
 );
@@ -38,7 +38,7 @@ const BlogPage = React.lazy(() =>
     new Promise((resolve) => {
       setTimeout(() => {
         resolve();
-      }, 3000);
+      }, 30);
     }),
   ]).then(([m]) => m)
 );
@@ -54,14 +54,37 @@ function App() {
             </div>
           }
         >
-          <Navigation />
           <Routes>
             <Route path="/" element={<Layout />}>
               <Route index element={<Redirect path="/home" />} />
-              <Route path="/home" element={<HomePage />} />
-              <Route path="/tutorials" element={<BlogPage />} />
-              <Route path="/tutorials/:tid" element={<BlogDetails />} />
-              <Route path="/challenges" element={<ChallengesPage />} />
+              <Route
+                path="/home"
+                element={
+                  <>
+                    <NavContainer value={0} />
+                    <HomePage />
+                  </>
+                }
+              />
+              <Route
+                path="/challenges"
+                element={
+                  <>
+                    <NavContainer value={1} />
+                    <ChallengesPage />
+                  </>
+                }
+              />
+              <Route
+                path="/tutorials"
+                element={
+                  <>
+                    <NavContainer value={2} />
+                    <BlogPage />
+                  </>
+                }
+              />
+              <Route path="/tutorials/:tid" element={<TutorialDetails />} />
               <Route path="/challenges/:cid" element={<ChallengeDetails />} />
               <Route path="/profile" />
               <Route path="/login" />

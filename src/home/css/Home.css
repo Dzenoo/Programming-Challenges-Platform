@@ -3,45 +3,11 @@
   background-position: right;
   background-repeat: no-repeat;
   background-size: contain;
-  overflow: hidden;
+  padding: 120px;
 }
 
 .ch {
   color: #fcbf49;
-}
-
-.hero_section .hero_text {
-  max-width: 900px;
-  margin: 130px;
-  display: flex;
-  flex-direction: column;
-  gap: 2em;
-  align-items: flex-start;
-}
-
-.hero_section .hero_text h1 {
-  font-size: 3.3em;
-  color: #121212;
-}
-
-.hero_section .hero_text p {
-  color: #121212;
-  font-size: 20px;
-}
-
-.btn_link {
-  background-color: #fcbf49;
-  padding: 20px 60px;
-  border: 1.2px solid transparent;
-  text-decoration: none;
-  color: #121212;
-}
-
-.btn_link:hover {
-  transition: 0.3s;
-  background-color: transparent;
-  border: 1.2px solid #fcbf49;
-  color: #121212;
 }
 
 /* Icon Section */
