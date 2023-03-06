@@ -23,7 +23,12 @@ const Newsletter = ({ tutorials }) => {
             <img src={tutorial.image} alt={tutorial.title} />
             <Typography variant="h4">{tutorial.title}</Typography>
             <Typography variant="p">{tutorial.shortDescription}</Typography>
-            <Link to={`/tutorials/${tutorial.id}`}>Read More</Link>
+            <Link
+              to={`/tutorials/${tutorial.id}`}
+              style={{ textDecoration: "none" }}
+            >
+              <Button variant="outlined">Read More</Button>
+            </Link>
           </Container>
         ))}
       </Container>
