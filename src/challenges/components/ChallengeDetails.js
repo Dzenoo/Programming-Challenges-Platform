@@ -1,3 +1,4 @@
+import { Container, Typography } from "@mui/material";
 import React, { useContext } from "react";
 import { useParams } from "react-router-dom";
 import { ChallengeContext } from "../../shared/context/ChallengeContext";
@@ -12,15 +13,15 @@ const ChallengeDetails = () => {
   const challenge = challenges.filter((c) => c.id === chId);
 
   return (
-    <div className="challenge_details_wrapper">
+    <Container maxWidth="lg">
       {challenge.map((c) => (
-        <div className="challenge_item">
+        <Container maxWidth="md">
           <img src={c.image} alt={c.title} />
-          <h1>{c.title}</h1>
-          <p>{c.description}</p>
-        </div>
+          <Typography variant="h4">{c.title}</Typography>
+          <Typography variant="p">{c.description}</Typography>
+        </Container>
       ))}
-    </div>
+    </Container>
   );
 };
 
