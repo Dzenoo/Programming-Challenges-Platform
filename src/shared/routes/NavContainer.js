@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { AppBar, Tabs, Tab, Toolbar, Button } from "@mui/material";
+import { AppBar, Tabs, Tab, Toolbar, Button, Typography } from "@mui/material";
 
 const appBarStyle = {
   backgroundColor: "#fff",
@@ -17,6 +17,11 @@ const buttonsStyle = {
 export default function NavContainer({ value }) {
   return (
     <AppBar position="static" style={appBarStyle}>
+      <Toolbar>
+        <Typography variant="h6" color="#333">
+          Coding<span className="ch">Hero</span>
+        </Typography>
+      </Toolbar>
       <Tabs value={value}>
         <Tab label="Home" component={Link} to="/home" />
         <Tab label="Challenges" component={Link} to="/challenges" />

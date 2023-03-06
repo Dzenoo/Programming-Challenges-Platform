@@ -8,27 +8,49 @@ import css from "../../assets/css.png";
 import nodejs from "../../assets/nodejs.png";
 import sass from "../../assets/sass.png";
 import { Link } from "react-router-dom";
+import { Button, Typography } from "@mui/material";
+import { Box, Container } from "@mui/system";
 
 const images = [html, css, react, javascript, nodejs, sass];
 
 const Tech = () => {
   return (
-    <div className="tech_section">
-      <h1>Technologies We Cover</h1>
-      <p>
+    <Box
+      sx={{
+        textAlign: "center",
+        padding: "12em",
+        display: "flex",
+        flexDirection: "column",
+        gap: "2em",
+        alignItems: "center",
+      }}
+    >
+      <Typography variant="h2">Technologies We Cover</Typography>
+      <Typography variant="p">
         Explore the technologies we cover in-depth, including programming
         languages, frameworks, and tools
-      </p>
-      <div className="tech_list">
+      </Typography>
+      <Box
+        sx={{
+          display: "flex",
+          justifyContent: "center",
+          margin: "auto",
+          flexWrap: "wrap",
+        }}
+      >
         {images.map((image) => (
-          <div key={image} className="tech_item">
+          <Box key={image}>
             <img src={image} alt="img" />
-          </div>
+          </Box>
         ))}
-      </div>
+      </Box>
 
-      <Link className="btn_link">Get Started</Link>
-    </div>
+      <Link className="btn_link">
+        <Button variant="contained" size="large">
+          Get Started
+        </Button>
+      </Link>
+    </Box>
   );
 };
 

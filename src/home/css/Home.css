@@ -10,109 +10,6 @@
   color: #fcbf49;
 }
 
-/* Icon Section */
-
-.icon_section {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10em;
-}
-
-.icon_section .icon_item {
-  max-width: 400px;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  text-align: center;
-  justify-content: center;
-}
-
-.icon_section .icon_item p,
-.icon_section .icon_item h1 {
-  color: #121212;
-}
-
-.icon_section .icon_item img {
-  width: 300px;
-  margin: auto;
-}
-
-.icon_title {
-  text-align: center;
-  color: #121212;
-  font-size: 3.3rem;
-  padding-top: 60px;
-}
-
-/* tech section */
-
-.tech_section {
-  text-align: center;
-  padding: 12em;
-  display: flex;
-  flex-direction: column;
-  gap: 2em;
-  align-items: center;
-}
-
-.tech_section h1 {
-  font-size: 3em;
-  color: #121212;
-}
-
-.tech_section p {
-  color: #121212;
-}
-
-.tech_section .tech_list {
-  display: flex;
-  justify-content: center;
-  margin: auto;
-  flex-wrap: wrap;
-}
-
-/* News */
-
-.newsletter_tutorials_section {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-  gap: 6em;
-}
-
-.newsletter_tutorials_section h1 {
-  color: #121212;
-}
-
-.newsletter_tutorials_section .tutorials {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: auto;
-  position: relative;
-  gap: 10em;
-}
-
-.newsletter_tutorials_section .tutorials::before {
-  content: " ";
-  top: -10em;
-  z-index: -20;
-  width: 100em;
-  right: -60px;
-  height: calc(20em + 20vh);
-  background-color: #fcbf49;
-  position: absolute;
-}
-
-.newsletter_tutorials_section .tutorials .tutorial {
-  max-width: 400px;
-  height: 600px;
-  color: #121212;
-}
-
 .newsletter {
   background-color: #fcbf49;
   padding: 100px;
@@ -122,13 +19,10 @@
   width: 100%;
 }
 
-.new_text {
-  max-width: 900px;
+.newsletter a {
+  text-decoration: none;
 }
 
-.newsletter a {
-  background-color: #1e9ae0;
-  padding: 20px 60px;
+.btn_link {
   text-decoration: none;
-  color: #121212;
 }
