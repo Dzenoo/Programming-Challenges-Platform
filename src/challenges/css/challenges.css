@@ -38,35 +38,34 @@
   margin-top: 20px;
 }
 
-.challenge_list .challenge_item span.advanced {
+span.advanced {
   color: rgb(15, 155, 255);
   font-weight: bold;
   font-size: 20px;
 }
-.challenge_list .challenge_item span.beginner {
+span.beginner {
   color: rgb(5, 164, 7);
   font-size: 20px;
   font-weight: bold;
 }
-.challenge_list .challenge_item span.expert {
+span.expert {
   color: rgb(255, 179, 38);
   font-size: 20px;
   font-weight: bold;
 }
 
-.challenge_item .tech {
+.tech {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
 }
 
-.challenge_item .tech .tech_flex {
+.tech .tech_flex {
   display: flex;
   gap: 10px;
 }
-
-.challenge_item .tech .tech_flex span {
+.tech .tech_flex span {
   color: #333;
   border: 1px solid #333;
   padding: 12px;

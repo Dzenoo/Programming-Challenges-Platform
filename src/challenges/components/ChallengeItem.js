@@ -2,19 +2,21 @@ import React from "react";
 import PropTypes from "prop-types";
 import "../css/challenges.css";
 import { Link } from "react-router-dom";
+import { Box, Grid, Typography } from "@mui/material";
 
 const ChallengeItem = ({ challenges }) => {
   return (
-    <ul className="challenge_list">
+    <Grid container spacing={7} padding={8}>
       {challenges.map((ch) => (
-        <li className="challenge_item" key={ch.id}>
-          <Link className="show_challenge" to={`/challenges/${ch.id}`}>
+        <Grid item xs={3} key={ch.id}>
+          <Link className="linkDecoration" to={`/challenges/${ch.id}`}>
             <img src={ch.image} alt={ch.title} />
           </Link>
-          <h1>{ch.title}</h1>
-          <p>{ch.description}</p>
-          <div className="tech">
-            <span
+          <Typography variant="h4">{ch.title}</Typography>
+          <Typography variant="p">{ch.description}</Typography>
+          <Box className="tech">
+            <Typography
+              variant="span"
               className={`${
                 ch.difficulty === "Advanced" ? "advanced" : ""
               } && ${ch.difficulty === "Beginner" ? "beginner" : ""} && ${
@@ -22,16 +24,18 @@ const ChallengeItem = ({ challenges }) => {
               }`}
             >
               {ch.difficulty}
-            </span>
-            <div className="tech_flex">
+            </Typography>
+            <Box className="tech_flex">
               {ch.technologies.map((t) => (
-                <span key={t}>{t}</span>
+                <Typography variant="span" key={t}>
+                  {t}
+                </Typography>
               ))}
-            </div>
-          </div>
-        </li>
+            </Box>
+          </Box>
+        </Grid>
       ))}
-    </ul>
+    </Grid>
   );
 };
 

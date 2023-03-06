@@ -40,3 +40,7 @@ code {
   background-color: #000000f4;
   z-index: 30;
 }
+
+.linkDecoration {
+  text-decoration: none;
+}
