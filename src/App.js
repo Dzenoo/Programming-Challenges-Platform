@@ -16,7 +16,7 @@ const HomePage = React.lazy(() =>
     new Promise((resolve) => {
       setTimeout(() => {
         resolve();
-      }, 30);
+      }, 3000);
     }),
   ]).then(([m]) => m)
 );
@@ -27,7 +27,7 @@ const ChallengesPage = React.lazy(() =>
     new Promise((resolve) => {
       setTimeout(() => {
         resolve();
-      }, 30);
+      }, 3000);
     }),
   ]).then(([m]) => m)
 );
@@ -38,7 +38,7 @@ const BlogPage = React.lazy(() =>
     new Promise((resolve) => {
       setTimeout(() => {
         resolve();
-      }, 30);
+      }, 3000);
     }),
   ]).then(([m]) => m)
 );
