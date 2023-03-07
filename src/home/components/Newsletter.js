@@ -15,11 +15,11 @@ import "../css/Home.css";
 
 const Newsletter = ({ tutorials }) => {
   return (
-    <Container maxWidth="lg">
+    <Container>
       <Typography variant="h2" textAlign="center">
         Browse some blog
       </Typography>
-      <Container sx={{ padding: "60px 0" }}>
+      <Container maxWidth="lg" sx={{ padding: "60px 0" }}>
         <Grid container spacing={4}>
           {tutorials.map((tutorial) => (
             <Grid item key={tutorial.id} xs={12} sm={6} md={4}>
