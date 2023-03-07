@@ -40,13 +40,6 @@ const ChallengeItem = ({ challenges }) => {
                 </Typography>
               </CardContent>
               <CardActions sx={{ justifyContent: "space-between" }}>
-                <Link
-                  style={{ textDecoration: "none" }}
-                  to={`/challenges/${ch.id}`}
-                >
-                  <Button variant="contained">Start Challenge</Button>
-                </Link>
-
                 <Typography
                   variant="span"
                   className={`${
@@ -57,6 +50,12 @@ const ChallengeItem = ({ challenges }) => {
                 >
                   {ch.difficulty}
                 </Typography>
+                <Link
+                  style={{ textDecoration: "none" }}
+                  to={`/challenges/${ch.id}`}
+                >
+                  <Button variant="contained">Start Challenge</Button>
+                </Link>
               </CardActions>
             </Card>
           </Grid>
