@@ -19,7 +19,7 @@ const Newsletter = ({ tutorials }) => {
       <Typography variant="h2" textAlign="center">
         Browse some blog
       </Typography>
-      <Container maxWidth="" sx={{ padding: "60px 0" }}>
+      <Container sx={{ padding: "60px 0" }}>
         <Grid container spacing={4}>
           {tutorials.map((tutorial) => (
             <Grid item key={tutorial.id} xs={12} sm={6} md={4}>

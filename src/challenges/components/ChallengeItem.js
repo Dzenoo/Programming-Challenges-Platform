@@ -2,40 +2,67 @@ import React from "react";
 import PropTypes from "prop-types";
 import "../css/challenges.css";
 import { Link } from "react-router-dom";
-import { Box, Grid, Typography } from "@mui/material";
+import {
+  Button,
+  Card,
+  CardActions,
+  CardContent,
+  CardMedia,
+  Grid,
+  Container,
+  Typography,
+} from "@mui/material";
 
 const ChallengeItem = ({ challenges }) => {
   return (
-    <Grid container spacing={7} padding={8}>
-      {challenges.map((ch) => (
-        <Grid item xs={3} key={ch.id}>
-          <Link className="linkDecoration" to={`/challenges/${ch.id}`}>
-            <img src={ch.image} alt={ch.title} />
-          </Link>
-          <Typography variant="h4">{ch.title}</Typography>
-          <Typography variant="p">{ch.description}</Typography>
-          <Box className="tech">
-            <Typography
-              variant="span"
-              className={`${
-                ch.difficulty === "Advanced" ? "advanced" : ""
-              } && ${ch.difficulty === "Beginner" ? "beginner" : ""} && ${
-                ch.difficulty === "Expert" ? "expert" : ""
-              }`}
+    <Container maxWidth="xl" sx={{ padding: "60px 0" }}>
+      <Grid container spacing={4} justifyContent="center">
+        {challenges.map((ch) => (
+          <Grid item key={ch.id} lg={4} md={6} sm={8} xs={12}>
+            <Card
+              sx={{
+                height: "100%",
+                display: "flex",
+                flexDirection: "column",
+              }}
             >
-              {ch.difficulty}
-            </Typography>
-            <Box className="tech_flex">
-              {ch.technologies.map((t) => (
-                <Typography variant="span" key={t}>
-                  {t}
+              <CardMedia
+                image={ch.image}
+                title={ch.title}
+                sx={{ paddingTop: "56.25%" }}
+              />
+              <CardContent sx={{ flexGrow: "1" }}>
+                <Typography variant="h4" color="textPrimary">
+                  {ch.title}
                 </Typography>
-              ))}
-            </Box>
-          </Box>
-        </Grid>
-      ))}
-    </Grid>
+                <Typography variant="p" color="textSecondary">
+                  {ch.description}
+                </Typography>
+              </CardContent>
+              <CardActions sx={{ justifyContent: "space-between" }}>
+                <Link
+                  style={{ textDecoration: "none" }}
+                  to={`/challenges/${ch.id}`}
+                >
+                  <Button variant="contained">Start Challenge</Button>
+                </Link>
+
+                <Typography
+                  variant="span"
+                  className={`${
+                    ch.difficulty === "Advanced" ? "advanced" : ""
+                  } && ${ch.difficulty === "Beginner" ? "beginner" : ""} && ${
+                    ch.difficulty === "Expert" ? "expert" : ""
+                  }`}
+                >
+                  {ch.difficulty}
+                </Typography>
+              </CardActions>
+            </Card>
+          </Grid>
+        ))}
+      </Grid>
+    </Container>
   );
 };
 
