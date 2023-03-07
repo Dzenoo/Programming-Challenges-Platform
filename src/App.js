@@ -50,7 +50,7 @@ function App() {
         <React.Suspense
           fallback={
             <div className="center">
-              <ClimbingBoxLoader color={"teal"} size={30} />
+              <ClimbingBoxLoader color={"#1976d2"} size={30} />
             </div>
           }
         >
