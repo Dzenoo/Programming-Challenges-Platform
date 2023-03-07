@@ -1,23 +1,20 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { AiOutlineSearch } from "react-icons/ai";
+import { TextField } from "@mui/material";
 import "../css/blog.css";
 
 const TutorialInput = ({ setInputValue, searchTutorials, searchMsg }) => {
   return (
-    <div className="tutorial_input">
-      <h1>Empower Your Learning</h1>
-      <p>Our tutorials cover a wide range of topics</p>
-      <form className="input" onSubmit={searchTutorials}>
-        <AiOutlineSearch onClick={searchTutorials} />
-        <input
-          type="text"
-          placeholder="Find a tutorial"
-          onChange={(e) => setInputValue(e.target.value)}
-        />
-      </form>
-      <p>{searchMsg}</p>
-    </div>
+    <form onSubmit={searchTutorials}>
+      <TextField
+        label="Search"
+        onChange={(e) => setInputValue(e.target.value)}
+        margin="normal"
+        sx={{ width: "20em" }}
+      >
+        <p>{searchMsg}</p>
+      </TextField>
+    </form>
   );
 };
 

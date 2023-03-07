@@ -1,6 +1,10 @@
 .tutorial_page {
   padding: 40px 0;
   color: #121212;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 
 .tutorial_input {

@@ -1,3 +1,4 @@
+import { Typography } from "@mui/material";
 import React, { useContext, useState } from "react";
 import { TutorialContext } from "../../shared/context/TutorialContext";
 import Pagination from "../../shared/navigation/Pagination";
@@ -26,6 +27,12 @@ const TutorialPage = () => {
   return (
     <>
       <div className="tutorial_page">
+        <Typography variant="h2" color="textPrimary">
+          Empower Your Learning
+        </Typography>
+        <Typography variant="p" color="textSecondary">
+          Our tutorials cover a wide range of topics
+        </Typography>
         <BlogInput
           setInputValue={setInputQuery}
           searchTutorials={searchTutorialsHandler}
