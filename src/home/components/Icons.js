@@ -15,7 +15,7 @@ const boxWidthStyle = {
 
 const Icons = () => {
   return (
-    <>
+    <div className="icons_section">
       <Typography variant="h2" style={textAlignStyle}>
         Boost your <span className="ch">Career</span>
       </Typography>
@@ -56,7 +56,7 @@ const Icons = () => {
           </Typography>
         </Box>
       </Box>
-    </>
+    </div>
   );
 };
 
