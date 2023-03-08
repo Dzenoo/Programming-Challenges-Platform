@@ -8,8 +8,10 @@ import {
   ListItem,
   Typography,
 } from "@mui/material";
+import React, { useContext } from "react";
+import CheckCircleIcon from "@mui/icons-material/CheckCircle";
+import AssessmentIcon from "@mui/icons-material/Assessment";
 import { Box } from "@mui/system";
-import React, { useContext, useState } from "react";
 import { useParams } from "react-router-dom";
 import { ChallengeContext } from "../../shared/context/ChallengeContext";
 
@@ -65,21 +67,40 @@ const ChallengeDetails = () => {
           ))}
         </Grid>
 
-        <Grid item>
+        <Grid item sx={{ display: "flex", flexWrap: "wrap" }}>
           {challenge.map((challenge) => (
             <Card sx={{ padding: "30px" }}>
-              <Typography variant="h3">What you need to do?</Typography>
+              <Typography variant="h4">What you need to do?</Typography>
               <Typography variant="p" color="textSecondary">
                 Follow this steps to and complete project by doing next:
               </Typography>
-
               <List>
                 {challenge.listOfSteps.map((li) => (
-                  <ListItem key={li}>{li}</ListItem>
+                  <Box sx={{ display: "flex", alignItems: "center" }}>
+                    <CheckCircleIcon style={{ fill: "darkgreen" }} />
+                    <ListItem key={li}>{li}</ListItem>
+                  </Box>
                 ))}
               </List>
             </Card>
           ))}
+
+          <Card sx={{ padding: "30px" }}>
+            <Typography variant="h4">Prerequisites</Typography>
+            <Typography variant="p" color="textSecondary">
+              You can complete this challenge using:
+            </Typography>
+            {challenge.map((challenge) => (
+              <List>
+                {challenge.technologies.map((li) => (
+                  <Box sx={{ display: "flex", alignItems: "center" }}>
+                    <AssessmentIcon color="primary" />
+                    <ListItem key={li}>{li}</ListItem>
+                  </Box>
+                ))}
+              </List>
+            ))}
+          </Card>
         </Grid>
       </Grid>
     </Container>
@@ -87,11 +108,3 @@ const ChallengeDetails = () => {
 };
 
 export default ChallengeDetails;
-
-// {challenge.map((c) => (
-//   <Container maxWidth="md">
-//     <img src={c.image} alt={c.title} />
-//     <Typography variant="h4">{c.title}</Typography>
-//     <Typography variant="p">{c.description}</Typography>
-//   </Container>
-// ))}
