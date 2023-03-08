@@ -1,10 +1,15 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import { ChallengeContext } from "../../shared/context/ChallengeContext";
-import { AiOutlineCaretDown } from "react-icons/ai";
 import ChallengeItem from "../components/ChallengeItem";
 import "../css/challenges.css";
+import {
+  Container,
+  FormControl,
+  InputLabel,
+  MenuItem,
+  Select,
+} from "@mui/material";
 const ChallengePage = () => {
-  const [filterIsOpen, setFilterIsOpen] = useState(false);
   const challengeCtx = useContext(ChallengeContext);
   const { filterChallenges, challengesHandler, findByDifficulty } =
     challengeCtx;
@@ -12,37 +17,31 @@ const ChallengePage = () => {
   const difficulties = ["Beginner", "Advanced", "Expert"];
 
   return (
-    <div className="challenges_container">
-      <div className="filter_challenges">
-        <div
-          className="open_filter"
-          onClick={() => setFilterIsOpen((prevState) => !prevState)}
-        >
-          <span>Filters</span>
-          <AiOutlineCaretDown />
-        </div>
-        <div className={`filter_wrapper ${filterIsOpen ? "toggle" : ""}`}>
-          <div className="filter_tech">
-            <h2>Language</h2>
+    <>
+      <Container maxWidth="xs" sx={{ paddingTop: "2em" }}>
+        <FormControl>
+          <InputLabel id="demo-simple-select-label">Technology</InputLabel>
+          <Select sx={{ width: "10em" }} labelId="demo-simple-select-label">
             {categories.map((btn) => (
-              <button key={btn} onClick={() => filterChallenges(btn)}>
+              <MenuItem key={btn} onClick={() => filterChallenges(btn)}>
                 {btn}
-              </button>
+              </MenuItem>
             ))}
-            <button onClick={challengesHandler}>All</button>
-          </div>
-          <div className="filter_difficulty">
-            <h2>Difficulty</h2>
+          </Select>
+        </FormControl>
+        <FormControl>
+          <InputLabel>Difficulty</InputLabel>
+          <Select sx={{ width: "10em" }}>
             {difficulties.map((dif) => (
-              <button key={dif} onClick={() => findByDifficulty(dif)}>
+              <MenuItem key={dif} onClick={() => findByDifficulty(dif)}>
                 {dif}
-              </button>
+              </MenuItem>
             ))}
-          </div>
-        </div>
-      </div>
+          </Select>
+        </FormControl>
+      </Container>
       <ChallengeItem challenges={challengeCtx.challenges} />
-    </div>
+    </>
   );
 };
 
