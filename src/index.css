@@ -49,11 +49,6 @@ code {
   background-image: url("./assets/pricingbackground.png");
   background-repeat: no-repeat;
   background-size: cover;
-}
-
-.icons_section {
-  background-image: url("./assets/pricingbackground.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-color: transparent;
+  padding-top: 40px;
+  padding-bottom: 100px;
 }
