@@ -29,7 +29,7 @@ export default function NavContainer({ value }) {
         <Tab label="Profile" component={Link} to="/profile" />
         <Tab label="Leaderboard" component={Link} to="/home" />
         <Tab label="Community" component={Link} to="/home" />
-        <Tab label="Pricing" component={Link} to="/home" />
+        <Tab label="Pricing" component={Link} to="/pricing" />
       </Tabs>
       <div style={buttonsStyle}>
         <Button variant="contained">Login</Button>

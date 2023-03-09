@@ -183,7 +183,9 @@ export const ChallengeProvider = ({ children }) => {
     });
 
     if (filteredChallenges.length === 0) {
-      toast.error("Not challenges found!");
+      toast.error(
+        `Don't have challenges for ${technology} with difficulty ${difficulty} `
+      );
     } else {
       setChallenges(filteredChallenges);
     }

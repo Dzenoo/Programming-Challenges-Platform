@@ -20,7 +20,6 @@ const HomePage = React.lazy(() =>
     }),
   ]).then(([m]) => m)
 );
-
 const ChallengesPage = React.lazy(() =>
   Promise.all([
     import("./challenges/pages/ChallengePage"),
@@ -31,10 +30,19 @@ const ChallengesPage = React.lazy(() =>
     }),
   ]).then(([m]) => m)
 );
-
 const BlogPage = React.lazy(() =>
   Promise.all([
     import("./blog/pages/BlogPage"),
+    new Promise((resolve) => {
+      setTimeout(() => {
+        resolve();
+      }, 30);
+    }),
+  ]).then(([m]) => m)
+);
+const PricingPage = React.lazy(() =>
+  Promise.all([
+    import("./pricing/pages/PricingPage"),
     new Promise((resolve) => {
       setTimeout(() => {
         resolve();
@@ -81,6 +89,16 @@ function App() {
                   <>
                     <NavContainer value={2} />
                     <BlogPage />
+                  </>
+                }
+              />
+
+              <Route
+                path="/pricing"
+                element={
+                  <>
+                    <NavContainer value={6} />
+                    <PricingPage />
                   </>
                 }
               />

@@ -44,3 +44,16 @@ code {
 .linkDecoration {
   text-decoration: none;
 }
+
+.pricingPage {
+  background-image: url("./assets/pricingbackground.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.icons_section {
+  background-image: url("./assets/pricingbackground.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: transparent;
+}
