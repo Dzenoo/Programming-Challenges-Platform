@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { toast } from "react-toastify";
 
 export const TutorialContext = React.createContext();
 
@@ -91,13 +92,12 @@ export const TutorialProvider = ({ children }) => {
         p.shortDescription.toLowerCase().includes(inputQuery)
     );
     if (filteredTutorials.length === 0) {
-      setSearchError(
+      toast.error(
         `Unfortunately, no tutorials could be found for ${inputQuery}`
       );
     } else {
-      setSearchError("");
+      setTutorials(filteredTutorials);
     }
-    setTutorials(filteredTutorials);
   };
 
   return (

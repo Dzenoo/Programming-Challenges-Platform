@@ -1,9 +1,11 @@
 import { Typography } from "@mui/material";
 import React, { useContext, useState } from "react";
+import { ToastContainer } from "react-toastify";
 import { TutorialContext } from "../../shared/context/TutorialContext";
 import Pagination from "../../shared/navigation/Pagination";
 import BlogInput from "../components/BlogInput";
 import BlogItem from "../components/BlogItem";
+import "react-toastify/dist/ReactToastify.css";
 import "../css/blog.css";
 
 const TutorialPage = () => {
@@ -44,6 +46,7 @@ const TutorialPage = () => {
           totalTutorials={tutorials.length}
           paginate={paginate}
         />
+        <ToastContainer />
       </div>
     </>
   );
