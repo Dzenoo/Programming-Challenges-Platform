@@ -3,6 +3,7 @@ import { ChallengeContext } from "../../shared/context/ChallengeContext";
 import ChallengeItem from "../components/ChallengeItem";
 import "../css/challenges.css";
 import {
+  Box,
   Button,
   Container,
   FormControl,
@@ -45,47 +46,57 @@ const ChallengePage = () => {
         sx={{
           paddingTop: "2em",
           display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
         }}
       >
-        <FormControl>
-          <InputLabel>Technology</InputLabel>
-          <Select
-            sx={{ width: "10em" }}
-            value={currCategory}
-            onChange={(e) =>
-              dispatch({ type: "CATEGORIES", ctg: e.target.value })
-            }
-          >
-            {categories.map((btn) => (
-              <MenuItem key={btn} value={btn}>
-                {btn}
-              </MenuItem>
-            ))}
-          </Select>
-        </FormControl>
-        <FormControl>
-          <InputLabel>Difficulty</InputLabel>
-          <Select
-            sx={{ width: "10em" }}
-            value={currDifficulty}
-            onChange={(e) =>
-              dispatch({ type: "DIFFICULTIES", dif: e.target.value })
-            }
-          >
-            {difficulties.map((dif) => (
-              <MenuItem key={dif} value={dif}>
-                {dif}
-              </MenuItem>
-            ))}
-          </Select>
-        </FormControl>
-
-        <Button
-          variant="contained"
-          onClick={() => filterChallenges(currCategory, currDifficulty)}
+        <Box
+          sx={{
+            display: "flex",
+            gap: "2em",
+            alignItems: "center",
+          }}
         >
-          Filter
-        </Button>
+          <FormControl>
+            <InputLabel>Technology</InputLabel>
+            <Select
+              sx={{ width: "10em" }}
+              value={currCategory}
+              onChange={(e) =>
+                dispatch({ type: "CATEGORIES", ctg: e.target.value })
+              }
+            >
+              {categories.map((btn) => (
+                <MenuItem key={btn} value={btn}>
+                  {btn}
+                </MenuItem>
+              ))}
+            </Select>
+          </FormControl>
+          <FormControl>
+            <InputLabel>Difficulty</InputLabel>
+            <Select
+              sx={{ width: "10em" }}
+              value={currDifficulty}
+              onChange={(e) =>
+                dispatch({ type: "DIFFICULTIES", dif: e.target.value })
+              }
+            >
+              {difficulties.map((dif) => (
+                <MenuItem key={dif} value={dif}>
+                  {dif}
+                </MenuItem>
+              ))}
+            </Select>
+          </FormControl>
+          <Button
+            variant="contained"
+            onClick={() => filterChallenges(currCategory, currDifficulty)}
+          >
+            Filter
+          </Button>
+        </Box>
+
         <Button variant="contained" onClick={challengesHandler}>
           All Challenges
         </Button>

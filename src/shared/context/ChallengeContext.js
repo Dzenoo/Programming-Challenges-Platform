@@ -34,7 +34,7 @@ const Challenges = [
     title: "Weather App",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis odit itaque molestias perspiciatis deserunt voluptatem tenetur adipisci nisi laboriosam quas fugit dignissimos vel minima, maxime at temporibus, consectetur nemo. Earum!",
-    difficulty: "Beginner",
+    difficulty: "Advanced",
     technologies: ["JavaScript", "Css", "Html"],
     acceptableFiles: [".zip", ".rar"],
     xp: 10,
@@ -57,7 +57,7 @@ const Challenges = [
     title: "Login Page",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis odit itaque molestias perspiciatis deserunt voluptatem tenetur adipisci nisi laboriosam quas fugit dignissimos vel minima, maxime at temporibus, consectetur nemo. Earum!",
-    difficulty: "Advanced",
+    difficulty: "Beginner",
     technologies: ["Html", "Css"],
     acceptableFiles: [".zip", ".rar"],
     xp: 12,
@@ -103,7 +103,7 @@ const Challenges = [
     title: "Navbar",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis odit itaque molestias perspiciatis deserunt voluptatem tenetur adipisci nisi laboriosam quas fugit dignissimos vel minima, maxime at temporibus, consectetur nemo. Earum!",
-    difficulty: "Expert",
+    difficulty: "Beginner",
     technologies: ["Html", "Css"],
     acceptableFiles: [".zip", ".rar"],
     xp: 16,
@@ -126,8 +126,8 @@ const Challenges = [
     title: "Expenses App",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis odit itaque molestias perspiciatis deserunt voluptatem tenetur adipisci nisi laboriosam quas fugit dignissimos vel minima, maxime at temporibus, consectetur nemo. Earum!",
-    difficulty: "Expert",
-    technologies: ["Html", "Css"],
+    difficulty: "Advanced",
+    technologies: ["React"],
     acceptableFiles: [".zip", ".rar"],
     xp: 16,
     listOfSteps: [
@@ -150,7 +150,7 @@ const Challenges = [
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis odit itaque molestias perspiciatis deserunt voluptatem tenetur adipisci nisi laboriosam quas fugit dignissimos vel minima, maxime at temporibus, consectetur nemo. Earum!",
     difficulty: "Expert",
-    technologies: ["Html", "Css"],
+    technologies: ["React"],
     acceptableFiles: [".zip", ".rar"],
     xp: 15,
     listOfSteps: [
