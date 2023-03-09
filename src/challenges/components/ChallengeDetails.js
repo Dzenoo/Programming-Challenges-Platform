@@ -1,7 +1,6 @@
 import {
   Button,
   Card,
-  CardActions,
   CardContent,
   CardMedia,
   Container,
@@ -14,9 +13,9 @@ import React, { useContext } from "react";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import AssessmentIcon from "@mui/icons-material/Assessment";
 import { Box } from "@mui/system";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { ChallengeContext } from "../../shared/context/ChallengeContext";
-
+import WebAssetIcon from "@mui/icons-material/WebAsset";
 import "../css/challenges.css";
 
 const ChallengeDetails = () => {
@@ -27,7 +26,7 @@ const ChallengeDetails = () => {
 
   return (
     <Container maxWidth="lg" sx={{ padding: "40px 0" }}>
-      <Grid container spacing={4} justifyContent="center">
+      <Grid container spacing={4} sx={{ display: "flex" }}>
         <Grid item>
           {challenge.map((ch) => (
             <Card
@@ -113,6 +112,24 @@ const ChallengeDetails = () => {
                 ))}
               </List>
             ))}
+
+            <Box
+              sx={{
+                display: "flex",
+                flexDirection: "column",
+                gap: "1em",
+              }}
+            >
+              <Typography variant="h4">Assets and Design</Typography>
+              <Typography variant="p" color="textSecondary">
+                You will receive figma design and assets
+              </Typography>
+
+              <WebAssetIcon sx={{ fill: "#fcbf49" }} />
+              <Link>Figma design</Link>
+              <WebAssetIcon sx={{ fill: "#fcbf49" }} />
+              <Link>Images</Link>
+            </Box>
           </Card>
         </Grid>
       </Grid>
