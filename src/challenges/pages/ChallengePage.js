@@ -1,4 +1,4 @@
-import React, { useContext, useReducer } from "react";
+import React, { useContext, useReducer, useState } from "react";
 import { ChallengeContext } from "../../shared/context/ChallengeContext";
 import ChallengeItem from "../components/ChallengeItem";
 import "../css/challenges.css";
@@ -10,6 +10,8 @@ import {
   MenuItem,
   Select,
 } from "@mui/material";
+import "react-toastify/dist/ReactToastify.css";
+import { ToastContainer } from "react-toastify";
 
 const initialState = {
   categories: ["React", "Css", "Html", "Node Js", "JavaScript", "Scss"],
@@ -23,10 +25,8 @@ const reducer = (state, action) => {
     case "CATEGORIES": {
       return { ...state, currCategory: action.ctg };
     }
-
     case "DIFFICULTIES":
       return { ...state, currDifficulty: action.dif };
-
     default:
       throw new Error(`${action.type} is not valid action`);
   }
@@ -40,7 +40,13 @@ const ChallengePage = () => {
 
   return (
     <>
-      <Container maxWidth="xs" sx={{ paddingTop: "2em" }}>
+      <Container
+        maxWidth="xl"
+        sx={{
+          paddingTop: "2em",
+          display: "flex",
+        }}
+      >
         <FormControl>
           <InputLabel>Technology</InputLabel>
           <Select
@@ -85,6 +91,7 @@ const ChallengePage = () => {
         </Button>
       </Container>
       <ChallengeItem challenges={challenges} />
+      <ToastContainer />
     </>
   );
 };

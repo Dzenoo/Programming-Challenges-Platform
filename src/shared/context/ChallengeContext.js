@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { toast } from "react-toastify";
 
 export const ChallengeContext = React.createContext();
 
@@ -182,7 +183,7 @@ export const ChallengeProvider = ({ children }) => {
     });
 
     if (filteredChallenges.length === 0) {
-      window.alert(`No challenges found for ${technology} ${difficulty}`);
+      toast.error("Not challenges found!");
     } else {
       setChallenges(filteredChallenges);
     }
