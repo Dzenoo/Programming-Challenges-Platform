@@ -80,7 +80,6 @@ const Tutorials = [
 
 export const TutorialProvider = ({ children }) => {
   const [tutorials, setTutorials] = useState(Tutorials);
-  const [searchError, setSearchError] = useState("");
   const [inputQuery, setInputQuery] = useState("");
 
   const searchTutorialsHandler = (e) => {
@@ -106,7 +105,6 @@ export const TutorialProvider = ({ children }) => {
         tutorials,
         searchTutorialsHandler,
         setInputQuery,
-        searchError,
       }}
     >
       {children}
