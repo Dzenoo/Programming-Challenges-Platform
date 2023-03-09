@@ -54,7 +54,7 @@ const ChallengeItem = ({ challenges }) => {
                   style={{ textDecoration: "none" }}
                   to={`/challenges/${ch.id}`}
                 >
-                  <Button variant="contained">Start Challenge</Button>
+                  <Button variant="contained">View Challenge</Button>
                 </Link>
               </CardActions>
             </Card>
