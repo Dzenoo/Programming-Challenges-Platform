@@ -6,7 +6,7 @@ const Challenges = [
   {
     id: "1",
     image:
-      "https://res.cloudinary.com/dzwb60tk1/image/upload/v1676482330/Untitled_design_3_giwyy7.png",
+      "https://res.cloudinary.com/dzwb60tk1/image/upload/v1678370732/Screenshot_36_b96qtg.png",
     title: "Multi Step Form",
     description:
       "Create beautiful multistep form Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem, id voluptates odit totam officiis omnis distinctio ex officia consequuntur in velit ad ipsum laborum illum, voluptatem dolorum, tempore eius cum!",

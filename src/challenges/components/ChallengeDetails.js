@@ -1,5 +1,7 @@
 import {
+  Button,
   Card,
+  CardActions,
   CardContent,
   CardMedia,
   Container,
@@ -32,13 +34,21 @@ const ChallengeDetails = () => {
               key={ch.id}
               sx={{
                 display: "flex",
-                flexDirection: "column",
                 alignItems: "center",
                 height: "100%",
               }}
             >
-              <CardMedia image={ch.image} sx={{ padding: "20.25%" }} />
-              <CardContent sx={{ flexGrow: "1" }}>
+              <CardMedia
+                image={ch.image}
+                sx={{ padding: "18.25%", width: "100%" }}
+              />
+              <CardContent
+                sx={{
+                  flexDirection: "column",
+                  display: "flex",
+                  gap: "1.2em",
+                }}
+              >
                 <Typography variant="h4">{ch.title}</Typography>
                 <Typography variant="p" color="textSecondary">
                   {ch.description}
@@ -62,6 +72,9 @@ const ChallengeDetails = () => {
                     {ch.difficulty}
                   </Typography>
                 </Box>
+                <Button variant="contained" size="large" sx={{}}>
+                  Start challenge
+                </Button>
               </CardContent>
             </Card>
           ))}
