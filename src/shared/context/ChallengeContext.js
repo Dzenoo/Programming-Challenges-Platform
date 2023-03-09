@@ -9,7 +9,7 @@ const Challenges = [
       "https://res.cloudinary.com/dzwb60tk1/image/upload/v1678370732/Screenshot_36_b96qtg.png",
     title: "Multi Step Form",
     description:
-      "Create beautiful multistep form Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem, id voluptates odit totam officiis omnis distinctio ex officia consequuntur in velit ad ipsum laborum illum, voluptatem dolorum, tempore eius cum!",
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis odit itaque molestias perspiciatis deserunt voluptatem tenetur adipisci nisi laboriosam quas fugit dignissimos vel minima, maxime at temporibus, consectetur nemo. Earum!",
     difficulty: "Advanced",
     technologies: ["React"],
     xp: 20,
@@ -29,10 +29,10 @@ const Challenges = [
   {
     id: "2",
     image:
-      "https://res.cloudinary.com/dzwb60tk1/image/upload/v1676482330/Untitled_design_3_giwyy7.png",
+      "https://res.cloudinary.com/dzwb60tk1/image/upload/v1678371740/Screenshot_37_sfc7d3.png",
     title: "Weather App",
     description:
-      "Create beautiful weather app Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem, id voluptates odit totam officiis omnis distinctio ex officia consequuntur in velit ad ipsum laborum illum, voluptatem dolorum, tempore eius cum!",
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis odit itaque molestias perspiciatis deserunt voluptatem tenetur adipisci nisi laboriosam quas fugit dignissimos vel minima, maxime at temporibus, consectetur nemo. Earum!",
     difficulty: "Beginner",
     technologies: ["JavaScript", "Css", "Html"],
     acceptableFiles: [".zip", ".rar"],
@@ -52,10 +52,10 @@ const Challenges = [
   {
     id: "3",
     image:
-      "https://res.cloudinary.com/dzwb60tk1/image/upload/v1676482330/Untitled_design_3_giwyy7.png",
+      "https://res.cloudinary.com/dzwb60tk1/image/upload/v1678371731/Screenshot_38_istpfy.png",
     title: "Login Page",
     description:
-      "Create beautiful Login page Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem, id voluptates odit totam officiis omnis distinctio ex officia consequuntur in velit ad ipsum laborum illum, voluptatem dolorum, tempore eius cum!",
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis odit itaque molestias perspiciatis deserunt voluptatem tenetur adipisci nisi laboriosam quas fugit dignissimos vel minima, maxime at temporibus, consectetur nemo. Earum!",
     difficulty: "Advanced",
     technologies: ["Html", "Css"],
     acceptableFiles: [".zip", ".rar"],
@@ -75,11 +75,10 @@ const Challenges = [
   {
     id: "4",
     image:
-      "https://res.cloudinary.com/dzwb60tk1/image/upload/v1676482330/Untitled_design_3_giwyy7.png",
-
+      "https://res.cloudinary.com/dzwb60tk1/image/upload/v1678371730/Screenshot_39_at4ac8.png",
     title: "Social Media Application API",
     description:
-      "Create beautiful Social app Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem, id voluptates odit totam officiis omnis distinctio ex officia consequuntur in velit ad ipsum laborum illum, voluptatem dolorum, tempore eius cum!",
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis odit itaque molestias perspiciatis deserunt voluptatem tenetur adipisci nisi laboriosam quas fugit dignissimos vel minima, maxime at temporibus, consectetur nemo. Earum!",
     difficulty: "Expert",
     technologies: ["Node Js"],
     acceptableFiles: [".zip", ".rar"],
@@ -99,11 +98,10 @@ const Challenges = [
   {
     id: "5",
     image:
-      "https://res.cloudinary.com/dzwb60tk1/image/upload/v1676482330/Untitled_design_3_giwyy7.png",
-
-    title: "Social Media Application API",
+      "https://res.cloudinary.com/dzwb60tk1/image/upload/v1678371731/Screenshot_40_wq5ipo.png",
+    title: "Navbar",
     description:
-      "Create beautiful Social app Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem, id voluptates odit totam officiis omnis distinctio ex officia consequuntur in velit ad ipsum laborum illum, voluptatem dolorum, tempore eius cum!",
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis odit itaque molestias perspiciatis deserunt voluptatem tenetur adipisci nisi laboriosam quas fugit dignissimos vel minima, maxime at temporibus, consectetur nemo. Earum!",
     difficulty: "Expert",
     technologies: ["Html", "Css"],
     acceptableFiles: [".zip", ".rar"],
@@ -123,11 +121,10 @@ const Challenges = [
   {
     id: "6",
     image:
-      "https://res.cloudinary.com/dzwb60tk1/image/upload/v1676482330/Untitled_design_3_giwyy7.png",
-
-    title: "Social Media Application API",
+      "https://res.cloudinary.com/dzwb60tk1/image/upload/v1678371814/exp_ibocbg.png",
+    title: "Expenses App",
     description:
-      "Create beautiful Social app Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem, id voluptates odit totam officiis omnis distinctio ex officia consequuntur in velit ad ipsum laborum illum, voluptatem dolorum, tempore eius cum!",
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis odit itaque molestias perspiciatis deserunt voluptatem tenetur adipisci nisi laboriosam quas fugit dignissimos vel minima, maxime at temporibus, consectetur nemo. Earum!",
     difficulty: "Expert",
     technologies: ["Html", "Css"],
     acceptableFiles: [".zip", ".rar"],
@@ -147,10 +144,10 @@ const Challenges = [
   {
     id: "7",
     image:
-      "https://res.cloudinary.com/dzwb60tk1/image/upload/v1676482330/Untitled_design_3_giwyy7.png",
-    title: "Social Media Application API",
+      "https://res.cloudinary.com/dzwb60tk1/image/upload/v1678371853/netlfixcl_qp3xjh.png",
+    title: "Netflix clone",
     description:
-      "Create beautiful Social app Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem, id voluptates odit totam officiis omnis distinctio ex officia consequuntur in velit ad ipsum laborum illum, voluptatem dolorum, tempore eius cum!",
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis odit itaque molestias perspiciatis deserunt voluptatem tenetur adipisci nisi laboriosam quas fugit dignissimos vel minima, maxime at temporibus, consectetur nemo. Earum!",
     difficulty: "Expert",
     technologies: ["Html", "Css"],
     acceptableFiles: [".zip", ".rar"],
