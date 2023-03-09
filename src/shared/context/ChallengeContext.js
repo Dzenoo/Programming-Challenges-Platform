@@ -168,28 +168,29 @@ const Challenges = [
 
 export const ChallengeProvider = ({ children }) => {
   const [challenges, setChallenges] = useState(Challenges);
-  const newChallenges = [...Challenges];
 
   // Find challenge by technology
-  const filterChallenges = (enteredFilter) => {
-    const filteredChallenges = newChallenges.filter((c) =>
-      c.technologies.includes(enteredFilter)
-    );
-    setChallenges(filteredChallenges);
+  const filterChallenges = (technology, difficulty) => {
+    const filteredChallenges = Challenges.filter((c) => {
+      if (technology && !c.technologies.includes(technology)) {
+        return false;
+      }
+      if (difficulty && c.difficulty !== difficulty) {
+        return false;
+      }
+      return true;
+    });
+
+    if (filteredChallenges.length === 0) {
+      window.alert(`No challenges found for ${technology} ${difficulty}`);
+    } else {
+      setChallenges(filteredChallenges);
+    }
   };
 
   // Find All Challenges
   const challengesHandler = () => {
     setChallenges(Challenges);
-  };
-
-  // Find By Difficulty
-
-  const findByDifficulty = (enteredDif) => {
-    const difChallenges = newChallenges.filter(
-      (c) => c.difficulty === enteredDif
-    );
-    setChallenges(difChallenges);
   };
 
   return (
@@ -198,7 +199,6 @@ export const ChallengeProvider = ({ children }) => {
         challenges,
         filterChallenges,
         challengesHandler,
-        findByDifficulty,
       }}
     >
       {children}
