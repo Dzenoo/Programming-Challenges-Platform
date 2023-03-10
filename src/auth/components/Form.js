@@ -1,15 +1,21 @@
+import React, { useState } from "react";
 import {
   Button,
   Card,
   CardContent,
   CardMedia,
-  TextField,
+  Container,
   Typography,
 } from "@mui/material";
-import { Container } from "@mui/system";
-import formImg from "../../assets/form.png";
-import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import Input from "./Input";
+import formImg from "../../assets/form.png";
+import {
+  VALIDATOR_EMAIL,
+  VALIDATOR_MATCH,
+  VALIDATOR_MINLENGTH,
+  VALIDATOR_REQUIRE,
+} from "../../shared/util/validate";
 
 const Form = () => {
   const [authMode, setAuthMode] = useState(true);
@@ -47,18 +53,61 @@ const Form = () => {
               recommendations, progress tracking, and community features.
             </Typography>
             <form className="auth_form">
+              {/* FIRST NAME */}
               {authMode && (
-                <TextField label="First Name" id="First Name" margin="normal" />
+                <Input
+                  validators={[VALIDATOR_REQUIRE()]}
+                  label="First Name"
+                  type="text"
+                  errorText="Please enter valid first name (not empty)"
+                />
               )}
+
+              {/* LAST NAME */}
               {authMode && (
-                <TextField label="Last Name" id="Last Name" margin="normal" />
+                <Input
+                  validators={[VALIDATOR_REQUIRE()]}
+                  type="text"
+                  errorText="Please enter valid last name (not empty)"
+                  label="Last Name"
+                />
               )}
-              <TextField label="Email" id="Email" margin="normal" />
-              {authMode && <TextField label="Number" type="number" />}
-              <TextField label="Password" type="password" />
+
+              {/*  USERNAME */}
               {authMode && (
-                <TextField label="Confirm Password" type="password" />
+                <Input
+                  validators={[VALIDATOR_MINLENGTH(3)]}
+                  errorText="Please enter valid username (min. 3)"
+                  label="Username"
+                  type="text"
+                />
               )}
+
+              {/* EMAIL */}
+              <Input
+                validators={[VALIDATOR_EMAIL()]}
+                errorText="Please enter valid email (include @ and .com)"
+                label="Email"
+                type="email"
+              />
+
+              {/* NUMBER */}
+              {authMode && (
+                <Input
+                  validators={[VALIDATOR_MINLENGTH(6)]}
+                  label="Number"
+                  errorText="Please enter valid number (min. 6)"
+                  type="number"
+                />
+              )}
+              {/* PASSWORD */}
+              <Input
+                validators={[VALIDATOR_MINLENGTH(6)]}
+                label="Password"
+                errorText="Please enter valid passsword (min. 6)"
+                type="password"
+              />
+
               <Button variant="contained" size="large" type="submit">
                 {authMode ? "Create Account" : "Login"}
               </Button>
