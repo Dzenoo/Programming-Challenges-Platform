@@ -130,7 +130,6 @@ export const routes = (
           <>
             <NavContainer value={3} />
             <ProfilePage />
-            <Footer />
           </>
         }
       />
