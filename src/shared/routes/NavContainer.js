@@ -27,7 +27,7 @@ export default function NavContainer({ value }) {
         <Tab label="Challenges" component={Link} to="/challenges" />
         <Tab label="Blog" component={Link} to="/tutorials" />
         <Tab label="Profile" component={Link} to="/profile" />
-        <Tab label="Leaderboard" component={Link} to="/home" />
+        <Tab label="Leaderboard" component={Link} to="/leaderboard" />
         <Tab label="Community" component={Link} to="/home" />
         <Tab label="Pricing" component={Link} to="/pricing" />
       </Tabs>
