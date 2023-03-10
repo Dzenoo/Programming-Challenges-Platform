@@ -8,14 +8,14 @@ import {
   Typography,
 } from "@mui/material";
 import { Link } from "react-router-dom";
-import Input from "./Input";
-import formImg from "../../assets/form.png";
+import { useForm } from "../../shared/hooks/formhook";
 import {
   VALIDATOR_EMAIL,
   VALIDATOR_MINLENGTH,
   VALIDATOR_REQUIRE,
 } from "../../shared/util/validate";
-import { useForm } from "../../shared/hooks/formhook";
+import formImg from "../../assets/form.png";
+import Input from "./Input";
 
 const Form = () => {
   const [authMode, setAuthMode] = useState(true);
@@ -86,11 +86,11 @@ const Form = () => {
             {authMode && (
               <Input
                 validators={[VALIDATOR_REQUIRE()]}
+                onInput={inputHandler}
                 label="First Name"
                 type="text"
                 errorText="Please enter valid first name (not empty)"
                 id="first_name"
-                onInput={inputHandler}
               />
             )}
 
@@ -98,11 +98,11 @@ const Form = () => {
             {authMode && (
               <Input
                 validators={[VALIDATOR_REQUIRE()]}
+                onInput={inputHandler}
+                label="Last Name"
                 type="text"
                 errorText="Please enter valid last name (not empty)"
                 id="last_name"
-                onInput={inputHandler}
-                label="Last Name"
               />
             )}
 
@@ -110,42 +110,42 @@ const Form = () => {
             {authMode && (
               <Input
                 validators={[VALIDATOR_MINLENGTH(3)]}
+                onInput={inputHandler}
+                type="text"
                 errorText="Please enter valid username (min. 3)"
                 label="Username"
-                onInput={inputHandler}
                 id="user_name"
-                type="text"
               />
             )}
 
             {/* EMAIL */}
             <Input
               validators={[VALIDATOR_EMAIL()]}
-              errorText="Please enter valid email (include @ and .com)"
               onInput={inputHandler}
-              id="email"
-              label="Email"
               type="email"
+              errorText="Please enter valid email (include @ and .com)"
+              label="Email"
+              id="email"
             />
 
             {/* NUMBER */}
             {authMode && (
               <Input
                 validators={[VALIDATOR_MINLENGTH(6)]}
-                label="Number"
-                errorText="Please enter valid number (min. 6)"
                 onInput={inputHandler}
                 type="number"
+                errorText="Please enter valid number (min. 6)"
+                label="Number"
                 id="number"
               />
             )}
             {/* PASSWORD */}
             <Input
               validators={[VALIDATOR_MINLENGTH(6)]}
-              label="Password"
-              errorText="Please enter valid passsword (min. 6)"
               onInput={inputHandler}
               type="password"
+              errorText="Please enter valid passsword (min. 6)"
+              label="Password"
               id="password"
             />
 
