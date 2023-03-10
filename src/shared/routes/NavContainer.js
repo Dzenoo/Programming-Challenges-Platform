@@ -32,8 +32,14 @@ export default function NavContainer({ value }) {
         <Tab label="Pricing" component={Link} to="/pricing" />
       </Tabs>
       <div style={buttonsStyle}>
-        <Button variant="contained">Login</Button>
-        <Button variant="outlined">Register</Button>
+        <Link
+          to="/signin"
+          style={{ textDecoration: "none", marginRight: "20px" }}
+        >
+          <Button variant="contained" size="large">
+            Sign in
+          </Button>
+        </Link>
       </div>
     </AppBar>
   );

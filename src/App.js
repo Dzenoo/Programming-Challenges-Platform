@@ -50,6 +50,16 @@ const PricingPage = React.lazy(() =>
     }),
   ]).then(([m]) => m)
 );
+const AuthPage = React.lazy(() =>
+  Promise.all([
+    import("./auth/pages/AuthPage"),
+    new Promise((resolve) => {
+      setTimeout(() => {
+        resolve();
+      }, 30);
+    }),
+  ]).then(([m]) => m)
+);
 
 function App() {
   return (
@@ -104,9 +114,7 @@ function App() {
               />
               <Route path="/tutorials/:tid" element={<TutorialDetails />} />
               <Route path="/challenges/:cid" element={<ChallengeDetails />} />
-              <Route path="/profile" />
-              <Route path="/login" />
-              <Route path="/signup" />
+              <Route path="/signin" element={<AuthPage />} />
               <Route path="*" element={<Navigate to="/" />} />
             </Route>
           </Routes>
