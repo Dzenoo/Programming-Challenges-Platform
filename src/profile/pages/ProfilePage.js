@@ -1,9 +1,10 @@
 import { Container } from "@mui/material";
 import React, { useState } from "react";
 import ProfileContent from "../components/ProfileContent";
-import ProfileSidebar from "../components/ProfileSidebar";
+import ProfileSidebar from "./ProfileSidebar";
 import ProfileAchievements from "../components/ProfileAchievements";
 import ProfilePlan from "../components/ProfilePlan";
+import ProfileChallenges from "../components/ProfileChallenges";
 
 const ProfilePage = () => {
   const [currentPage, setcurrentPage] = useState(0);
@@ -14,7 +15,7 @@ const ProfilePage = () => {
 
   return (
     <Container
-      maxWidth="md"
+      maxWidth="xl"
       sx={{
         display: "flex",
         padding: "40px 0",
@@ -24,7 +25,8 @@ const ProfilePage = () => {
       <ProfileSidebar onFilterPage={activePageHandler} />
       {currentPage === "0" && <ProfileContent />}
       {currentPage === "1" && <ProfileAchievements />}
-      {currentPage === "2" && <ProfilePlan />}
+      {currentPage === "2" && <ProfileChallenges />}
+      {currentPage === "3" && <ProfilePlan />}
     </Container>
   );
 };
