@@ -23,10 +23,10 @@ const ProfilePage = () => {
       }}
     >
       <ProfileSidebar onFilterPage={activePageHandler} />
-      {currentPage === "0" && <ProfileContent />}
-      {currentPage === "1" && <ProfileAchievements />}
-      {currentPage === "2" && <ProfileChallenges />}
-      {currentPage === "3" && <ProfilePlan />}
+      {currentPage === 0 && <ProfileContent />}
+      {currentPage === 1 && <ProfileAchievements />}
+      {currentPage === 2 && <ProfileChallenges />}
+      {currentPage === 3 && <ProfilePlan />}
     </Container>
   );
 };

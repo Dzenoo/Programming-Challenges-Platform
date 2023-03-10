@@ -17,22 +17,22 @@ import BookIcon from "@mui/icons-material/Book";
 
 const ListItems = [
   {
-    id: "0",
+    id: 0,
     name: "Profile",
     icon: <SettingsIcon />,
   },
   {
-    id: "1",
+    id: 1,
     name: "Achievements",
     icon: <EmojiEventsIcon />,
   },
   {
-    id: "2",
+    id: 2,
     name: "Challenges",
     icon: <BookmarksIcon />,
   },
   {
-    id: "3",
+    id: 3,
     name: "Plan",
     icon: <LocalOfferIcon />,
   },

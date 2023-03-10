@@ -169,6 +169,7 @@ const Challenges = [
 
 export const ChallengeProvider = ({ children }) => {
   const [challenges, setChallenges] = useState(Challenges);
+  const [startedChallenges, setstartedChallenges] = useState([]);
 
   // Find challenge by technology
   const filterChallenges = (technology, difficulty) => {
@@ -196,12 +197,26 @@ export const ChallengeProvider = ({ children }) => {
     setChallenges(Challenges);
   };
 
+  // Start Challenge
+  const startChallenge = (newChallenge) => {
+    setstartedChallenges([
+      ...startedChallenges,
+      {
+        id: newChallenge.id,
+        title: newChallenge.title,
+        image: newChallenge.image,
+      },
+    ]);
+  };
+
   return (
     <ChallengeContext.Provider
       value={{
         challenges,
         filterChallenges,
         challengesHandler,
+        startChallenge,
+        startedChallenges,
       }}
     >
       {children}

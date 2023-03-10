@@ -20,7 +20,7 @@ import "../css/challenges.css";
 
 const ChallengeDetails = () => {
   const challengesCtx = useContext(ChallengeContext);
-  const { challenges } = challengesCtx;
+  const { challenges, startChallenge } = challengesCtx;
   const chId = useParams().cid;
   const challenge = challenges.filter((c) => c.id === chId);
 
@@ -71,7 +71,12 @@ const ChallengeDetails = () => {
                     {ch.difficulty}
                   </Typography>
                 </Box>
-                <Button variant="contained" size="large" sx={{}}>
+                <Button
+                  onClick={() => startChallenge(ch)}
+                  variant="contained"
+                  size="large"
+                  sx={{}}
+                >
                   Start challenge
                 </Button>
               </CardContent>
