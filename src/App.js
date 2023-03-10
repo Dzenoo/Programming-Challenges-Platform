@@ -81,6 +81,7 @@ function App() {
                   <>
                     <NavContainer value={0} />
                     <HomePage />
+                    <Footer />
                   </>
                 }
               />
@@ -90,6 +91,7 @@ function App() {
                   <>
                     <NavContainer value={1} />
                     <ChallengesPage />
+                    <Footer />
                   </>
                 }
               />
@@ -99,6 +101,7 @@ function App() {
                   <>
                     <NavContainer value={2} />
                     <BlogPage />
+                    <Footer />
                   </>
                 }
               />
@@ -109,6 +112,7 @@ function App() {
                   <>
                     <NavContainer value={6} />
                     <PricingPage />
+                    <Footer />
                   </>
                 }
               />
@@ -118,7 +122,6 @@ function App() {
               <Route path="*" element={<Navigate to="/" />} />
             </Route>
           </Routes>
-          <Footer />
         </React.Suspense>
       </AppProvider>
     </>
