@@ -1,4 +1,4 @@
-import React, { useReducer } from "react";
+import React, { useEffect, useReducer } from "react";
 import { validate } from "../../shared/util/validate";
 import { TextField } from "@mui/material";
 
@@ -31,6 +31,13 @@ const Input = (props) => {
     isTouched: false,
     isValid: true,
   });
+
+  const { id, onInput } = props;
+  const { value, isValid } = inputState;
+
+  useEffect(() => {
+    onInput(id, value, isValid);
+  }, [id, value, isValid, onInput]);
 
   const inputChangeHandler = (e) => {
     dispatch({
