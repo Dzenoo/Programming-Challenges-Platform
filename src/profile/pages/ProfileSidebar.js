@@ -12,8 +12,6 @@ import EmojiEventsIcon from "@mui/icons-material/EmojiEvents";
 import BookmarksIcon from "@mui/icons-material/Bookmarks";
 import LocalOfferIcon from "@mui/icons-material/LocalOffer";
 import SettingsIcon from "@mui/icons-material/Settings";
-import LeaderboardIcon from "@mui/icons-material/Leaderboard";
-import BookIcon from "@mui/icons-material/Book";
 
 const ListItems = [
   {

@@ -1,12 +1,4 @@
-import {
-  Card,
-  Grid,
-  InputLabel,
-  List,
-  ListItem,
-  TextField,
-  Typography,
-} from "@mui/material";
+import { Card, Grid, InputLabel, TextField } from "@mui/material";
 import React from "react";
 
 const ProfileContent = () => {

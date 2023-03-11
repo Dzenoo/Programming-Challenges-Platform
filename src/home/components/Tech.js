@@ -9,7 +9,7 @@ import nodejs from "../../assets/nodejs.png";
 import sass from "../../assets/sass.png";
 import { Link } from "react-router-dom";
 import { Button, Typography } from "@mui/material";
-import { Box, Container } from "@mui/system";
+import { Box } from "@mui/system";
 
 const images = [html, css, react, javascript, nodejs, sass];
 

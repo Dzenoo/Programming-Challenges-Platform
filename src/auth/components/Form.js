@@ -19,7 +19,7 @@ import Input from "./Input";
 
 const Form = () => {
   const [authMode, setAuthMode] = useState(true);
-  const [formState, inputHandler] = useForm(
+  const [inputHandler] = useForm(
     {
       first_name: {
         value: "",

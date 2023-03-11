@@ -8,7 +8,6 @@ const TutorialDetails = () => {
   const { tutorials } = tutorialCtx;
   const tutorialId = useParams().tid;
   const currTutorial = tutorials.filter((tut) => tut.id === tutorialId);
-
   return (
     <>
       <div className="tutorials_details_wrapper">
