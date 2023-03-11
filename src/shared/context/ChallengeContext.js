@@ -169,7 +169,9 @@ const Challenges = [
 
 export const ChallengeProvider = ({ children }) => {
   const [challenges, setChallenges] = useState(Challenges);
-  const [startedChallenges, setstartedChallenges] = useState([]);
+  const [startedChallenges, setstartedChallenges] = useState(
+    JSON.parse(localStorage.getItem("challenges")) || []
+  );
 
   // Find challenge by technology
   const filterChallenges = (technology, difficulty) => {
@@ -199,15 +201,10 @@ export const ChallengeProvider = ({ children }) => {
 
   // Start Challenge
   const startChallenge = (newChallenge) => {
-    setstartedChallenges([
-      ...startedChallenges,
-      {
-        id: newChallenge.id,
-        title: newChallenge.title,
-        image: newChallenge.image,
-        description: newChallenge.description,
-      },
-    ]);
+    const updatedChallenges = [...startedChallenges, { ...newChallenge }];
+    setstartedChallenges(updatedChallenges);
+
+    localStorage.setItem("challenges", JSON.stringify(updatedChallenges));
   };
 
   return (

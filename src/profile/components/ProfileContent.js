@@ -4,8 +4,8 @@ import React from "react";
 const ProfileContent = () => {
   return (
     <Card>
-      <Grid container lg={6} alignItems="center" spacing={2} padding={2}>
-        <Grid item>
+      <Grid container alignItems="center" spacing={2} padding={2}>
+        <Grid item lg={6}>
           <InputLabel>First Name</InputLabel>
           <TextField
             InputProps={{
