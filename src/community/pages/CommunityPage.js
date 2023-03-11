@@ -1,8 +1,14 @@
-import { Typography } from "@mui/material";
 import React from "react";
+import Comment from "../components/Comment";
+import Post from "../components/Post";
 
 const CommunityPage = () => {
-  return <Typography variant="h1">Get on our discord</Typography>;
+  return (
+    <>
+      <Post />
+      <Comment />
+    </>
+  );
 };
 
 export default CommunityPage;
