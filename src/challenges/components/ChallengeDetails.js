@@ -27,7 +27,7 @@ const ChallengeDetails = () => {
   return (
     <Container maxWidth="lg" sx={{ padding: "40px 0" }}>
       <Grid container spacing={4} sx={{ display: "flex" }}>
-        <Grid item>
+        <Grid item xs={12}>
           {challenge.map((ch) => (
             <Card
               key={ch.id}
@@ -36,10 +36,11 @@ const ChallengeDetails = () => {
                 alignItems: "center",
                 height: "100%",
               }}
+              className="cardChDetails"
             >
               <CardMedia
                 image={ch.image}
-                sx={{ padding: "18.25%", width: "100%" }}
+                sx={{ padding: "28.25%", width: "100%" }}
               />
               <CardContent
                 sx={{
