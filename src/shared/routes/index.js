@@ -13,7 +13,7 @@ const HomePage = React.lazy(() =>
     new Promise((resolve) => {
       setTimeout(() => {
         resolve();
-      }, 30);
+      }, 2000);
     }),
   ]).then(([m]) => m)
 );
@@ -23,7 +23,7 @@ const ChallengesPage = React.lazy(() =>
     new Promise((resolve) => {
       setTimeout(() => {
         resolve();
-      }, 30);
+      }, 2000);
     }),
   ]).then(([m]) => m)
 );
@@ -33,7 +33,7 @@ const BlogPage = React.lazy(() =>
     new Promise((resolve) => {
       setTimeout(() => {
         resolve();
-      }, 30);
+      }, 2000);
     }),
   ]).then(([m]) => m)
 );
@@ -43,7 +43,7 @@ const PricingPage = React.lazy(() =>
     new Promise((resolve) => {
       setTimeout(() => {
         resolve();
-      }, 30);
+      }, 2000);
     }),
   ]).then(([m]) => m)
 );
@@ -53,7 +53,7 @@ const AuthPage = React.lazy(() =>
     new Promise((resolve) => {
       setTimeout(() => {
         resolve();
-      }, 30);
+      }, 2000);
     }),
   ]).then(([m]) => m)
 );
@@ -63,7 +63,7 @@ const ProfilePage = React.lazy(() =>
     new Promise((resolve) => {
       setTimeout(() => {
         resolve();
-      }, 30);
+      }, 2000);
     }),
   ]).then(([m]) => m)
 );
@@ -73,7 +73,7 @@ const LeaderboardPage = React.lazy(() =>
     new Promise((resolve) => {
       setTimeout(() => {
         resolve();
-      }, 30);
+      }, 2000);
     }),
   ]).then(([m]) => m)
 );
@@ -83,7 +83,7 @@ const CommunityPage = React.lazy(() =>
     new Promise((resolve) => {
       setTimeout(() => {
         resolve();
-      }, 30);
+      }, 2000);
     }),
   ]).then(([m]) => m)
 );
