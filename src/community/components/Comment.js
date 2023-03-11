@@ -1,16 +1,12 @@
-import {
-  Button,
-  InputLabel,
-  TextareaAutosize,
-  TextField,
-  Box,
-  Typography,
-  Card,
-} from "@mui/material";
+import { Button, TextField, Box, Typography, Card } from "@mui/material";
 import { Container } from "@mui/system";
-import React from "react";
+import React, { useContext } from "react";
+import { CommunityContext } from "../../shared/context/CommunityContext";
 
 const Comment = () => {
+  const comCtx = useContext(CommunityContext);
+  const { CommentUsers } = comCtx;
+
   return (
     <Container maxWidth="md" sx={{ padding: "40px 0" }}>
       <Card
