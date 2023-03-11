@@ -18,7 +18,7 @@ const ChallengeItem = ({ challenges }) => {
     <Container maxWidth="xl" sx={{ padding: "60px 0" }}>
       <Grid container spacing={4} justifyContent="center">
         {challenges.map((ch) => (
-          <Grid item key={ch.id} lg={4} md={6} sm={8} xs={12}>
+          <Grid item key={ch.id} lg={4} md={6} sm={8} xs={10}>
             <Card
               sx={{
                 height: "100%",

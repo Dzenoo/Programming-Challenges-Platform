@@ -47,12 +47,15 @@ const ChallengePage = () => {
           paddingTop: "2em",
           display: "flex",
           justifyContent: "space-between",
+          gap: "2em",
           alignItems: "center",
+          flexWrap: "wrap",
         }}
       >
         <Box
           sx={{
             display: "flex",
+            flexWrap: "wrap",
             gap: "2em",
             alignItems: "center",
           }}
