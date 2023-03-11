@@ -5,7 +5,7 @@ const ProfileContent = () => {
   return (
     <Card>
       <Grid container alignItems="center" spacing={2} padding={2}>
-        <Grid item lg={6}>
+        <Grid item lg={3}>
           <InputLabel>First Name</InputLabel>
           <TextField
             InputProps={{

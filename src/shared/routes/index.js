@@ -77,6 +77,16 @@ const LeaderboardPage = React.lazy(() =>
     }),
   ]).then(([m]) => m)
 );
+const CommunityPage = React.lazy(() =>
+  Promise.all([
+    import("../../community/pages/CommunityPage"),
+    new Promise((resolve) => {
+      setTimeout(() => {
+        resolve();
+      }, 30);
+    }),
+  ]).then(([m]) => m)
+);
 
 export const routes = (
   <Routes>
@@ -140,6 +150,17 @@ export const routes = (
           <>
             <NavContainer value={4} />
             <LeaderboardPage />
+            <Footer />
+          </>
+        }
+      />
+
+      <Route
+        path="/community"
+        element={
+          <>
+            <NavContainer value={5} />
+            <CommunityPage />
             <Footer />
           </>
         }
