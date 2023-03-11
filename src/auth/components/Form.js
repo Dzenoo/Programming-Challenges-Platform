@@ -19,7 +19,7 @@ import Input from "./Input";
 
 const Form = () => {
   const [authMode, setAuthMode] = useState(true);
-  const [inputHandler] = useForm(
+  const [formState, inputHandler] = useForm(
     {
       first_name: {
         value: "",
@@ -53,6 +53,10 @@ const Form = () => {
     setAuthMode(!authMode);
   };
 
+  const submitFormHandler = (e) => {
+    e.preventDefault();
+  };
+
   return (
     <Container maxWidth="lg" sx={{ padding: "40px 0" }}>
       <Card
@@ -81,7 +85,7 @@ const Form = () => {
             platform. Gain access to premium content, personalized
             recommendations, progress tracking, and community features.
           </Typography>
-          <form className="auth_form">
+          <form className="auth_form" onSubmit={submitFormHandler}>
             {/* FIRST NAME */}
             {authMode && (
               <Input

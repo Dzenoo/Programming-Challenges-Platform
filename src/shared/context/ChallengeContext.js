@@ -205,6 +205,7 @@ export const ChallengeProvider = ({ children }) => {
         id: newChallenge.id,
         title: newChallenge.title,
         image: newChallenge.image,
+        description: newChallenge.description,
       },
     ]);
   };
