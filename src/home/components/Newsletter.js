@@ -15,7 +15,7 @@ import "../css/Home.css";
 
 const Newsletter = ({ tutorials }) => {
   return (
-    <Container>
+    <Container className="tutorialsContainer">
       <Typography variant="h2" textAlign="center">
         Browse some blog
       </Typography>

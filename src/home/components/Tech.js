@@ -24,6 +24,7 @@ const Tech = () => {
         gap: "2em",
         alignItems: "center",
       }}
+      className="boxIcons"
     >
       <Typography variant="h2">Technologies We Cover</Typography>
       <Typography variant="p">
@@ -34,7 +35,6 @@ const Tech = () => {
         sx={{
           display: "flex",
           justifyContent: "center",
-          margin: "auto",
           flexWrap: "wrap",
         }}
       >

@@ -4,7 +4,7 @@ import React from "react";
 const Footer = () => {
   return (
     <Grid container spacing={2} padding={2} sx={{ backgroundColor: "#fff" }}>
-      <Grid item xs={4}>
+      <Grid item xs={12}>
         <Typography variant="h4">About Us</Typography>
         <Typography variant="p">
           Codinghero is your go-to source for programming tutorials and blogs.
@@ -12,7 +12,7 @@ const Footer = () => {
           latest trends in programming.
         </Typography>
       </Grid>
-      <Grid item xs={4}>
+      <Grid item xs={12}>
         <Typography variant="h4">Contact Us</Typography>
         <Typography variant="p">
           If you have any questions or feedback, please don't hesitate to get in
@@ -20,7 +20,7 @@ const Footer = () => {
           following us on social media.
         </Typography>
       </Grid>
-      <Grid item xs={4}>
+      <Grid item xs={12}>
         <Typography variant="h4">Stay Connected</Typography>
         <Typography variant="p">
           Follow us on social media to stay up-to-date with the latest tutorials

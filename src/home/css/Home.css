@@ -6,21 +6,36 @@
   padding: 120px;
 }
 
+@media (max-width: 947px) {
+  .hero_section {
+    padding: 60px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero_section h2 {
+    font-size: 2.75rem;
+  }
+}
+
+@media (max-width: 425px) {
+  .hero_section {
+    background-image: none;
+    padding: 60px 0;
+  }
+
+  .boxIcons {
+    padding: 0 10px !important;
+    margin-top: 60px;
+  }
+
+  .tutorialsContainer {
+    margin-top: 60px;
+  }
+}
+
 .ch {
   color: #fcbf49;
-}
-
-.newsletter {
-  background-color: #fcbf49;
-  padding: 100px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-}
-
-.newsletter a {
-  text-decoration: none;
 }
 
 .btn_link {
