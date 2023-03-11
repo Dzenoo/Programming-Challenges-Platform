@@ -15,4 +15,8 @@ span.expert {
   .cardChDetails {
     flex-direction: column;
   }
+
+  .cardImgCh {
+    padding: 28.26%;
+  }
 }

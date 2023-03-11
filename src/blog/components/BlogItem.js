@@ -19,7 +19,7 @@ const TutorialItem = ({ tutorials }) => {
     <Container maxWidth="xl" sx={{ padding: "20px 0" }}>
       <Grid container spacing={4} justifyContent="center">
         {tutorials.map((tutorial) => (
-          <Grid item key={tutorial.id} lg={4} md={6} sm={8} xs={12}>
+          <Grid item key={tutorial.id} lg={4} md={6} sm={8} xs={10}>
             <Card
               sx={{ display: "flex", flexDirection: "column", height: "100%" }}
             >

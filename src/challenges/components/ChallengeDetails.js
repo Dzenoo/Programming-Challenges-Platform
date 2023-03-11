@@ -40,7 +40,8 @@ const ChallengeDetails = () => {
             >
               <CardMedia
                 image={ch.image}
-                sx={{ padding: "28.25%", width: "100%" }}
+                sx={{ padding: "18.25%", width: "100%" }}
+                className="cardImgCh"
               />
               <CardContent
                 sx={{
