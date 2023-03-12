@@ -15,11 +15,13 @@ import AssessmentIcon from "@mui/icons-material/Assessment";
 import { Box } from "@mui/system";
 import { Link, useParams } from "react-router-dom";
 import { ChallengeContext } from "../../shared/context/ChallengeContext";
+import { AuthContext } from "../../shared/context/AuthContext";
 import WebAssetIcon from "@mui/icons-material/WebAsset";
 import "../css/challenges.css";
 
 const ChallengeDetails = () => {
   const challengesCtx = useContext(ChallengeContext);
+  const auth = useContext(AuthContext);
   const { challenges, startChallenge } = challengesCtx;
   const chId = useParams().cid;
   const challenge = challenges.filter((c) => c.id === chId);
@@ -73,14 +75,21 @@ const ChallengeDetails = () => {
                     {ch.difficulty}
                   </Typography>
                 </Box>
-                <Button
-                  onClick={() => startChallenge(ch)}
-                  variant="contained"
-                  size="large"
-                  sx={{}}
-                >
-                  Start challenge
-                </Button>
+
+                {auth.isLoggedIn && (
+                  <Button
+                    onClick={() => startChallenge(ch)}
+                    variant="contained"
+                    size="large"
+                    sx={{}}
+                  >
+                    Start challenge
+                  </Button>
+                )}
+
+                {!auth.isLoggedIn && (
+                  <Typography>Log in to do challenge</Typography>
+                )}
               </CardContent>
             </Card>
           ))}

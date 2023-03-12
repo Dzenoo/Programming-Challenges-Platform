@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import {
   Button,
   Card,
@@ -7,7 +7,7 @@ import {
   Container,
   Typography,
 } from "@mui/material";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "../../shared/hooks/formhook";
 import {
   VALIDATOR_EMAIL,
@@ -16,9 +16,12 @@ import {
 } from "../../shared/util/validate";
 import formImg from "../../assets/form.png";
 import Input from "./Input";
+import { AuthContext } from "../../shared/context/AuthContext";
+import { FadeLoader } from "react-spinners";
 
 const Form = () => {
   const [authMode, setAuthMode] = useState(true);
+  const [isLoading, setisLoading] = useState(false);
   const [formState, inputHandler] = useForm(
     {
       first_name: {
@@ -48,17 +51,79 @@ const Form = () => {
     },
     false
   );
+  const auth = useContext(AuthContext);
+  const navigate = useNavigate();
 
   const switchMode = () => {
     setAuthMode(!authMode);
   };
 
-  const submitFormHandler = (e) => {
+  const submitFormHandler = async (e) => {
     e.preventDefault();
+
+    setisLoading(true);
+
+    if (authMode) {
+      try {
+        const response = await fetch("http://localhost:8000/api/users/signup", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            first_name: formState.inputs.first_name.value,
+            last_name: formState.inputs.last_name.value,
+            user_name: formState.inputs.user_name.value,
+            email: formState.inputs.email.value,
+            number: formState.inputs.number.value,
+            password: formState.inputs.password.value,
+          }),
+        });
+
+        const responseData = await response.json();
+
+        if (!response.ok) {
+          throw new Error(responseData.message);
+        }
+
+        auth.login(responseData.userId, responseData.token);
+        setisLoading(false);
+        navigate("/");
+      } catch (err) {
+        setisLoading(false);
+        console.log(err.message);
+      }
+    } else {
+      try {
+        const response = await fetch("http://localhost:8000/api/users/login", {
+          method: "POST",
+          body: JSON.stringify({
+            email: formState.inputs.email.value,
+            password: formState.inputs.password.value,
+          }),
+          headers: { "Content-Type": "application/json" },
+        });
+
+        const responseData = await response.json();
+
+        if (!response.ok) {
+          throw new Error(responseData.message);
+        }
+
+        auth.login(responseData.userId, responseData.token);
+        navigate("/");
+      } catch (err) {
+        setisLoading(false);
+        console.log(err.message);
+      }
+    }
   };
 
   return (
     <Container maxWidth="lg" sx={{ padding: "40px 0" }}>
+      {isLoading && (
+        <div className="loader">
+          <FadeLoader color={"#1976d2"} size={30} />
+        </div>
+      )}
       <Card
         sx={{
           height: "100%",

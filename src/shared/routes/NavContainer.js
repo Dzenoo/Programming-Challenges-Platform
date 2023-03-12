@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { AppBar, Tabs, Tab, Toolbar, Button, Typography } from "@mui/material";
-
+import { useContext } from "react";
+import { AuthContext } from "../context/AuthContext";
 const appBarStyle = {
   backgroundColor: "#fff",
   display: "flex",
@@ -15,6 +16,8 @@ const buttonsStyle = {
 };
 
 export default function NavContainer({ value }) {
+  const auth = useContext(AuthContext);
+
   return (
     <AppBar position="static" style={appBarStyle}>
       <Toolbar>
@@ -26,20 +29,42 @@ export default function NavContainer({ value }) {
         <Tab label="Home" component={Link} to="/home" />
         <Tab label="Challenges" component={Link} to="/challenges" />
         <Tab label="Blog" component={Link} to="/tutorials" />
-        <Tab label="Profile" component={Link} to="/profile" />
-        <Tab label="Leaderboard" component={Link} to="/leaderboard" />
-        <Tab label="Community" component={Link} to="/community" />
+        {auth.isLoggedIn && (
+          <Tab label="Profile" component={Link} to="/profile" />
+        )}
+
+        {auth.isLoggedIn && (
+          <Tab label="Leaderboard" component={Link} to="/leaderboard" />
+        )}
+
+        {auth.isLoggedIn && (
+          <Tab label="Community" component={Link} to="/community" />
+        )}
+
         <Tab label="Pricing" component={Link} to="/pricing" />
       </Tabs>
       <div style={buttonsStyle}>
-        <Link
-          to="/signin"
-          style={{ textDecoration: "none", marginRight: "20px" }}
-        >
-          <Button variant="contained" size="large">
-            Sign in
+        {!auth.isLoggedIn && (
+          <Link
+            to="/signin"
+            style={{ textDecoration: "none", marginRight: "20px" }}
+          >
+            <Button variant="contained" size="large">
+              Sign In
+            </Button>
+          </Link>
+        )}
+
+        {auth.isLoggedIn && (
+          <Button
+            sx={{ textDecoration: "none", marginRight: "20px" }}
+            variant="outlined"
+            size="large"
+            onClick={auth.logout}
+          >
+            Logout
           </Button>
-        </Link>
+        )}
       </div>
     </AppBar>
   );

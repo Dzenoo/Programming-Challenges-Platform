@@ -41,6 +41,15 @@ code {
   z-index: 30;
 }
 
+.loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #77adff44;
+  z-index: 30;
+}
+
 .linkDecoration {
   text-decoration: none;
 }
