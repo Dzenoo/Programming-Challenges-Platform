@@ -1,5 +1,6 @@
 import { Container } from "@mui/material";
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
+import { AuthContext } from "../../shared/context/AuthContext";
 import ProfileContent from "../components/ProfileContent";
 import ProfileSidebar from "./ProfileSidebar";
 import ProfileAchievements from "../components/ProfileAchievements";
@@ -8,6 +9,23 @@ import ProfileChallenges from "../components/ProfileChallenges";
 
 const ProfilePage = () => {
   const [currentPage, setcurrentPage] = useState(0);
+  const authCtx = useContext(AuthContext);
+
+  const { first_name, last_name, user_name, email, image, number } =
+    authCtx.profile;
+
+  const sidebarProps = {
+    user_name,
+    email,
+    image,
+  };
+
+  const contentProps = {
+    first_name,
+    last_name,
+    email,
+    number,
+  };
 
   const activePageHandler = (n) => {
     setcurrentPage(n);
@@ -22,8 +40,8 @@ const ProfilePage = () => {
         gap: "2em",
       }}
     >
-      <ProfileSidebar onFilterPage={activePageHandler} />
-      {currentPage === 0 && <ProfileContent />}
+      <ProfileSidebar {...sidebarProps} onFilterPage={activePageHandler} />
+      {currentPage === 0 && <ProfileContent {...contentProps} />}
       {currentPage === 1 && <ProfileAchievements />}
       {currentPage === 2 && <ProfileChallenges />}
       {currentPage === 3 && <ProfilePlan />}

@@ -30,7 +30,11 @@ export default function NavContainer({ value }) {
         <Tab label="Challenges" component={Link} to="/challenges" />
         <Tab label="Blog" component={Link} to="/tutorials" />
         {auth.isLoggedIn && (
-          <Tab label="Profile" component={Link} to="/profile" />
+          <Tab
+            label="Profile"
+            component={Link}
+            to={`/${auth.userId}/profile`}
+          />
         )}
 
         {auth.isLoggedIn && (

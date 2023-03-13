@@ -1,7 +1,10 @@
 import { Card, Grid, InputLabel, TextField } from "@mui/material";
 import React from "react";
+import PropTypes from "prop-types";
 
-const ProfileContent = () => {
+const ProfileContent = (props) => {
+  const { first_name, last_name, email, number } = props;
+
   return (
     <Card>
       <Grid container alignItems="center" spacing={2} padding={2}>
@@ -11,7 +14,7 @@ const ProfileContent = () => {
             InputProps={{
               readOnly: true,
             }}
-            value="Dzenis"
+            value={first_name}
           ></TextField>
         </Grid>
 
@@ -21,7 +24,7 @@ const ProfileContent = () => {
             InputProps={{
               readOnly: true,
             }}
-            value="Gudzevic"
+            value={last_name}
           ></TextField>
         </Grid>
 
@@ -31,7 +34,7 @@ const ProfileContent = () => {
             InputProps={{
               readOnly: true,
             }}
-            value="dgudzevic00@gmail.com"
+            value={email}
           ></TextField>
         </Grid>
 
@@ -41,7 +44,7 @@ const ProfileContent = () => {
             InputProps={{
               readOnly: true,
             }}
-            value="06006006"
+            value={number}
           ></TextField>
         </Grid>
       </Grid>
@@ -50,3 +53,10 @@ const ProfileContent = () => {
 };
 
 export default ProfileContent;
+
+ProfileContent.propTypes = {
+  first_name: PropTypes.string.isRequired,
+  last_name: PropTypes.string.isRequired,
+  email: PropTypes.string.isRequired,
+  number: PropTypes.number.isRequired,
+};

@@ -8,6 +8,7 @@ import {
   ListItem,
   Typography,
 } from "@mui/material";
+import PropTypes from "prop-types";
 import EmojiEventsIcon from "@mui/icons-material/EmojiEvents";
 import BookmarksIcon from "@mui/icons-material/Bookmarks";
 import LocalOfferIcon from "@mui/icons-material/LocalOffer";
@@ -37,6 +38,8 @@ const ListItems = [
 ];
 
 const ProfileSidebar = (props) => {
+  const { user_name, email, image } = props;
+
   return (
     <Card
       sx={{
@@ -48,13 +51,13 @@ const ProfileSidebar = (props) => {
       }}
     >
       <CardMedia
-        image="https://res.cloudinary.com/dzwb60tk1/image/upload/v1676845690/Blue_Yellow_Black_Photo_How_To_Sell_Online_Youtube_Thumbnail_illxkc.png"
+        image={image}
         sx={{ borderRadius: "100%", width: "200px", height: "200px" }}
       ></CardMedia>
       <CardContent>
-        <Typography variant="h4">Dzen00</Typography>
+        <Typography variant="h4">{user_name}</Typography>
         <Typography variant="h6" fontWeight={2} color="textSecondary">
-          dgudzevic00@gmail.com
+          {email}
         </Typography>
         <List>
           {ListItems.map((li) => (
@@ -81,3 +84,9 @@ const ProfileSidebar = (props) => {
 };
 
 export default ProfileSidebar;
+
+ProfileSidebar.propTypes = {
+  user_name: PropTypes.string.isRequired,
+  email: PropTypes.string.isRequired,
+  image: PropTypes.string.isRequired,
+};
