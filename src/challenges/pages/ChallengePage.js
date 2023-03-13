@@ -37,7 +37,7 @@ const ChallengePage = () => {
   const [{ categories, difficulties, currCategory, currDifficulty }, dispatch] =
     useReducer(reducer, initialState);
   const challengeCtx = useContext(ChallengeContext);
-  const { filterChallenges, challengesHandler, challenges } = challengeCtx;
+  const { challenges } = challengeCtx;
 
   return (
     <>
@@ -94,15 +94,13 @@ const ChallengePage = () => {
           </FormControl>
           <Button
             variant="contained"
-            onClick={() => filterChallenges(currCategory, currDifficulty)}
+            // onClick={() => filterChallenges(currCategory, currDifficulty)}
           >
             Filter
           </Button>
         </Box>
 
-        <Button variant="contained" onClick={challengesHandler}>
-          All Challenges
-        </Button>
+        <Button variant="contained">All Challenges</Button>
       </Container>
       <ChallengeItem challenges={challenges} />
       <ToastContainer />
