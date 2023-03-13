@@ -192,7 +192,6 @@ export const ChallengeProvider = ({ children }) => {
     fetchChallenges();
   }, []);
 
-  // Find challenge by technology
   const filterChallenges = (technology, difficulty) => {
     const filteredChallenges = challenges.filter((c) => {
       if (technology && !c.technologies.includes(technology)) {

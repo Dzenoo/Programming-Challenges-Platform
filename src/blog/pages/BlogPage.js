@@ -12,12 +12,17 @@ const TutorialPage = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [tutorialsPerPage] = useState(4);
   const tutorialCtx = useContext(TutorialContext);
-  const { tutorials, setInputQuery, searchTutorialsHandler, searchError } =
-    tutorialCtx;
+  const {
+    tutorials,
+    setInputQuery,
+    searchTutorialsHandler,
+    searchError,
+    selectedTutorials,
+  } = tutorialCtx;
 
   const indexOfLastTutorial = currentPage * tutorialsPerPage;
   const indexOfFirstTutorial = indexOfLastTutorial - tutorialsPerPage;
-  const currentTutorials = tutorials.slice(
+  const currentTutorials = selectedTutorials.slice(
     indexOfFirstTutorial,
     indexOfLastTutorial
   );
