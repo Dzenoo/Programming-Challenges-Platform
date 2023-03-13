@@ -38,14 +38,7 @@ const ChallengePage = () => {
   const [{ categories, difficulties, currCategory, currDifficulty }, dispatch] =
     useReducer(reducer, initialState);
   const challengeCtx = useContext(ChallengeContext);
-  const {
-    challenges,
-    filterChallenges,
-    isLoading,
-    resetChallenges,
-    filteredChallenges,
-    selectedChallenges,
-  } = challengeCtx;
+  const { filterChallenges, isLoading, selectedChallenges } = challengeCtx;
 
   return (
     <>
