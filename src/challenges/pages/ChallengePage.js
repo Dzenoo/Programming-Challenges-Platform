@@ -44,6 +44,7 @@ const ChallengePage = () => {
     isLoading,
     resetChallenges,
     filteredChallenges,
+    selectedChallenges,
   } = challengeCtx;
 
   return (
@@ -112,7 +113,7 @@ const ChallengePage = () => {
           </Button>
         </Box>
       </Container>
-      <ChallengeItem challenges={challenges} />
+      <ChallengeItem challenges={selectedChallenges} />
       <ToastContainer />
     </>
   );

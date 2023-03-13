@@ -169,6 +169,7 @@ export const ChallengeContext = React.createContext();
 
 export const ChallengeProvider = ({ children }) => {
   const [challenges, setChallenges] = useState([]);
+  const [selectedChallenges, setSelectedChallenges] = useState([]);
   const [isLoading, setisLoading] = useState(false);
 
   useEffect(() => {
@@ -182,6 +183,7 @@ export const ChallengeProvider = ({ children }) => {
         const responseData = await response.json();
 
         setChallenges(responseData.challenges);
+        setSelectedChallenges(responseData.challenges);
         setisLoading(false);
       } catch (err) {
         setisLoading(false);
@@ -193,7 +195,9 @@ export const ChallengeProvider = ({ children }) => {
   }, []);
 
   const filterChallenges = (technology, difficulty) => {
-    const filteredChallenges = challenges.filter((c) => {
+    const newChallenges = [...challenges];
+
+    const filteredChallenges = newChallenges.filter((c) => {
       if (technology && !c.technologies.includes(technology)) {
         return false;
       }
@@ -208,13 +212,13 @@ export const ChallengeProvider = ({ children }) => {
         `Don't have challenges for ${technology} with difficulty ${difficulty} `
       );
     } else {
-      setChallenges(filteredChallenges);
+      setSelectedChallenges(filteredChallenges);
     }
   };
 
   return (
     <ChallengeContext.Provider
-      value={{ challenges, filterChallenges, isLoading }}
+      value={{ challenges, filterChallenges, isLoading, selectedChallenges }}
     >
       {children}
     </ChallengeContext.Provider>
