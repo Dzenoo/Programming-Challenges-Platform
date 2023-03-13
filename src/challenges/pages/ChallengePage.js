@@ -13,6 +13,7 @@ import {
 } from "@mui/material";
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer } from "react-toastify";
+import { FadeLoader } from "react-spinners";
 
 const initialState = {
   categories: ["React", "Css", "Html", "Node Js", "JavaScript", "Scss"],
@@ -37,10 +38,21 @@ const ChallengePage = () => {
   const [{ categories, difficulties, currCategory, currDifficulty }, dispatch] =
     useReducer(reducer, initialState);
   const challengeCtx = useContext(ChallengeContext);
-  const { challenges } = challengeCtx;
+  const {
+    challenges,
+    filterChallenges,
+    isLoading,
+    resetChallenges,
+    filteredChallenges,
+  } = challengeCtx;
 
   return (
     <>
+      {isLoading && (
+        <div className="center">
+          <FadeLoader />
+        </div>
+      )}
       <Container
         maxWidth="xl"
         sx={{
@@ -94,13 +106,11 @@ const ChallengePage = () => {
           </FormControl>
           <Button
             variant="contained"
-            // onClick={() => filterChallenges(currCategory, currDifficulty)}
+            onClick={() => filterChallenges(currCategory, currDifficulty)}
           >
             Filter
           </Button>
         </Box>
-
-        <Button variant="contained">All Challenges</Button>
       </Container>
       <ChallengeItem challenges={challenges} />
       <ToastContainer />

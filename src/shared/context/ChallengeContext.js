@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { toast } from "react-toastify";
 
 export const ChallengeContext = React.createContext();
@@ -169,8 +169,10 @@ export const ChallengeContext = React.createContext();
 
 export const ChallengeProvider = ({ children }) => {
   const [challenges, setChallenges] = useState([]);
+  const [isLoading, setisLoading] = useState(false);
 
   useEffect(() => {
+    setisLoading(true);
     const fetchChallenges = async () => {
       try {
         const response = await fetch("http://localhost:8000/api/challenges/", {
@@ -180,7 +182,9 @@ export const ChallengeProvider = ({ children }) => {
         const responseData = await response.json();
 
         setChallenges(responseData.challenges);
+        setisLoading(false);
       } catch (err) {
+        setisLoading(false);
         console.log(err.message);
       }
     };
@@ -188,42 +192,31 @@ export const ChallengeProvider = ({ children }) => {
     fetchChallenges();
   }, []);
 
-  // // Find challenge by technology
-  // const filterChallenges = (technology, difficulty) => {
-  //   const filteredChallenges = Challenges.filter((c) => {
-  //     if (technology && !c.technologies.includes(technology)) {
-  //       return false;
-  //     }
-  //     if (difficulty && c.difficulty !== difficulty) {
-  //       return false;
-  //     }
-  //     return true;
-  //   });
+  // Find challenge by technology
+  const filterChallenges = (technology, difficulty) => {
+    const filteredChallenges = challenges.filter((c) => {
+      if (technology && !c.technologies.includes(technology)) {
+        return false;
+      }
+      if (difficulty && c.difficulty !== difficulty) {
+        return false;
+      }
+      return true;
+    });
 
-  //   if (filteredChallenges.length === 0) {
-  //     toast.error(
-  //       `Don't have challenges for ${technology} with difficulty ${difficulty} `
-  //     );
-  //   } else {
-  //     setChallenges(filteredChallenges);
-  //   }
-  // };
-
-  // // Find All Challenges
-  // const challengesHandler = () => {
-  //   setChallenges(Challenges);
-  // };
-
-  // // Start Challenge
-  // const startChallenge = (newChallenge) => {
-  //   const updatedChallenges = [...startedChallenges, { ...newChallenge }];
-  //   setstartedChallenges(updatedChallenges);
-
-  //   localStorage.setItem("challenges", JSON.stringify(updatedChallenges));
-  // };
+    if (filteredChallenges.length === 0) {
+      toast.error(
+        `Don't have challenges for ${technology} with difficulty ${difficulty} `
+      );
+    } else {
+      setChallenges(filteredChallenges);
+    }
+  };
 
   return (
-    <ChallengeContext.Provider value={{ challenges }}>
+    <ChallengeContext.Provider
+      value={{ challenges, filterChallenges, isLoading }}
+    >
       {children}
     </ChallengeContext.Provider>
   );
