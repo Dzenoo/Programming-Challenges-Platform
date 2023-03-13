@@ -228,6 +228,8 @@ export const ChallengeProvider = ({ children }) => {
           headers: { Authorization: `Bearer ${auth.token}` },
         }
       );
+
+      toast.success("Challenge added to your profile!");
     } catch (error) {
       console.log(error.message);
     }

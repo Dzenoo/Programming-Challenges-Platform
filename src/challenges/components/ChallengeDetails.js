@@ -18,6 +18,7 @@ import { ChallengeContext } from "../../shared/context/ChallengeContext";
 import { AuthContext } from "../../shared/context/AuthContext";
 import WebAssetIcon from "@mui/icons-material/WebAsset";
 import "../css/challenges.css";
+import { ToastContainer } from "react-toastify";
 
 const ChallengeDetails = () => {
   const challengesCtx = useContext(ChallengeContext);
@@ -28,6 +29,7 @@ const ChallengeDetails = () => {
 
   return (
     <Container maxWidth="lg" sx={{ padding: "40px 0" }}>
+      <ToastContainer />
       <Grid container spacing={4} sx={{ display: "flex" }}>
         <Grid item xs={12}>
           {challenge.map((ch) => (
