@@ -1,5 +1,6 @@
 import React, { useEffect, useMemo, useState } from "react";
 import { toast } from "react-toastify";
+import { useAuth } from "../hooks/authhook";
 
 export const ChallengeContext = React.createContext();
 
@@ -172,6 +173,8 @@ export const ChallengeProvider = ({ children }) => {
   const [selectedChallenges, setSelectedChallenges] = useState([]);
   const [isLoading, setisLoading] = useState(false);
 
+  const auth = useAuth();
+
   useEffect(() => {
     setisLoading(true);
     const fetchChallenges = async () => {
@@ -216,9 +219,29 @@ export const ChallengeProvider = ({ children }) => {
     }
   };
 
+  const startChallenge = async (challengeId) => {
+    try {
+      const response = await fetch(
+        `http://localhost:8000/api/challenges/${auth.userId}/${challengeId}/start`,
+        {
+          method: "POST",
+          headers: { Authorization: `Bearer ${auth.token}` },
+        }
+      );
+    } catch (error) {
+      console.log(error.message);
+    }
+  };
+
   return (
     <ChallengeContext.Provider
-      value={{ challenges, filterChallenges, isLoading, selectedChallenges }}
+      value={{
+        challenges,
+        filterChallenges,
+        isLoading,
+        selectedChallenges,
+        startChallenge,
+      }}
     >
       {children}
     </ChallengeContext.Provider>

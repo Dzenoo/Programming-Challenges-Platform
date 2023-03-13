@@ -78,10 +78,9 @@ const ChallengeDetails = () => {
 
                 {auth.isLoggedIn && (
                   <Button
-                    onClick={() => startChallenge(ch)}
+                    onClick={() => startChallenge(ch.id)}
                     variant="contained"
                     size="large"
-                    sx={{}}
                   >
                     Start challenge
                   </Button>
