@@ -10,7 +10,7 @@ import "../css/blog.css";
 
 const TutorialPage = () => {
   const [currentPage, setCurrentPage] = useState(1);
-  const [tutorialsPerPage] = useState(4);
+  const [tutorialsPerPage] = useState(3);
   const tutorialCtx = useContext(TutorialContext);
   const {
     tutorials,

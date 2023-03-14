@@ -26,8 +26,6 @@ const Newsletter = ({ tutorials }) => {
               <Card
                 sx={{
                   height: "100%",
-                  display: "flex",
-                  flexDirection: "column",
                 }}
               >
                 <CardMedia
@@ -37,9 +35,7 @@ const Newsletter = ({ tutorials }) => {
                 />
                 <CardContent sx={{ flexGrow: "1" }}>
                   <Typography variant="h4">{tutorial.title}</Typography>
-                  <Typography variant="p">
-                    {tutorial.shortDescription}
-                  </Typography>
+                  <Typography variant="p">{tutorial.description}</Typography>
                 </CardContent>
                 <CardActions>
                   <Link
