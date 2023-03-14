@@ -6,6 +6,7 @@ import ProfileSidebar from "./ProfileSidebar";
 import ProfileAchievements from "../components/ProfileAchievements";
 import ProfilePlan from "../components/ProfilePlan";
 import ProfileChallenges from "../components/ProfileChallenges";
+import { ChallengeContext } from "../../shared/context/ChallengeContext";
 
 const ProfilePage = () => {
   const [currentPage, setcurrentPage] = useState(0);
@@ -13,6 +14,8 @@ const ProfilePage = () => {
 
   const { first_name, last_name, user_name, email, image, number } =
     authCtx.profile;
+
+  const { userChallenges } = useContext(ChallengeContext);
 
   const sidebarProps = {
     user_name,
@@ -43,7 +46,7 @@ const ProfilePage = () => {
       <ProfileSidebar {...sidebarProps} onFilterPage={activePageHandler} />
       {currentPage === 0 && <ProfileContent {...contentProps} />}
       {currentPage === 1 && <ProfileAchievements />}
-      {currentPage === 2 && <ProfileChallenges />}
+      {currentPage === 2 && <ProfileChallenges challenges={userChallenges} />}
       {currentPage === 3 && <ProfilePlan />}
     </Container>
   );

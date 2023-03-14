@@ -1,6 +1,7 @@
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useContext, useEffect, useMemo, useState } from "react";
 import { toast } from "react-toastify";
 import { useAuth } from "../hooks/authhook";
+import { AuthContext } from "./AuthContext";
 
 export const ChallengeContext = React.createContext();
 
@@ -171,9 +172,30 @@ export const ChallengeContext = React.createContext();
 export const ChallengeProvider = ({ children }) => {
   const [challenges, setChallenges] = useState([]);
   const [selectedChallenges, setSelectedChallenges] = useState([]);
+  const [userChallenges, setuserChallenges] = useState([]);
   const [isLoading, setisLoading] = useState(false);
 
   const auth = useAuth();
+  const authCtx = useContext(AuthContext);
+  const { profile } = authCtx;
+
+  useEffect(() => {
+    const fetchChallenges = async () => {
+      try {
+        const promises = profile.challenges.map((challengeId) =>
+          fetch(`http://localhost:8000/api/challenges/${challengeId}`, {
+            headers: { Authorization: `Bearer ${auth.token}` },
+          }).then((response) => response.json())
+        );
+        const challengeObjects = await Promise.all(promises);
+        setuserChallenges(challengeObjects);
+      } catch (error) {
+        console.log(error.message);
+      }
+    };
+
+    fetchChallenges();
+  }, [profile]);
 
   useEffect(() => {
     setisLoading(true);
@@ -229,9 +251,13 @@ export const ChallengeProvider = ({ children }) => {
         }
       );
 
-      toast.success("Challenge added to your profile!");
+      if (profile.challenges.includes(challengeId)) {
+        toast.error("Challenge is already started");
+      } else {
+        toast.success("Challenge added to your profile!");
+      }
     } catch (error) {
-      console.log(error.message);
+      console.log("Error:", error.message);
     }
   };
 
@@ -240,6 +266,7 @@ export const ChallengeProvider = ({ children }) => {
       value={{
         challenges,
         filterChallenges,
+        userChallenges,
         isLoading,
         selectedChallenges,
         startChallenge,
