@@ -88,6 +88,17 @@ const CommunityPage = React.lazy(() =>
   ]).then(([m]) => m)
 );
 
+const SubmitPage = React.lazy(() =>
+  Promise.all([
+    import("../../challenges/components/SubmitChallenge"),
+    new Promise((resolve) => {
+      setTimeout(() => {
+        resolve();
+      }, 20);
+    }),
+  ]).then(([m]) => m)
+);
+
 export const routes = (
   <Routes>
     <Route path="/" element={<Layout />}>
@@ -161,6 +172,17 @@ export const routes = (
           <>
             <NavContainer value={5} />
             <CommunityPage />
+            <Footer />
+          </>
+        }
+      />
+
+      <Route
+        path="/challenge/submit/:cId"
+        element={
+          <>
+            <NavContainer />
+            <SubmitPage />
             <Footer />
           </>
         }

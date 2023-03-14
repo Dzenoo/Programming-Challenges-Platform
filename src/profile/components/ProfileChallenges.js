@@ -1,5 +1,14 @@
-import { Card, CardContent, CardMedia, Grid, Typography } from "@mui/material";
+import {
+  Card,
+  CardActions,
+  CardContent,
+  CardMedia,
+  Grid,
+  Typography,
+  Button,
+} from "@mui/material";
 import React from "react";
+import { Link } from "react-router-dom";
 
 const ProfileChallenges = ({ challenges }) => {
   return (
@@ -29,6 +38,15 @@ const ProfileChallenges = ({ challenges }) => {
                 {challenge.description}
               </Typography>
             </CardContent>
+
+            <CardActions>
+              <Link
+                style={{ textDecoration: "none" }}
+                to={`/challenge/submit/${challenge._id}`}
+              >
+                <Button variant="contained">Submit challenge</Button>
+              </Link>
+            </CardActions>
           </Card>
         </Grid>
       ))}
