@@ -6,11 +6,7 @@ import ChallengeItem from "../components/ChallengeItem";
 const SolutionsPage = () => {
   const cCtx = useContext(ChallengeContext);
 
-  return (
-    <Grid container>
-      <ChallengeItem challenges={cCtx.challenges} />
-    </Grid>
-  );
+  return <Grid container></Grid>;
 };
 
 export default SolutionsPage;

@@ -14,6 +14,7 @@ export const ChallengeProvider = ({ children }) => {
   const auth = useAuth();
   const authCtx = useContext(AuthContext);
   const { profile } = authCtx;
+  const { userId } = auth;
 
   useEffect(() => {
     const fetchChallenges = async () => {
@@ -80,7 +81,7 @@ export const ChallengeProvider = ({ children }) => {
   const startChallenge = async (challengeId) => {
     try {
       const response = await fetch(
-        `http://localhost:8000/api/challenges/${auth.userId}/${challengeId}/start`,
+        `http://localhost:8000/api/challenges/${userId}/${challengeId}/start`,
         {
           method: "POST",
           headers: { Authorization: `Bearer ${auth.token}` },
