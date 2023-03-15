@@ -100,6 +100,17 @@ const SubmitPage = React.lazy(() =>
   ]).then(([m]) => m)
 );
 
+const SolutionsPage = React.lazy(() =>
+  Promise.all([
+    import("../../challenges/pages/SolutionsPage"),
+    new Promise((resolve) => {
+      setTimeout(() => {
+        resolve();
+      }, 20);
+    }),
+  ]).then(([m]) => m)
+);
+
 export const routes = (
   <Routes>
     <Route path="/" element={<Layout />}>
@@ -148,6 +159,17 @@ export const routes = (
             </>
           }
         />
+
+        <Route
+          path="/challenge/solvedChallenges"
+          element={
+            <>
+              <NavContainer value={6} />
+              <SolutionsPage />
+              <Footer />
+            </>
+          }
+        />
       </Route>
 
       <Route
@@ -185,7 +207,7 @@ export const routes = (
         path="/pricing"
         element={
           <>
-            <NavContainer value={6} />
+            <NavContainer value={7} />
             <PricingPage />
             <Footer />
           </>

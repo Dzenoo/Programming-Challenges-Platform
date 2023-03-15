@@ -1,15 +1,33 @@
-import {
-  Button,
-  FormControl,
-  InputLabel,
-  Paper,
-  TextField,
-  Typography,
-} from "@mui/material";
+import { Button, Paper, Typography } from "@mui/material";
 import { Container } from "@mui/system";
+import Input from "../../auth/components/Input";
 import React from "react";
+import { useForm } from "../../shared/hooks/formhook";
+import { VALIDATOR_REQUIRE } from "../../shared/util/validate";
 
 const SubmitChallenge = () => {
+  const [formState, inputHandler] = useForm(
+    {
+      title: {
+        value: "",
+        isValid: false,
+      },
+      github_url: {
+        value: "",
+        isValid: false,
+      },
+      site_url: {
+        value: "",
+        isValid: false,
+      },
+      description: {
+        value: "",
+        isValid: false,
+      },
+    },
+    false
+  );
+
   return (
     <Container maxWidth="md" sx={{ padding: "40px 0" }}>
       <Paper sx={{ padding: "40px" }}>
@@ -21,10 +39,14 @@ const SubmitChallenge = () => {
             <Typography variant="p" color="textSecondary">
               Enter the title of challenge you do
             </Typography>
-            <FormControl>
-              <InputLabel>e.g Weather App</InputLabel>
-              <TextField />
-            </FormControl>
+            <Input
+              onInput={inputHandler}
+              id="title"
+              errorText="Please enter a valid title"
+              validators={[VALIDATOR_REQUIRE()]}
+              label="Title"
+              type="text"
+            />
           </div>
 
           <div className="form_control">
@@ -35,10 +57,14 @@ const SubmitChallenge = () => {
               If your project is hosted on GitHub, enter the URL to your
               repository here.
             </Typography>
-            <FormControl>
-              <InputLabel>e.g https/Github.com/challengeName</InputLabel>
-              <TextField />
-            </FormControl>
+            <Input
+              onInput={inputHandler}
+              id="github_url"
+              errorText="Please enter a valid github url"
+              validators={[VALIDATOR_REQUIRE()]}
+              label="Github url"
+              type="url"
+            />
           </div>
 
           <div className="form_control">
@@ -49,10 +75,14 @@ const SubmitChallenge = () => {
               If your project is hosted online, enter the URL to your live site
               here.
             </Typography>
-            <FormControl>
-              <InputLabel>e.g https://challengeurl.netlify.app</InputLabel>
-              <TextField />
-            </FormControl>
+            <Input
+              onInput={inputHandler}
+              id="site_url"
+              errorText="Please enter a valid site url"
+              validators={[VALIDATOR_REQUIRE()]}
+              label="Site Url"
+              type="url"
+            />
           </div>
 
           <div className="form_control">
@@ -62,12 +92,14 @@ const SubmitChallenge = () => {
             <Typography variant="p" color="textSecondary">
               Provide a brief description of your project (max 250 characters).
             </Typography>
-            <FormControl>
-              <textarea
-                maxLength={250}
-                placeholder="Description...."
-              ></textarea>
-            </FormControl>
+            <Input
+              onInput={inputHandler}
+              id="description"
+              errorText="Please enter a valid description "
+              validators={[VALIDATOR_REQUIRE()]}
+              label="Description"
+              type="text"
+            />
           </div>
 
           <Button variant="contained" size="large">

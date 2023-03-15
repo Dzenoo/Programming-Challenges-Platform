@@ -45,6 +45,14 @@ export default function NavContainer({ value }) {
           <Tab label="Community" component={Link} to="/community" />
         )}
 
+        {auth.isLoggedIn && (
+          <Tab
+            label="Solved Challenges"
+            component={Link}
+            to="/challenge/solvedChallenges"
+          />
+        )}
+
         <Tab label="Pricing" component={Link} to="/pricing" />
       </Tabs>
       <div style={buttonsStyle}>
