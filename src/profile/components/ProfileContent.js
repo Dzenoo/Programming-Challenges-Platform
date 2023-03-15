@@ -3,7 +3,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 const ProfileContent = (props) => {
-  const { first_name, last_name, email, number } = props;
+  const { first_name, last_name, email, number, level } = props;
 
   return (
     <Card>
@@ -47,6 +47,16 @@ const ProfileContent = (props) => {
             value={number}
           ></TextField>
         </Grid>
+
+        <Grid item>
+          <InputLabel>Level</InputLabel>
+          <TextField
+            InputProps={{
+              readOnly: true,
+            }}
+            value={level}
+          ></TextField>
+        </Grid>
       </Grid>
     </Card>
   );
@@ -58,5 +68,6 @@ ProfileContent.propTypes = {
   first_name: PropTypes.string.isRequired,
   last_name: PropTypes.string.isRequired,
   email: PropTypes.string.isRequired,
+  level: PropTypes.number.isRequired,
   number: PropTypes.number.isRequired,
 };

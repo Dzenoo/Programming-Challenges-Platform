@@ -12,7 +12,7 @@ const ProfilePage = () => {
   const [currentPage, setcurrentPage] = useState(0);
   const authCtx = useContext(AuthContext);
 
-  const { first_name, last_name, user_name, email, image, number } =
+  const { first_name, last_name, user_name, email, image, number, level } =
     authCtx.profile;
 
   const { userChallenges } = useContext(ChallengeContext);
@@ -27,6 +27,7 @@ const ProfilePage = () => {
     first_name,
     last_name,
     email,
+    level,
     number,
   };
 

@@ -1,4 +1,5 @@
 import { useState, useCallback, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 let logoutTimer;
 
@@ -6,6 +7,8 @@ export const useAuth = () => {
   const [token, setToken] = useState(false);
   const [tokenExpirationDate, settokenExpirationDate] = useState();
   const [userId, setUserId] = useState(false);
+
+  const navigate = useNavigate();
 
   const login = useCallback((uid, token, expirationDate) => {
     setToken(token);
@@ -28,6 +31,8 @@ export const useAuth = () => {
     settokenExpirationDate(null);
     setUserId(null);
     localStorage.removeItem("userData");
+
+    navigate("/home");
   }, []);
 
   useEffect(() => {
