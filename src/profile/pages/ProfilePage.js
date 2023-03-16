@@ -17,6 +17,8 @@ const ProfilePage = () => {
 
   const { userChallenges } = useContext(ChallengeContext);
 
+  console.log(userChallenges);
+
   const sidebarProps = {
     user_name,
     email,
