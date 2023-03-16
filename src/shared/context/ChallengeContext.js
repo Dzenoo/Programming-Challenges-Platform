@@ -26,6 +26,8 @@ export const ChallengeProvider = ({ children }) => {
           }).then((response) => response.json())
         );
         const challengeObjects = await Promise.all(promises);
+        console.log(challengeObjects); // Check the value of challengeObjects
+
         setuserChallenges(challengeObjects);
       } catch (error) {
         console.log(error.message);
