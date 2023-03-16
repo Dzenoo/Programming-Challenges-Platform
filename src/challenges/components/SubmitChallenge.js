@@ -6,6 +6,7 @@ import { useForm } from "../../shared/hooks/formhook";
 import { VALIDATOR_REQUIRE } from "../../shared/util/validate";
 import { useAuth } from "../../shared/hooks/authhook";
 import { AuthContext } from "../../shared/context/AuthContext";
+import { useParams } from "react-router-dom";
 
 const SubmitChallenge = () => {
   const [formState, inputHandler] = useForm(
@@ -31,6 +32,7 @@ const SubmitChallenge = () => {
   );
 
   const auth = useContext(AuthContext);
+  const challengeId = useParams().cId;
 
   const submitChallenge = async (event) => {
     event.preventDefault();
@@ -44,10 +46,11 @@ const SubmitChallenge = () => {
           site: formState.inputs.site.value,
           description: formState.inputs.description.value,
           submitter: auth.userId,
+          challengeId: challengeId,
         }),
         headers: {
           "Content-Type": "application/json",
-          // Authorization: "Bearer " + auth.token,
+          Authorization: "Bearer " + auth.token,
         },
       });
 

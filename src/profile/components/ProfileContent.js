@@ -1,13 +1,45 @@
-import { Card, Grid, InputLabel, TextField } from "@mui/material";
+import {
+  Card,
+  Grid,
+  InputLabel,
+  TextField,
+  Box,
+  Typography,
+} from "@mui/material";
 import React from "react";
 import PropTypes from "prop-types";
+import CircularProgress from "@mui/material/CircularProgress";
 
 const ProfileContent = (props) => {
-  const { first_name, last_name, email, number, level } = props;
+  const { first_name, last_name, email, number, level, xp } = props;
 
   return (
     <Card>
       <Grid container alignItems="center" spacing={2} padding={2}>
+        <Box sx={{ position: "relative", display: "inline-flex" }}>
+          <CircularProgress variant="determinate" value={xp} />
+          <Box
+            sx={{
+              top: 0,
+              left: 0,
+              bottom: 0,
+              right: 0,
+              position: "absolute",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            <Typography
+              variant="caption"
+              component="div"
+              color="text.secondary"
+            >
+              {`${Math.round(xp)}%`}
+            </Typography>
+          </Box>
+        </Box>
+
         <Grid item lg={3}>
           <InputLabel>First Name</InputLabel>
           <TextField

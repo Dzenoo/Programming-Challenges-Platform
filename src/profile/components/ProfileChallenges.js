@@ -11,13 +11,9 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const ProfileChallenges = ({ challenges }) => {
-  console.log(challenges);
   return (
     <Grid container spacing={2}>
       {challenges.map((challenge) => {
-        console.log(challenge.image); // Check the value of image
-        console.log(challenge.title); // Check the value of title
-        console.log(challenge.description); // Check the value of descript
         return (
           <Grid
             item

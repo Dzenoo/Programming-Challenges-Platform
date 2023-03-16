@@ -11,7 +11,6 @@ export const ChallengeProvider = ({ children }) => {
   const [userChallenges, setuserChallenges] = useState([]);
   const [submittedChallenges, setsubmittedChallenges] = useState([]);
   const [isLoading, setisLoading] = useState(false);
-
   const auth = useAuth();
   const authCtx = useContext(AuthContext);
   const { profile } = authCtx;
