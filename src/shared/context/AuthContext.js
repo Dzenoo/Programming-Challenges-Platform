@@ -9,15 +9,22 @@ export const AuthContext = React.createContext({
   login: () => {},
   logout: () => {},
   profile: null,
+  isLoading: false,
 });
 
 export const AuthProvider = ({ children }) => {
   const { login, logout, token, userId } = useAuth();
   const [userProfile, setUserProfile] = useState(null);
+  const [isLoading, setisLoading] = useState(false);
 
   useEffect(() => {
+    setisLoading(true);
     const fetchUserProfile = async () => {
       try {
+        if (!token || !userId) {
+          return;
+        }
+
         const response = await fetch(
           `http://localhost:8000/api/users/${userId}/profile`,
           {
@@ -30,7 +37,9 @@ export const AuthProvider = ({ children }) => {
 
         const data = await response.json();
         setUserProfile(data.user);
+        setisLoading(false);
       } catch (err) {
+        setisLoading(false);
         console.log(err);
       }
     };
@@ -47,6 +56,7 @@ export const AuthProvider = ({ children }) => {
         login: login,
         logout: logout,
         profile: userProfile,
+        isLoading: isLoading,
       }}
     >
       {children}
