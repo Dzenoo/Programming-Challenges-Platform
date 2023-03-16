@@ -9,6 +9,7 @@ export const ChallengeProvider = ({ children }) => {
   const [challenges, setChallenges] = useState([]);
   const [selectedChallenges, setSelectedChallenges] = useState([]);
   const [userChallenges, setuserChallenges] = useState([]);
+  const [submittedChallenges, setsubmittedChallenges] = useState([]);
   const [isLoading, setisLoading] = useState(false);
 
   const auth = useAuth();
@@ -98,6 +99,21 @@ export const ChallengeProvider = ({ children }) => {
     }
   };
 
+  useEffect(() => {
+    const fetchSubmittedChallenges = async () => {
+      try {
+        const response = await fetch(
+          "http://localhost:8000/api/challenges/submittedChallenges"
+        );
+
+        const responseData = await response.json();
+        setsubmittedChallenges(responseData.submittedChallenges);
+      } catch (err) {}
+    };
+
+    fetchSubmittedChallenges();
+  }, []);
+
   return (
     <ChallengeContext.Provider
       value={{
@@ -107,6 +123,7 @@ export const ChallengeProvider = ({ children }) => {
         isLoading,
         selectedChallenges,
         startChallenge,
+        submittedChallenges,
       }}
     >
       {children}

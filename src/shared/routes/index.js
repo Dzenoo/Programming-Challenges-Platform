@@ -116,61 +116,61 @@ export const routes = (
     <Route path="/" element={<Layout />}>
       <Route index element={<Redirect path="/home" />} />
 
-      <Route element={<PrivateRoute />}>
-        <Route
-          path="/:userId/profile"
-          element={
-            <>
-              <NavContainer value={3} />
-              <ProfilePage />
-            </>
-          }
-        />
+      {/* <Route element={<PrivateRoute />}> */}
+      <Route
+        path="/:userId/profile"
+        element={
+          <>
+            <NavContainer value={3} />
+            <ProfilePage />
+          </>
+        }
+      />
 
-        <Route
-          path="/community"
-          element={
-            <>
-              <NavContainer value={5} />
-              <CommunityPage />
-              <Footer />
-            </>
-          }
-        />
+      <Route
+        path="/community"
+        element={
+          <>
+            <NavContainer value={5} />
+            <CommunityPage />
+            <Footer />
+          </>
+        }
+      />
 
-        <Route
-          path="/leaderboard"
-          element={
-            <>
-              <NavContainer value={4} />
-              <LeaderboardPage />
-              <Footer />
-            </>
-          }
-        />
+      <Route
+        path="/leaderboard"
+        element={
+          <>
+            <NavContainer value={4} />
+            <LeaderboardPage />
+            <Footer />
+          </>
+        }
+      />
 
-        <Route
-          path="/challenge/submit/:cId"
-          element={
-            <>
-              <NavContainer />
-              <SubmitPage />
-              <Footer />
-            </>
-          }
-        />
+      <Route
+        path="/challenge/submit/:cId"
+        element={
+          <>
+            <NavContainer />
+            <SubmitPage />
+            <Footer />
+          </>
+        }
+      />
 
-        <Route
-          path="/challenge/solvedChallenges"
-          element={
-            <>
-              <NavContainer value={6} />
-              <SolutionsPage />
-              <Footer />
-            </>
-          }
-        />
-      </Route>
+      <Route
+        path="/challenge/solvedChallenges"
+        element={
+          <>
+            <NavContainer value={6} />
+            <SolutionsPage />
+            <Footer />
+          </>
+        }
+      />
+      {/* </Route> */}
 
       <Route
         path="/home"
