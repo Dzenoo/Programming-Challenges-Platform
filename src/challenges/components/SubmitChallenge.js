@@ -1,10 +1,11 @@
 import { Button, Paper, Typography } from "@mui/material";
 import { Container } from "@mui/system";
 import Input from "../../auth/components/Input";
-import React,  from "react";
+import React, { useContext } from "react";
 import { useForm } from "../../shared/hooks/formhook";
 import { VALIDATOR_REQUIRE } from "../../shared/util/validate";
 import { useAuth } from "../../shared/hooks/authhook";
+import { AuthContext } from "../../shared/context/AuthContext";
 
 const SubmitChallenge = () => {
   const [formState, inputHandler] = useForm(
@@ -13,11 +14,11 @@ const SubmitChallenge = () => {
         value: "",
         isValid: false,
       },
-      github_url: {
+      github: {
         value: "",
         isValid: false,
       },
-      site_url: {
+      site: {
         value: "",
         isValid: false,
       },
@@ -29,7 +30,7 @@ const SubmitChallenge = () => {
     false
   );
 
-  const auth = useAuth();
+  const auth = useContext(AuthContext);
 
   const submitChallenge = async (event) => {
     event.preventDefault();
@@ -39,13 +40,14 @@ const SubmitChallenge = () => {
         method: "POST",
         body: JSON.stringify({
           title: formState.inputs.title.value,
-          github_url: formState.inputs.github_url.value,
-          site_url: formState.inputs.site_url.value,
+          github: formState.inputs.github.value,
+          site: formState.inputs.site.value,
           description: formState.inputs.description.value,
+          submitter: auth.userId,
         }),
         headers: {
           "Content-Type": "application/json",
-          Authorization: "Bearer " + auth.token,
+          // Authorization: "Bearer " + auth.token,
         },
       });
 
@@ -87,7 +89,7 @@ const SubmitChallenge = () => {
             </Typography>
             <Input
               onInput={inputHandler}
-              id="github_url"
+              id="github"
               errorText="Please enter a valid github url"
               validators={[VALIDATOR_REQUIRE()]}
               label="Github url"
@@ -105,7 +107,7 @@ const SubmitChallenge = () => {
             </Typography>
             <Input
               onInput={inputHandler}
-              id="site_url"
+              id="site"
               errorText="Please enter a valid site url"
               validators={[VALIDATOR_REQUIRE()]}
               label="Site Url"
