@@ -153,7 +153,7 @@ export const routes = (
         path="/challenge/submit/:cId"
         element={
           <>
-            <NavContainer />
+            <NavContainer value={0} />
             <SubmitPage />
             <Footer />
           </>

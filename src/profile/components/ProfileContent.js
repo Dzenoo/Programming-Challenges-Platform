@@ -13,11 +13,15 @@ import CircularProgress from "@mui/material/CircularProgress";
 const ProfileContent = (props) => {
   const { first_name, last_name, email, number, level, xp } = props;
 
+  const levelUpBasePoints = 100;
+  const pointsNeededForNextLevel = levelUpBasePoints + (level - 1) * 100;
+  const progress = (xp / pointsNeededForNextLevel) * 100;
+
   return (
     <Card>
       <Grid container alignItems="center" spacing={2} padding={2}>
         <Box sx={{ position: "relative", display: "inline-flex" }}>
-          <CircularProgress variant="determinate" value={xp} />
+          <CircularProgress variant="determinate" value={progress} />
           <Box
             sx={{
               top: 0,
@@ -35,7 +39,7 @@ const ProfileContent = (props) => {
               component="div"
               color="text.secondary"
             >
-              {`${Math.round(xp)}%`}
+              {`${Math.round(progress)}%`}
             </Typography>
           </Box>
         </Box>
