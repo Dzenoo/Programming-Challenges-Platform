@@ -7,6 +7,7 @@ import Footer from "../navigation/Footer";
 import Redirect from "./Redirect";
 import Layout from "./Layout";
 import PrivateRoute from "./PrivateRoute";
+import SuccessSubmit from "../ui/SuccessSubmit";
 
 const HomePage = React.lazy(() =>
   Promise.all([
@@ -214,6 +215,7 @@ export const routes = (
         }
       />
 
+      <Route path="/success" element={<SuccessSubmit />} />
       <Route path="/tutorials/:tid" element={<TutorialDetails />} />
       <Route path="/challenges/:cid" element={<ChallengeDetails />} />
       <Route path="/signin" element={<AuthPage />} />

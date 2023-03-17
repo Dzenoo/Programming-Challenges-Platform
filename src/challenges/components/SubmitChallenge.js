@@ -6,7 +6,7 @@ import { useForm } from "../../shared/hooks/formhook";
 import { VALIDATOR_REQUIRE } from "../../shared/util/validate";
 import { useAuth } from "../../shared/hooks/authhook";
 import { AuthContext } from "../../shared/context/AuthContext";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 const SubmitChallenge = () => {
   const [formState, inputHandler] = useForm(
@@ -31,6 +31,7 @@ const SubmitChallenge = () => {
     false
   );
 
+  const navigate = useNavigate();
   const auth = useContext(AuthContext);
   const challengeId = useParams().cId;
 
@@ -54,7 +55,7 @@ const SubmitChallenge = () => {
         },
       });
 
-      //       navigate("/" + authCtx.userId + "/places");
+      navigate("/success");
     } catch (err) {}
   };
 
