@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { Container } from "@mui/material";
 import { AuthContext } from "../../shared/context/AuthContext";
 import { ChallengeContext } from "../../shared/context/ChallengeContext";
+import { FadeLoader } from "react-spinners";
 import ProfileContent from "../components/ProfileContent";
 import ProfileSidebar from "./ProfileSidebar";
 import ProfileAchievements from "../components/ProfileAchievements";
@@ -11,9 +12,8 @@ import ProfileChallenges from "../components/ProfileChallenges";
 const ProfilePage = () => {
   const [currentPage, setcurrentPage] = useState(0);
   const [loadedAchievements, setloadedAchievements] = useState([]);
-  const authCtx = useContext(AuthContext);
-
-  const { userId } = authCtx;
+  const { userId, profile } = useContext(AuthContext);
+  const { userChallenges, isLoading } = useContext(ChallengeContext);
 
   // Get properties from user profile
   const {
@@ -26,10 +26,9 @@ const ProfilePage = () => {
     level,
     xp,
     submittedChallenges,
-  } = authCtx.profile;
+  } = profile;
 
   // User challenges from context
-  const { userChallenges } = useContext(ChallengeContext);
 
   useEffect(() => {
     if (submittedChallenges.length === 1) {
@@ -55,6 +54,14 @@ const ProfilePage = () => {
     };
     fetchAchievements();
   }, [userId]);
+
+  if (isLoading || userChallenges.length === 0) {
+    return (
+      <div className="center">
+        <FadeLoader />
+      </div>
+    );
+  }
 
   // Props for sidebar
   const sidebarProps = {

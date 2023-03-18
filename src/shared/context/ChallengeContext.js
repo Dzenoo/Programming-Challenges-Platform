@@ -1,5 +1,4 @@
-import React, { useContext, useEffect, useMemo, useState } from "react";
-import FadeLoader from "react-spinners/FadeLoader";
+import React, { useContext, useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import { useAuth } from "../hooks/authhook";
 import { AuthContext } from "./AuthContext";
@@ -37,7 +36,7 @@ export const ChallengeProvider = ({ children }) => {
     };
 
     fetchChallenges();
-  }, [profile]);
+  }, [auth.token, profile]);
 
   // Fetch challenges
   useEffect(() => {
@@ -88,7 +87,7 @@ export const ChallengeProvider = ({ children }) => {
   // Start Challenge
   const startChallenge = async (challengeId) => {
     try {
-      const response = await fetch(
+      await fetch(
         `http://localhost:8000/api/challenges/${userId}/${challengeId}/start`,
         {
           method: "POST",
@@ -125,14 +124,6 @@ export const ChallengeProvider = ({ children }) => {
 
     fetchSubmittedChallenges();
   }, []);
-
-  if (isLoading || userChallenges.length === 0) {
-    return (
-      <div className="center">
-        <FadeLoader />
-      </div>
-    );
-  }
 
   return (
     <ChallengeContext.Provider

@@ -51,7 +51,7 @@ const ProfileContent = (props) => {
           <div className="flex">
             <InputLabel>First name:</InputLabel>
             <Typography>
-              <b>{first_name}</b>
+              <b>{first_name || "User"}</b>
             </Typography>
           </div>
         </Grid>
@@ -60,7 +60,7 @@ const ProfileContent = (props) => {
           <div className="flex">
             <InputLabel>Last Name:</InputLabel>
             <Typography>
-              <b>{last_name}</b>
+              <b>{last_name || "User last name"}</b>
             </Typography>
           </div>
         </Grid>
@@ -69,7 +69,7 @@ const ProfileContent = (props) => {
           <div className="flex">
             <InputLabel>Email:</InputLabel>
             <Typography>
-              <b>{email}</b>
+              <b>{email || "User Email"}</b>
             </Typography>
           </div>
         </Grid>
@@ -78,7 +78,7 @@ const ProfileContent = (props) => {
           <div className="flex">
             <InputLabel>Phone:</InputLabel>
             <Typography>
-              <b>{number}</b>
+              <b>{number || "0000000"}</b>
             </Typography>
           </div>
         </Grid>
@@ -87,7 +87,7 @@ const ProfileContent = (props) => {
           <div className="flex">
             <InputLabel>Level:</InputLabel>
             <Typography>
-              <b>{level}</b>
+              <b>{level || "0"}</b>
             </Typography>
           </div>
         </Grid>

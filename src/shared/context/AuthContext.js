@@ -10,7 +10,7 @@ export const AuthContext = React.createContext({
   login: () => {},
   logout: () => {},
   profile: [],
-  isLoading: false,
+  isLoadingUser: false,
 });
 
 export const AuthProvider = ({ children }) => {
@@ -48,14 +48,6 @@ export const AuthProvider = ({ children }) => {
     fetchUserProfile();
   }, [token, userId]);
 
-  if (isLoading || userProfile === null) {
-    return (
-      <div className="center">
-        <FadeLoader />
-      </div>
-    );
-  }
-
   return (
     <AuthContext.Provider
       value={{
@@ -65,7 +57,7 @@ export const AuthProvider = ({ children }) => {
         login: login,
         logout: logout,
         profile: userProfile,
-        isLoading: isLoading,
+        isLoadingUser: isLoading,
       }}
     >
       {children}
