@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { FadeLoader } from "react-spinners";
 
 import { useAuth } from "../hooks/authhook";
 
@@ -8,7 +9,7 @@ export const AuthContext = React.createContext({
   token: null,
   login: () => {},
   logout: () => {},
-  profile: null,
+  profile: [],
   isLoading: false,
 });
 
@@ -46,6 +47,14 @@ export const AuthProvider = ({ children }) => {
 
     fetchUserProfile();
   }, [token, userId]);
+
+  if (isLoading || userProfile === null) {
+    return (
+      <div className="center">
+        <FadeLoader />
+      </div>
+    );
+  }
 
   return (
     <AuthContext.Provider

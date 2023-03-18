@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useMemo, useState } from "react";
+import FadeLoader from "react-spinners/FadeLoader";
 import { toast } from "react-toastify";
 import { useAuth } from "../hooks/authhook";
 import { AuthContext } from "./AuthContext";
@@ -124,6 +125,14 @@ export const ChallengeProvider = ({ children }) => {
 
     fetchSubmittedChallenges();
   }, []);
+
+  if (isLoading || userChallenges.length === 0) {
+    return (
+      <div className="center">
+        <FadeLoader />
+      </div>
+    );
+  }
 
   return (
     <ChallengeContext.Provider

@@ -10,6 +10,7 @@ import ProfileChallenges from "../components/ProfileChallenges";
 
 const ProfilePage = () => {
   const [currentPage, setcurrentPage] = useState(0);
+  const [loadedAchievements, setloadedAchievements] = useState([]);
   const authCtx = useContext(AuthContext);
 
   const { userId } = authCtx;
@@ -31,19 +32,29 @@ const ProfilePage = () => {
   const { userChallenges } = useContext(ChallengeContext);
 
   useEffect(() => {
-    async function addAchievement() {
-      if (submittedChallenges.length === 1) {
-        await fetch(
-          `http://localhost:8000/api/achievements/${userId}/addAchievement`,
-          {
-            method: "POST",
-          }
-        );
-      }
+    if (submittedChallenges.length === 1) {
+      fetch(
+        `http://localhost:8000/api/achievements/${userId}/addAchievement?name=ChallengeAccepted`,
+        {
+          method: "POST",
+        }
+      );
     }
+  }, [submittedChallenges, userId]);
 
-    addAchievement();
-  }, [authCtx.profile]);
+  useEffect(() => {
+    const fetchAchievements = async () => {
+      try {
+        const response = await fetch(
+          `http://localhost:8000/api/achievements/${userId}`
+        );
+
+        const responseData = await response.json();
+        setloadedAchievements(responseData.achievements);
+      } catch (err) {}
+    };
+    fetchAchievements();
+  }, [userId]);
 
   // Props for sidebar
   const sidebarProps = {
@@ -77,7 +88,9 @@ const ProfilePage = () => {
     >
       <ProfileSidebar {...sidebarProps} onFilterPage={activePageHandler} />
       {currentPage === 0 && <ProfileContent {...contentProps} />}
-      {currentPage === 1 && <ProfileAchievements />}
+      {currentPage === 1 && (
+        <ProfileAchievements userAchievements={loadedAchievements} />
+      )}
       {currentPage === 2 && <ProfileChallenges challenges={userChallenges} />}
       {currentPage === 3 && <ProfilePlan />}
     </Container>
