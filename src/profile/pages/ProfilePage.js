@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Container } from "@mui/material";
 import { AuthContext } from "../../shared/context/AuthContext";
 import { ChallengeContext } from "../../shared/context/ChallengeContext";
@@ -12,12 +12,38 @@ const ProfilePage = () => {
   const [currentPage, setcurrentPage] = useState(0);
   const authCtx = useContext(AuthContext);
 
+  const { userId } = authCtx;
+
   // Get properties from user profile
-  const { first_name, last_name, user_name, email, image, number, level, xp } =
-    authCtx.profile;
+  const {
+    first_name,
+    last_name,
+    user_name,
+    email,
+    image,
+    number,
+    level,
+    xp,
+    submittedChallenges,
+  } = authCtx.profile;
 
   // User challenges from context
   const { userChallenges } = useContext(ChallengeContext);
+
+  useEffect(() => {
+    async function addAchievement() {
+      if (submittedChallenges.length === 1) {
+        await fetch(
+          `http://localhost:8000/api/achievements/${userId}/addAchievement`,
+          {
+            method: "POST",
+          }
+        );
+      }
+    }
+
+    addAchievement();
+  }, [authCtx.profile]);
 
   // Props for sidebar
   const sidebarProps = {
