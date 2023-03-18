@@ -89,7 +89,7 @@ const Form = () => {
         navigate("/");
       } catch (err) {
         setisLoading(false);
-        console.log(err.message);
+        alert(err.message || "Something went wrong, please try again");
       }
     } else {
       try {
@@ -112,7 +112,7 @@ const Form = () => {
         navigate("/");
       } catch (err) {
         setisLoading(false);
-        console.log(err.message);
+        alert("Something went wrong, please try again");
       }
     }
   };

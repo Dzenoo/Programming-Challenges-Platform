@@ -94,5 +94,11 @@ textarea {
   height: 100vh;
   flex-direction: column;
   gap: 20px;
-  background-color: #bbeaff;
+  background-color: #fff;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 2em;
 }

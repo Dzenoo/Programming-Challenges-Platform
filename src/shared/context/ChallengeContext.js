@@ -16,7 +16,9 @@ export const ChallengeProvider = ({ children }) => {
   const { profile } = authCtx;
   const { userId } = auth;
 
+  // Fetch user challenges
   useEffect(() => {
+    setisLoading(true);
     const fetchChallenges = async () => {
       try {
         const promises = profile.challenges.map((challengeId) =>
@@ -25,10 +27,10 @@ export const ChallengeProvider = ({ children }) => {
           }).then((response) => response.json())
         );
         const challengeObjects = await Promise.all(promises);
-        console.log(challengeObjects); // Check the value of challengeObjects
-
         setuserChallenges(challengeObjects);
+        setisLoading(false);
       } catch (error) {
+        setisLoading(false);
         console.log(error.message);
       }
     };
@@ -36,6 +38,7 @@ export const ChallengeProvider = ({ children }) => {
     fetchChallenges();
   }, [profile]);
 
+  // Fetch challenges
   useEffect(() => {
     setisLoading(true);
     const fetchChallenges = async () => {
@@ -58,6 +61,7 @@ export const ChallengeProvider = ({ children }) => {
     fetchChallenges();
   }, []);
 
+  // Function for filtering challenges
   const filterChallenges = (technology, difficulty) => {
     const newChallenges = [...challenges];
 
@@ -80,6 +84,7 @@ export const ChallengeProvider = ({ children }) => {
     }
   };
 
+  // Start Challenge
   const startChallenge = async (challengeId) => {
     try {
       const response = await fetch(
@@ -100,7 +105,9 @@ export const ChallengeProvider = ({ children }) => {
     }
   };
 
+  // Fetch submitted challenges
   useEffect(() => {
+    setisLoading(true);
     const fetchSubmittedChallenges = async () => {
       try {
         const response = await fetch(
@@ -109,7 +116,10 @@ export const ChallengeProvider = ({ children }) => {
 
         const responseData = await response.json();
         setsubmittedChallenges(responseData.submittedChallenges);
-      } catch (err) {}
+        setisLoading(false);
+      } catch (err) {
+        setisLoading(false);
+      }
     };
 
     fetchSubmittedChallenges();

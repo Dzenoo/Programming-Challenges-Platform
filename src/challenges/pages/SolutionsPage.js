@@ -41,14 +41,20 @@ const SolutionsPage = () => {
               />
               <Typography variant="h6">{sc.submitter.user_name}</Typography>
             </Box>
+            <hr />
 
             <List className="todo_list_submenu">
               <ListItem
                 className="todo_list_subitem"
                 key={sc._id}
-                sx={{ display: "flex", flexDirection: "column" }}
+                sx={{
+                  display: "flex",
+                  flexDirection: "column",
+                  justifyContent: "flex-start",
+                  alignItems: "flex-start",
+                }}
               >
-                <Typography variant="h6">{sc.title}</Typography>
+                <Typography variant="h4">{sc.title}</Typography>
                 <Typography variant="p" color="textSecondary">
                   {sc.description}
                 </Typography>

@@ -1,28 +1,32 @@
-import { Container } from "@mui/material";
 import React, { useContext, useState } from "react";
+import { Container } from "@mui/material";
 import { AuthContext } from "../../shared/context/AuthContext";
+import { ChallengeContext } from "../../shared/context/ChallengeContext";
 import ProfileContent from "../components/ProfileContent";
 import ProfileSidebar from "./ProfileSidebar";
 import ProfileAchievements from "../components/ProfileAchievements";
 import ProfilePlan from "../components/ProfilePlan";
 import ProfileChallenges from "../components/ProfileChallenges";
-import { ChallengeContext } from "../../shared/context/ChallengeContext";
 
 const ProfilePage = () => {
   const [currentPage, setcurrentPage] = useState(0);
   const authCtx = useContext(AuthContext);
 
+  // Get properties from user profile
   const { first_name, last_name, user_name, email, image, number, level, xp } =
     authCtx.profile;
 
+  // User challenges from context
   const { userChallenges } = useContext(ChallengeContext);
 
+  // Props for sidebar
   const sidebarProps = {
     user_name,
     email,
     image,
   };
 
+  // Props for profile content
   const contentProps = {
     first_name,
     last_name,

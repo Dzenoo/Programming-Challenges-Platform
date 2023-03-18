@@ -19,8 +19,18 @@ const ProfileContent = (props) => {
 
   return (
     <Card>
-      <Grid container alignItems="center" spacing={2} padding={2}>
-        <Box sx={{ position: "relative", display: "inline-flex" }}>
+      <Grid
+        container
+        alignItems="center"
+        spacing={2}
+        padding={2}
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "flex-start",
+        }}
+      >
+        <Box sx={{ position: "relative" }}>
           <CircularProgress variant="determinate" value={progress} />
           <Box
             sx={{
@@ -44,54 +54,49 @@ const ProfileContent = (props) => {
           </Box>
         </Box>
 
-        <Grid item lg={3}>
-          <InputLabel>First Name</InputLabel>
-          <TextField
-            InputProps={{
-              readOnly: true,
-            }}
-            value={first_name}
-          ></TextField>
+        <Grid item>
+          <div className="flex">
+            <InputLabel>First name:</InputLabel>
+            <Typography>
+              <b>{first_name}</b>
+            </Typography>
+          </div>
         </Grid>
 
         <Grid item>
-          <InputLabel>Last Name</InputLabel>
-          <TextField
-            InputProps={{
-              readOnly: true,
-            }}
-            value={last_name}
-          ></TextField>
+          <div className="flex">
+            <InputLabel>Last Name:</InputLabel>
+            <Typography>
+              <b>{last_name}</b>
+            </Typography>
+          </div>
         </Grid>
 
         <Grid item>
-          <InputLabel>Email</InputLabel>
-          <TextField
-            InputProps={{
-              readOnly: true,
-            }}
-            value={email}
-          ></TextField>
+          <div className="flex">
+            <InputLabel>Email:</InputLabel>
+            <Typography>
+              <b>{email}</b>
+            </Typography>
+          </div>
         </Grid>
 
         <Grid item>
-          <InputLabel>Phone</InputLabel>
-          <TextField
-            InputProps={{
-              readOnly: true,
-            }}
-            value={number}
-          ></TextField>
+          <div className="flex">
+            <InputLabel>Phone:</InputLabel>
+            <Typography>
+              <b>{number}</b>
+            </Typography>
+          </div>
         </Grid>
 
         <Grid item>
-          <InputLabel>Level</InputLabel>
-          <TextField
-            InputProps={{
-              readOnly: true,
-            }}
-            value={level}
-          ></TextField>
+          <div className="flex">
+            <InputLabel>Level:</InputLabel>
+            <Typography>
+              <b>{level}</b>
+            </Typography>
+          </div>
         </Grid>
       </Grid>
     </Card>
