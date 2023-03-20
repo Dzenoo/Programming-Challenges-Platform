@@ -2,7 +2,6 @@ import React from "react";
 import { TutorialProvider } from "./TutorialContext";
 import { ChallengeProvider } from "./ChallengeContext";
 import { LeaderboardProvider } from "./LeaderboardContext";
-import { CommunityProvider } from "./CommunityContext";
 import { AuthProvider } from "./AuthContext";
 
 export default function AppProvider({ children }) {
@@ -10,9 +9,7 @@ export default function AppProvider({ children }) {
     <AuthProvider>
       <TutorialProvider>
         <ChallengeProvider>
-          <LeaderboardProvider>
-            <CommunityProvider>{children}</CommunityProvider>
-          </LeaderboardProvider>
+          <LeaderboardProvider>{children}</LeaderboardProvider>
         </ChallengeProvider>
       </TutorialProvider>
     </AuthProvider>

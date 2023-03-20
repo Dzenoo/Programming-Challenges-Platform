@@ -7,16 +7,12 @@ import {
   Typography,
 } from "@mui/material";
 import { Box } from "@mui/system";
-import React, { useContext } from "react";
-import { CommunityContext } from "../../shared/context/CommunityContext";
+import React from "react";
 
-const Post = () => {
-  const comCtx = useContext(CommunityContext);
-  const { CommentUsers } = comCtx;
-
+const Post = ({ comments }) => {
   return (
     <Grid container spacing={2} justifyContent="center" padding={2}>
-      {CommentUsers.map((comment) => (
+      {comments.map((comment) => (
         <Grid item lg={4} md={6} sm={10} xs={12}>
           <Card
             sx={{
@@ -31,15 +27,15 @@ const Post = () => {
               }}
             >
               <img
-                src={comment.image}
+                src={comment.user.image}
                 alt={comment.title}
                 style={{ width: "60px", height: "60px", borderRadius: "100%" }}
               />
               <Box>
                 <Typography variant="h6">
-                  {`${comment.first_name} ${comment.last_name}`}
+                  {`${comment.user.first_name} ${comment.user.last_name}`}
                 </Typography>
-                <Typography variant="p">{comment.user_name}</Typography>
+                <Typography variant="p">{comment.user.user_name}</Typography>
               </Box>
             </Box>
             <CardContent>

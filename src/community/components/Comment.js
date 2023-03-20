@@ -1,11 +1,43 @@
-import { Button, TextField, Box, Typography, Card } from "@mui/material";
+import { Button, Box, Typography, Card } from "@mui/material";
 import { Container } from "@mui/system";
+import { useForm } from "../../shared/hooks/formhook";
+import Input from "../../auth/components/Input";
 import React, { useContext } from "react";
-import { CommunityContext } from "../../shared/context/CommunityContext";
+import { VALIDATOR_REQUIRE } from "../../shared/util/validate";
+import { AuthContext } from "../../shared/context/AuthContext";
 
 const Comment = () => {
-  const comCtx = useContext(CommunityContext);
-  const { CommentUsers } = comCtx;
+  const { profile, userId } = useContext(AuthContext);
+  const { first_name, user_name, image } = profile;
+  const [formState, inputHandler] = useForm(
+    {
+      title: {
+        value: "",
+        isValid: false,
+      },
+      message: {
+        value: "",
+        isValid: false,
+      },
+    },
+    false
+  );
+
+  const newCommentHandler = async (e) => {
+    e.preventDefault();
+    try {
+      await fetch(`http://localhost:8000/api/users/${userId}/newComment`, {
+        method: "POST",
+        body: JSON.stringify({
+          title: formState.inputs.title.value,
+          message: formState.inputs.message.value,
+        }),
+        headers: { "Content-Type": "application/json" },
+      });
+    } catch (error) {
+      console.log(error.message);
+    }
+  };
 
   return (
     <Container maxWidth="md" sx={{ padding: "40px 0" }}>
@@ -25,18 +57,37 @@ const Comment = () => {
           }}
         >
           <img
-            src="https://res.cloudinary.com/dzwb60tk1/image/upload/v1678535834/Untitled_design_3_zbm2cx.png"
+            src={image}
             alt="img"
             style={{ width: "60px", height: "60px", borderRadius: "100%" }}
           />
           <Box>
-            <Typography variant="h6">John Doe</Typography>
-            <Typography variant="p">John00</Typography>
+            <Typography variant="h6">{first_name}</Typography>
+            <Typography variant="p">{user_name}</Typography>
           </Box>
         </Box>
-        <TextField label="Title" fullWidth></TextField>
-        <textarea placeholder="New Comment...."></textarea>
-        <Button variant="contained">Post</Button>
+
+        <form onSubmit={newCommentHandler}>
+          <Input
+            label="Title"
+            onInput={inputHandler}
+            id="title"
+            validators={[VALIDATOR_REQUIRE()]}
+            type="text"
+            errorText="Please enter valid title"
+          ></Input>
+          <Input
+            label="Message"
+            onInput={inputHandler}
+            id="message"
+            validators={[VALIDATOR_REQUIRE()]}
+            type="text"
+            errorText="Please enter valid message"
+          ></Input>
+          <Button variant="contained" type="submit">
+            Post
+          </Button>
+        </form>
       </Card>
     </Container>
   );
