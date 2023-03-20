@@ -73,7 +73,9 @@ const TableLeaderboard = () => {
                 <TableCell align="right">{user.last_name}</TableCell>
                 <TableCell align="right">{user.user_name}</TableCell>
                 <TableCell align="right">{user.level}</TableCell>
-                <TableCell align="right">{user.completedChallenges}</TableCell>
+                <TableCell align="right">
+                  {user.submittedChallenges.length}
+                </TableCell>
               </TableRow>
             );
           })}

@@ -34,7 +34,14 @@ const ProfileChallenges = ({ challenges }) => {
                 sx={{ paddingTop: "56.25%" }}
               ></CardMedia>
               <CardContent>
-                <Typography variant="h4">{challenge.title}</Typography>
+                <Typography variant="h4" color="textPrimary">
+                  <Link
+                    style={{ textDecoration: "none", color: "#333" }}
+                    to={`/challenges/${challenge._id}`}
+                  >
+                    {challenge.title}
+                  </Link>
+                </Typography>
                 <Typography variant="p" color="textSecondary">
                   {challenge.description}
                 </Typography>

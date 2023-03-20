@@ -24,7 +24,7 @@ const ProfileContent = (props) => {
         }}
       >
         <Box sx={{ position: "relative" }}>
-          <CircularProgress variant="determinate" value={progress} />
+          <CircularProgress variant="determinate" value={progress || 0} />
           <Box
             sx={{
               top: 0,
@@ -42,7 +42,7 @@ const ProfileContent = (props) => {
               component="div"
               color="text.secondary"
             >
-              {`${Math.round(progress)}%`}
+              {`${Math.round(progress || 0)}%`}
             </Typography>
           </Box>
         </Box>

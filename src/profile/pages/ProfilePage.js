@@ -55,13 +55,13 @@ const ProfilePage = () => {
     fetchAchievements();
   }, [userId]);
 
-  if (isLoading || userChallenges.length === 0) {
-    return (
-      <div className="center">
-        <FadeLoader />
-      </div>
-    );
-  }
+  // if (isLoading || userChallenges.length === 0) {
+  //   return (
+  //     <div className="center">
+  //       <FadeLoader />
+  //     </div>
+  //   );
+  // }
 
   // Props for sidebar
   const sidebarProps = {

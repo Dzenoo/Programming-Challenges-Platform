@@ -1,7 +1,6 @@
 import { Card, Container, Typography } from "@mui/material";
 import React from "react";
 import TableLeaderboard from "../components/TableLeaderboard";
-
 const LeaderboardPage = () => {
   return (
     <Container sx={{ padding: "40px 0" }}>
