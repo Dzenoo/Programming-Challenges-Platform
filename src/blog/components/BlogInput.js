@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { TextField } from "@mui/material";
 import "../css/blog.css";
+
 const TutorialInput = ({ setInputValue, searchTutorials, searchMsg }) => {
   return (
     <form onSubmit={searchTutorials}>
