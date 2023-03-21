@@ -1,6 +1,5 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect, useMemo, useState } from "react";
 import { toast } from "react-toastify";
-import { useAuth } from "../hooks/authhook";
 import { AuthContext } from "./AuthContext";
 
 export const ChallengeContext = React.createContext();
@@ -11,32 +10,27 @@ export const ChallengeProvider = ({ children }) => {
   const [userChallenges, setuserChallenges] = useState([]);
   const [submittedChallenges, setsubmittedChallenges] = useState([]);
   const [isLoading, setisLoading] = useState(false);
-  const auth = useAuth();
-  const authCtx = useContext(AuthContext);
-  const { profile } = authCtx;
-  const { userId } = auth;
+  const { userId, profile, token } = useContext(AuthContext);
 
-  // Fetch user challenges
+  const fetchChallenges = async () => {
+    try {
+      const promises = profile.challenges.map((challengeId) =>
+        fetch(`http://localhost:8000/api/challenges/${challengeId}`, {
+          headers: { Authorization: `Bearer ${token}` },
+        }).then((response) => response.json())
+      );
+      const challengeObjects = await Promise.all(promises);
+      setuserChallenges(challengeObjects);
+      setisLoading(false);
+    } catch (error) {
+      setisLoading(false);
+      console.log(error.message);
+    }
+  };
+
   useEffect(() => {
-    setisLoading(true);
-    const fetchChallenges = async () => {
-      try {
-        const promises = profile.challenges.map((challengeId) =>
-          fetch(`http://localhost:8000/api/challenges/${challengeId}`, {
-            headers: { Authorization: `Bearer ${auth.token}` },
-          }).then((response) => response.json())
-        );
-        const challengeObjects = await Promise.all(promises);
-        setuserChallenges(challengeObjects);
-        setisLoading(false);
-      } catch (error) {
-        setisLoading(false);
-        console.log(error.message);
-      }
-    };
-
     fetchChallenges();
-  }, [auth.token, profile]);
+  }, [token, profile]);
 
   // Fetch challenges
   useEffect(() => {
@@ -91,7 +85,7 @@ export const ChallengeProvider = ({ children }) => {
         `http://localhost:8000/api/challenges/${userId}/${challengeId}/start`,
         {
           method: "POST",
-          headers: { Authorization: `Bearer ${auth.token}` },
+          headers: { Authorization: `Bearer ${token}` },
         }
       );
 
