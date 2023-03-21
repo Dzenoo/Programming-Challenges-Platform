@@ -129,7 +129,6 @@ const ChallengeDetails = () => {
                 ))}
               </List>
             ))}
-
             <Box
               sx={{
                 display: "flex",
