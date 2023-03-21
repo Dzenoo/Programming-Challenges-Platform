@@ -20,7 +20,6 @@ const TutorialDetails = () => {
               <h2>{tuto.shortDescription}</h2>
             </div>
           </div>
-
           <article
             className="details_content"
             dangerouslySetInnerHTML={{ __html: tuto.details }}
