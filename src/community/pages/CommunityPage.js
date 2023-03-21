@@ -5,7 +5,6 @@ import Post from "../components/Post";
 const CommunityPage = () => {
   const [comments, setcomments] = useState([]);
 
-  console.log(comments);
 
   useEffect(() => {
     const fetchComments = async () => {
