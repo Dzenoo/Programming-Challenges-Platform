@@ -6,7 +6,6 @@ import { Container } from "@mui/system";
 const CommunityPage = () => {
   const [comments, setcomments] = useState([]);
 
-  console.log(comments);
 
   useEffect(() => {
     const fetchComments = async () => {

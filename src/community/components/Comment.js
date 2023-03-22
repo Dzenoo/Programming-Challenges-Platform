@@ -59,8 +59,7 @@ const Comment = () => {
             display: "flex",
             alignItems: "center",
             gap: "12px",
-          }}
-        >
+          }}>
           <img
             src={image}
             alt="img"
