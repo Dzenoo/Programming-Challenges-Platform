@@ -65,18 +65,21 @@ const Form = () => {
 
     if (authMode) {
       try {
-        const response = await fetch("http://localhost:8000/api/users/signup", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            first_name: formState.inputs.first_name.value,
-            last_name: formState.inputs.last_name.value,
-            user_name: formState.inputs.user_name.value,
-            email: formState.inputs.email.value,
-            number: formState.inputs.number.value,
-            password: formState.inputs.password.value,
-          }),
-        });
+        const response = await fetch(
+          `${process.env.REACT_APP_BACKEND_URL}/user/signup`,
+          {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              first_name: formState.inputs.first_name.value,
+              last_name: formState.inputs.last_name.value,
+              user_name: formState.inputs.user_name.value,
+              email: formState.inputs.email.value,
+              number: formState.inputs.number.value,
+              password: formState.inputs.password.value,
+            }),
+          }
+        );
 
         const responseData = await response.json();
 
@@ -93,14 +96,17 @@ const Form = () => {
       }
     } else {
       try {
-        const response = await fetch("http://localhost:8000/api/users/login", {
-          method: "POST",
-          body: JSON.stringify({
-            email: formState.inputs.email.value,
-            password: formState.inputs.password.value,
-          }),
-          headers: { "Content-Type": "application/json" },
-        });
+        const response = await fetch(
+          `${process.env.REACT_APP_BACKEND_URL}/user/login`,
+          {
+            method: "POST",
+            body: JSON.stringify({
+              email: formState.inputs.email.value,
+              password: formState.inputs.password.value,
+            }),
+            headers: { "Content-Type": "application/json" },
+          }
+        );
 
         const responseData = await response.json();
 

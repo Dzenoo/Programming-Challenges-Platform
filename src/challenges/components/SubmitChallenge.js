@@ -39,7 +39,7 @@ const SubmitChallenge = () => {
     event.preventDefault();
 
     try {
-      await fetch("http://localhost:8000/api/challenges/submit", {
+      await fetch(`${process.env.REACT_APP_BACKEND_URL}/challenges/submit`, {
         method: "POST",
         body: JSON.stringify({
           title: formState.inputs.title.value,

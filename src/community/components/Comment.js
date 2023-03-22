@@ -26,14 +26,17 @@ const Comment = () => {
   const newCommentHandler = async (e) => {
     e.preventDefault();
     try {
-      await fetch(`http://localhost:8000/api/users/${userId}/newComment`, {
-        method: "POST",
-        body: JSON.stringify({
-          title: formState.inputs.title.value,
-          message: formState.inputs.message.value,
-        }),
-        headers: { "Content-Type": "application/json" },
-      });
+      await fetch(
+        `${process.env.REACT_APP_BACKEND_URL}/users/${userId}/newComment`,
+        {
+          method: "POST",
+          body: JSON.stringify({
+            title: formState.inputs.title.value,
+            message: formState.inputs.message.value,
+          }),
+          headers: { "Content-Type": "application/json" },
+        }
+      );
     } catch (error) {
       console.log(error.message);
     }
@@ -59,7 +62,8 @@ const Comment = () => {
             display: "flex",
             alignItems: "center",
             gap: "12px",
-          }}>
+          }}
+        >
           <img
             src={image}
             alt="img"

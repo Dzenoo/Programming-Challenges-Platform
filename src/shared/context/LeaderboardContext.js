@@ -8,7 +8,9 @@ export const LeaderboardProvider = ({ children }) => {
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        const response = await fetch("http://localhost:8000/api/users/");
+        const response = await fetch(
+          `${process.env.REACT_APP_BACKEND_URL}/users/`
+        );
 
         const responseData = await response.json();
         setLeaderboardUsers(responseData.users);

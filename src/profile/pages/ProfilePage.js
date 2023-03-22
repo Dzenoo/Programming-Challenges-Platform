@@ -33,7 +33,7 @@ const ProfilePage = () => {
   useEffect(() => {
     if (submittedChallenges.length === 1) {
       fetch(
-        `http://localhost:8000/api/achievements/${userId}/addAchievement?name=ChallengeAccepted`,
+        `${process.env.REACT_APP_BACKEND_URL}/achievements/${userId}/addAchievement?name=ChallengeAccepted`,
         {
           method: "POST",
         }
@@ -45,7 +45,7 @@ const ProfilePage = () => {
     const fetchAchievements = async () => {
       try {
         const response = await fetch(
-          `http://localhost:8000/api/achievements/${userId}`
+          `${process.env.REACT_APP_BACKEND_URL}/achievements/${userId}`
         );
 
         const responseData = await response.json();

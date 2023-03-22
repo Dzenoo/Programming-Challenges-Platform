@@ -11,7 +11,9 @@ export const TutorialProvider = ({ children }) => {
   useEffect(() => {
     const fetchBlog = async () => {
       try {
-        const response = await fetch("http://localhost:8000/api/blog/");
+        const response = await fetch(
+          `${process.env.REACT_APP_BACKEND_URL}/blog/`
+        );
 
         const responseData = await response.json();
         setTutorials(responseData.blogs);

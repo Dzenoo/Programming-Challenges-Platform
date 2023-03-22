@@ -27,7 +27,7 @@ export const AuthProvider = ({ children }) => {
         }
 
         const response = await fetch(
-          `http://localhost:8000/api/users/${userId}/profile`,
+          `${process.env.REACT_APP_BACKEND_URL}/users/${userId}/profile`,
           {
             method: "GET",
             headers: {

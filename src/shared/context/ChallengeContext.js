@@ -15,9 +15,12 @@ export const ChallengeProvider = ({ children }) => {
   const fetchChallenges = async () => {
     try {
       const promises = profile.challenges.map((challengeId) =>
-        fetch(`http://localhost:8000/api/challenges/${challengeId}`, {
-          headers: { Authorization: `Bearer ${token}` },
-        }).then((response) => response.json())
+        fetch(
+          `${process.env.REACT_APP_BACKEND_URL}/challenges/${challengeId}`,
+          {
+            headers: { Authorization: `Bearer ${token}` },
+          }
+        ).then((response) => response.json())
       );
       const challengeObjects = await Promise.all(promises);
       setuserChallenges(challengeObjects);
@@ -37,9 +40,12 @@ export const ChallengeProvider = ({ children }) => {
     setisLoading(true);
     const fetchChallenges = async () => {
       try {
-        const response = await fetch("http://localhost:8000/api/challenges/", {
-          method: "GET",
-        });
+        const response = await fetch(
+          `${process.env.REACT_APP_BACKEND_URL}/challenges/`,
+          {
+            method: "GET",
+          }
+        );
 
         const responseData = await response.json();
 
@@ -82,7 +88,7 @@ export const ChallengeProvider = ({ children }) => {
   const startChallenge = async (challengeId) => {
     try {
       await fetch(
-        `http://localhost:8000/api/challenges/${userId}/${challengeId}/start`,
+        `${process.env.REACT_APP_BACKEND_URL}/challenges/${userId}/${challengeId}/start`,
         {
           method: "POST",
           headers: { Authorization: `Bearer ${token}` },
@@ -105,7 +111,7 @@ export const ChallengeProvider = ({ children }) => {
     const fetchSubmittedChallenges = async () => {
       try {
         const response = await fetch(
-          "http://localhost:8000/api/challenges/submittedChallenges"
+          `${process.env.REACT_APP_BACKEND_URL}/challenges/submittedChallenges`
         );
 
         const responseData = await response.json();
