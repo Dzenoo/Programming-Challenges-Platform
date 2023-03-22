@@ -66,7 +66,7 @@ const Form = () => {
     if (authMode) {
       try {
         const response = await fetch(
-          `${process.env.REACT_APP_BACKEND_URL}/user/signup`,
+          `${process.env.REACT_APP_BACKEND_URL}/users/signup`,
           {
             method: "POST",
             headers: { "Content-Type": "application/json" },
@@ -97,7 +97,7 @@ const Form = () => {
     } else {
       try {
         const response = await fetch(
-          `${process.env.REACT_APP_BACKEND_URL}/user/login`,
+          `${process.env.REACT_APP_BACKEND_URL}/users/login`,
           {
             method: "POST",
             body: JSON.stringify({
