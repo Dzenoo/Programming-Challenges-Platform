@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Comment from "../components/Comment";
 import Post from "../components/Post";
+import { Container } from "@mui/system";
 
 const CommunityPage = () => {
   const [comments, setcomments] = useState([]);
@@ -25,10 +26,10 @@ const CommunityPage = () => {
   }, []);
 
   return (
-    <>
+    <Container sx={{ display: "flex", flexDirection: "column" }} maxWidth="lg">
       <Post comments={comments} />
       <Comment />
-    </>
+    </Container>
   );
 };
 

@@ -13,7 +13,7 @@ const Post = ({ comments }) => {
   return (
     <Grid container spacing={2} justifyContent="center" padding={2}>
       {comments.map((comment) => (
-        <Grid item lg={4} md={6} sm={10} xs={12}>
+        <Grid item lg={4} md={6} sm={10} xs={12} lg={12}>
           <Card
             sx={{
               padding: "12px",

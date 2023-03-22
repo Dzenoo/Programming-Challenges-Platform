@@ -40,7 +40,12 @@ const Comment = () => {
   };
 
   return (
-    <Container maxWidth="md" sx={{ padding: "40px 0" }}>
+    <Container
+      maxWidth="md"
+      sx={{
+        padding: "40px 0",
+      }}
+    >
       <Card
         sx={{
           padding: "20px",
@@ -67,7 +72,10 @@ const Comment = () => {
           </Box>
         </Box>
 
-        <form onSubmit={newCommentHandler}>
+        <form
+          onSubmit={newCommentHandler}
+          style={{ display: "flex", flexDirection: "column" }}
+        >
           <Input
             label="Title"
             onInput={inputHandler}
