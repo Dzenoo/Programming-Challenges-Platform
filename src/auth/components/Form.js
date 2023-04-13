@@ -135,6 +135,7 @@ const Form = () => {
           height: "100%",
           display: "flex",
           alignItems: "center",
+          flexWrap: "wrap",
         }}
       >
         <CardMedia image={formImg} sx={{ padding: "38.45% 18%" }} />

@@ -16,7 +16,6 @@ import { Box } from "@mui/system";
 import { Link, useParams } from "react-router-dom";
 import { ChallengeContext } from "../../shared/context/ChallengeContext";
 import { AuthContext } from "../../shared/context/AuthContext";
-import WebAssetIcon from "@mui/icons-material/WebAsset";
 import "../css/challenges.css";
 import { ToastContainer } from "react-toastify";
 
@@ -129,23 +128,6 @@ const ChallengeDetails = () => {
                 ))}
               </List>
             ))}
-            <Box
-              sx={{
-                display: "flex",
-                flexDirection: "column",
-                gap: "1em",
-              }}
-            >
-              <Typography variant="h4">Assets and Design</Typography>
-              <Typography variant="p" color="textSecondary">
-                You will receive figma design and assets
-              </Typography>
-
-              <WebAssetIcon sx={{ fill: "#fcbf49" }} />
-              <Link>Figma design</Link>
-              <WebAssetIcon sx={{ fill: "#fcbf49" }} />
-              <Link>Images</Link>
-            </Box>
           </Card>
         </Grid>
       </Grid>

@@ -16,7 +16,6 @@ import { AccordionPlans } from "../../shared/data/data";
 import React from "react";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
-
 const PricingPage = () => {
   return (
     <>

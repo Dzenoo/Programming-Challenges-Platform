@@ -3,7 +3,6 @@ import { Navigate, Route, Routes } from "react-router-dom";
 import NavContainer from "./NavContainer";
 import TutorialDetails from "../../blog/components/BlogDetails";
 import ChallengeDetails from "../../challenges/components/ChallengeDetails";
-import Footer from "../navigation/Footer";
 import Redirect from "./Redirect";
 import Layout from "./Layout";
 import PrivateRoute from "./PrivateRoute";
@@ -134,7 +133,6 @@ export const routes = (
           <>
             <NavContainer value={5} />
             <CommunityPage />
-            <Footer />
           </>
         }
       />
@@ -145,7 +143,6 @@ export const routes = (
           <>
             <NavContainer value={4} />
             <LeaderboardPage />
-            <Footer />
           </>
         }
       />
@@ -156,7 +153,6 @@ export const routes = (
           <>
             <NavContainer value={0} />
             <SubmitPage />
-            <Footer />
           </>
         }
       />
@@ -167,7 +163,6 @@ export const routes = (
           <>
             <NavContainer value={6} />
             <SolutionsPage />
-            <Footer />
           </>
         }
       />
@@ -179,7 +174,6 @@ export const routes = (
           <>
             <NavContainer value={0} />
             <HomePage />
-            <Footer />
           </>
         }
       />
@@ -189,7 +183,6 @@ export const routes = (
           <>
             <NavContainer value={1} />
             <ChallengesPage />
-            <Footer />
           </>
         }
       />
@@ -199,7 +192,6 @@ export const routes = (
           <>
             <NavContainer value={2} />
             <BlogPage />
-            <Footer />
           </>
         }
       />
@@ -210,7 +202,6 @@ export const routes = (
           <>
             <NavContainer value={7} />
             <PricingPage />
-            <Footer />
           </>
         }
       />
