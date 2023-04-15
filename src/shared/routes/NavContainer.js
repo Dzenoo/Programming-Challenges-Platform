@@ -26,34 +26,34 @@ export default function NavContainer({ value }) {
         </Typography>
       </Toolbar>
       <Tabs value={value}>
-        <Tab label="Home" component={Link} to="/home" />
-        <Tab label="Challenges" component={Link} to="/challenges" />
-        <Tab label="Blog" component={Link} to="/tutorials" />
-        {auth.isLoggedIn && (
-          <Tab
-            label="Profile"
-            component={Link}
-            to={`/${auth.userId}/profile`}
-          />
-        )}
+        <div className="tabs">
+          <Tab label="Home" component={Link} to="/home" />
+          <Tab label="Challenges" component={Link} to="/challenges" />
+          <Tab label="Blog" component={Link} to="/tutorials" />
+          {auth.isLoggedIn && (
+            <Tab
+              label="Profile"
+              component={Link}
+              to={`/${auth.userId}/profile`}
+            />
+          )}
 
-        {auth.isLoggedIn && (
-          <Tab label="Leaderboard" component={Link} to="/leaderboard" />
-        )}
+          {auth.isLoggedIn && (
+            <Tab label="Leaderboard" component={Link} to="/leaderboard" />
+          )}
 
-        {auth.isLoggedIn && (
-          <Tab label="Community" component={Link} to="/community" />
-        )}
+          {auth.isLoggedIn && (
+            <Tab label="Community" component={Link} to="/community" />
+          )}
 
-        {auth.isLoggedIn && (
-          <Tab
-            label="Solved Challenges"
-            component={Link}
-            to="/challenge/solvedChallenges"
-          />
-        )}
-
-        <Tab label="Pricing" component={Link} to="/pricing" />
+          {auth.isLoggedIn && (
+            <Tab
+              label="Solved Challenges"
+              component={Link}
+              to="/challenge/solvedChallenges"
+            />
+          )}
+        </div>
       </Tabs>
       <div style={buttonsStyle}>
         {!auth.isLoggedIn && (

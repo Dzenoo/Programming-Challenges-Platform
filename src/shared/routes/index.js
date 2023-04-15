@@ -5,7 +5,6 @@ import TutorialDetails from "../../blog/components/BlogDetails";
 import ChallengeDetails from "../../challenges/components/ChallengeDetails";
 import Redirect from "./Redirect";
 import Layout from "./Layout";
-import PrivateRoute from "./PrivateRoute";
 import SuccessSubmit from "../ui/SuccessSubmit";
 
 const HomePage = React.lazy(() =>
@@ -18,6 +17,7 @@ const HomePage = React.lazy(() =>
     }),
   ]).then(([m]) => m)
 );
+
 const ChallengesPage = React.lazy(() =>
   Promise.all([
     import("../../challenges/pages/ChallengePage"),
@@ -28,6 +28,7 @@ const ChallengesPage = React.lazy(() =>
     }),
   ]).then(([m]) => m)
 );
+
 const BlogPage = React.lazy(() =>
   Promise.all([
     import("../../blog/pages/BlogPage"),
@@ -38,16 +39,7 @@ const BlogPage = React.lazy(() =>
     }),
   ]).then(([m]) => m)
 );
-const PricingPage = React.lazy(() =>
-  Promise.all([
-    import("../../pricing/pages/PricingPage"),
-    new Promise((resolve) => {
-      setTimeout(() => {
-        resolve();
-      }, 2000);
-    }),
-  ]).then(([m]) => m)
-);
+
 const AuthPage = React.lazy(() =>
   Promise.all([
     import("../../auth/pages/AuthPage"),
@@ -192,16 +184,6 @@ export const routes = (
           <>
             <NavContainer value={2} />
             <BlogPage />
-          </>
-        }
-      />
-
-      <Route
-        path="/pricing"
-        element={
-          <>
-            <NavContainer value={7} />
-            <PricingPage />
           </>
         }
       />

@@ -1,8 +1,8 @@
 import React from "react";
 import { ClimbingBoxLoader } from "react-spinners";
-
 import { routes } from "./shared/routes/index";
 import AppProvider from "./shared/context";
+import "./index.css";
 
 function App() {
   return (

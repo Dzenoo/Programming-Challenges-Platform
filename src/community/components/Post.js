@@ -1,18 +1,8 @@
-import {
-  Button,
-  Card,
-  CardActions,
-  CardContent,
-  Grid,
-  Typography,
-} from "@mui/material";
-
+import React from "react";
+import { Card, CardContent, Grid, Typography } from "@mui/material";
 import { Box } from "@mui/system";
-import React, { useState } from "react";
 
 const Post = ({ comments }) => {
-  const [like, setlike] = useState(0);
-
   return (
     <Grid container spacing={2} justifyContent="center" padding={2}>
       {comments.map((comment) => (
@@ -47,12 +37,6 @@ const Post = ({ comments }) => {
                 <Typography variant="p">{comment.comment}</Typography>
               </Box>
             </CardContent>
-            <CardActions>
-              <Button disabled={like} onClick={() => setlike(like + 1)}>
-                Like {like}
-              </Button>
-              <Button>Reply</Button>
-            </CardActions>
           </Card>
         </Grid>
       ))}

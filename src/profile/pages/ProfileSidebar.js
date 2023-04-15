@@ -11,7 +11,6 @@ import {
 import PropTypes from "prop-types";
 import EmojiEventsIcon from "@mui/icons-material/EmojiEvents";
 import BookmarksIcon from "@mui/icons-material/Bookmarks";
-import LocalOfferIcon from "@mui/icons-material/LocalOffer";
 import SettingsIcon from "@mui/icons-material/Settings";
 
 const ListItems = [
@@ -29,11 +28,6 @@ const ListItems = [
     id: 2,
     name: "Challenges",
     icon: <BookmarksIcon />,
-  },
-  {
-    id: 3,
-    name: "Plan",
-    icon: <LocalOfferIcon />,
   },
 ];
 

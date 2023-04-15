@@ -2,11 +2,9 @@ import React, { useContext, useEffect, useState } from "react";
 import { Container } from "@mui/material";
 import { AuthContext } from "../../shared/context/AuthContext";
 import { ChallengeContext } from "../../shared/context/ChallengeContext";
-import { FadeLoader } from "react-spinners";
 import ProfileContent from "../components/ProfileContent";
 import ProfileSidebar from "./ProfileSidebar";
 import ProfileAchievements from "../components/ProfileAchievements";
-import ProfilePlan from "../components/ProfilePlan";
 import ProfileChallenges from "../components/ProfileChallenges";
 
 const ProfilePage = () => {
@@ -55,14 +53,6 @@ const ProfilePage = () => {
     fetchAchievements();
   }, [userId]);
 
-  // if (isLoading || userChallenges.length === 0) {
-  //   return (
-  //     <div className="center">
-  //       <FadeLoader />
-  //     </div>
-  //   );
-  // }
-
   // Props for sidebar
   const sidebarProps = {
     user_name,
@@ -99,7 +89,6 @@ const ProfilePage = () => {
         <ProfileAchievements userAchievements={loadedAchievements} />
       )}
       {currentPage === 2 && <ProfileChallenges challenges={userChallenges} />}
-      {currentPage === 3 && <ProfilePlan />}
     </Container>
   );
 };

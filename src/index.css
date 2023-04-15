@@ -107,4 +107,11 @@ textarea {
   .form-image {
     display: none;
   }
+
+  .img {
+    width: 300px;
+  }
+  .form-image {
+    display: none !important;
+  }
 }

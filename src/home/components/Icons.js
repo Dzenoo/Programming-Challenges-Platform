@@ -29,7 +29,7 @@ const Icons = () => {
         }}
       >
         <Box style={boxWidthStyle}>
-          <img src={icon1} alt="ico1" />
+          <img src={icon1} alt="ico1" className="img" />
           <Typography variant="h4">Learn Latest Technologies</Typography>
           <Typography variant="p">
             Our website is dedicated to providing you with valuable resources
@@ -39,7 +39,7 @@ const Icons = () => {
         </Box>
 
         <Box style={boxWidthStyle}>
-          <img src={icon2} alt="ico2" />
+          <img src={icon2} alt="ico2" className="img" />
           <Typography variant="h4">Browse blog</Typography>
           <Typography variant="p">
             Our platform offers a range of tutorials, courses, and articles that
@@ -48,7 +48,7 @@ const Icons = () => {
         </Box>
 
         <Box style={boxWidthStyle}>
-          <img src={icon3} alt="ico3" />
+          <img src={icon3} alt="ico3" className="img" />
           <Typography variant="h4">Learn from challenges</Typography>
           <Typography variant="p">
             Programming challenges are an excellent way to develop your skills,
